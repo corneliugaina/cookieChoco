@@ -7,3 +7,10 @@ window.onload = function(){
 }
 
 "Test Corneliu, premier commit."
+    cli.addEventListener('clic', clicking)
+
+    function clicking(cli){
+        
+    }
+
+}
