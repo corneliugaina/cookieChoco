@@ -4,13 +4,14 @@ window.onload = function(){
     let aff = document.getElementById('affichage');
     let score =0;
 
-}
-
-"Test Corneliu, premier commit."
     cli.addEventListener('clic', clicking)
 
     function clicking(cli){
         
     }
 
+//exo 4
+var multiplicarteur= ;
 }
+
+"TEST CORNELIU"
