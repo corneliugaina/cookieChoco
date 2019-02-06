@@ -15,10 +15,10 @@ Projet de "Cookie Clicker" maison. Initiation au developpement en equipe (JS/HTM
 
 # Timing :
 
->mercredi 6 fevrier : initialisation du projet, organisation
->jeudi 7 fevrier : 
+>mercredi 6 fevrier : initialisation du projet, organisation  
+>jeudi 7 fevrier :   
 >vendredi 8 fevrier : 
 
->lundi 11 fevrier :
->mardi 12 fevrier : 
->mercredi 13 fevrier : 
+>lundi 11 fevrier :  
+>mardi 12 fevrier :   
+>mercredi 13 fevrier :   
