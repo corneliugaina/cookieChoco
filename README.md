@@ -21,3 +21,11 @@ Projet de "CoinClicker" (CookieClicker-like) maison. Initiation au developpement
 >lundi 11 fevrier :  
 >mardi 12 fevrier :   
 >mercredi 13 fevrier :   
+
+# Organisation & Outils
+
+- Schema (**Google draw**):  
+- BreakdownVelocity (avancee projet sur **Google Sheet**) :  
+- ProductBacklog : cf. Projects dans **GitHub** / cf. panneau post-it's  
+- Communication : groupe **Ryver**  
+- Issue/Tasks: cf. Issue dans **GitHub**  
