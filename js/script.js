@@ -5,5 +5,6 @@ window.onload = function(){
     let score =0;
 
 
-
+//exo 4
+var multiplicarteur= ;
 }
