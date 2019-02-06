@@ -6,4 +6,4 @@ window.onload = function(){
 
 }
 
-"Test Corneliu"
+"Test Corneliu, premier commit."
