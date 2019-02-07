@@ -18,7 +18,17 @@ window.onload = function(){
         aff.innerText = txt
     }
 
+<<<<<<< HEAD
     
 //exo 4
 //var multiplicarteur= ;
 }
+=======
+
+//exo 4
+var multiplicarteur= ;
+}
+
+
+// Test Corneliu 9h14 
+>>>>>>> a209d2f6715796bb35ee50bdbd98e720d5f97175
