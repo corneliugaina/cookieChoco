@@ -14,7 +14,8 @@
     align-content: center;
     justify-content: space-around;
     text-align: center;
-    
+
+     
     }
 
   img {
@@ -22,6 +23,15 @@
     height:50%;
    
   }
+ 
+  .pokeButtonSide {
 
+    &:hover {
+      font-size: 1em;
+      color: rgb(233, 51, 27);
+      transform: scale(1.1);
+    }
+  }
+  
 	
     
