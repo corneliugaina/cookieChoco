@@ -11,22 +11,24 @@ window.onload = function(){
                     console.log(txt)
                     aff.innerText = txt
         },
-        bonus = {
-            active : "false",
-            activate : function() {
-                // stackoverflow propose
-                // document.getElementById('id').style.pointerEvents = 'none';
-                // document.getElementById('id').style.pointerEvents = 'auto'; 
-                // mais rendra aussi idispo le over à mon avis
-            },
-            augmenterMultiplicateur : function(){
-                multiplicateur++
-                console.log(multiplicateur);
-            }
-
-        },
+       
         
 
+
+    }
+
+    let bonus = {
+        active : "false",
+        activate : function() {
+            // stackoverflow propose
+            // document.getElementById('id').style.pointerEvents = 'none';
+            // document.getElementById('id').style.pointerEvents = 'auto'; 
+            // mais rendra aussi idispo le over à mon avis
+        },
+        augmenterMultiplicateur : function(){
+            multiplicateur++
+            console.log(multiplicateur);
+        }
 
     }
 
@@ -39,7 +41,7 @@ window.onload = function(){
     cli.addEventListener('click', pokemon.clicking)
 
     // fonction pour compter le nombre de multiplicateur utilisé
-    multi.addEventListener("click", augmenterMultiplicateur);
+    multi.addEventListener("click", bonus.augmenterMultiplicateur);
 
 
 }
