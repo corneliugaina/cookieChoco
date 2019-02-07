@@ -5,7 +5,7 @@ window.onload = function(){
     let pokemon = {
         score : 0,
         multiplicateur  :1 ,
-
+        autoclicker : 0 ,
     }
 
     let bonus = {
@@ -25,7 +25,7 @@ window.onload = function(){
 
 
     function clicking () {
-        pokemon.score++;
+        pokemon.score = pokemon.score + (1 * pokemon.multiplicateur)
         console.log (pokemon.score)
         let txt = "Votre score est de " + pokemon.score + " pikachu !"
         aff.innerText = txt
@@ -45,17 +45,20 @@ window.onload = function(){
     };
 
     function booster () {
-        setInterval()
+        // clicking()
+        pokemon.score = pokemon.score * 2
+        console.log(pokemon.score)
     };
 
-    // fonction affiche le score à chaque clic
+
+
+    // appel fonction affiche le score à chaque clic
     cli.addEventListener('click', clicking)
 
-    // fonction pour compter le nombre de multiplicateur utilisé
+    // appel fonction pour compter le nombre de multiplicateur utilisé
     multi.addEventListener("click", augmenterMultiplicateur);
 
-
-    // fonction pour lancer le boost
+    // appel fonction pour lancer le boost
     boost.addEventListener("click", booster);
 }
 
