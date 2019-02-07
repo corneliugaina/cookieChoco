@@ -10,7 +10,10 @@ window.onload = function(){
         
     }
 
+
 //exo 4
 var multiplicarteur= ;
+}
 
-"Test 7 fevrier 9:10"
+
+// Test Corneliu 9h14 
