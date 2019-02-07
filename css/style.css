@@ -17,9 +17,12 @@ img {
   width: 50%;
   height: 50%; }
 
-.pokeButtonSide:hover {
+.pokeButtonSide:active {
   font-size: 1em;
   color: #e9331b;
   transform: scale(1.1); }
+
+#clic:active {
+  transform: scale(0.9); }
 
 /*# sourceMappingURL=style.css.map */

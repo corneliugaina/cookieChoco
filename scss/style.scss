@@ -26,11 +26,19 @@
  
   .pokeButtonSide {
 
-    &:hover {
+    &:active {
       font-size: 1em;
       color: rgb(233, 51, 27);
       transform: scale(1.1);
     }
+  }
+
+  #clic {
+
+    &:active {
+      transform: scale(0.9);
+    }
+
   }
   
 	
