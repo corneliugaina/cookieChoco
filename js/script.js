@@ -13,3 +13,7 @@ window.onload = function(){
 
 //exo 4
 var multiplicarteur= ;
+}
+
+
+// Test Corneliu 9h14 
