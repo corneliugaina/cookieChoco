@@ -1,19 +1,64 @@
 window.onload = function(){
 
-    let cli = document.getElementById('clic');
-    let aff = document.getElementById('affichage');
-    let score =0;
 
-    cli.addEventListener('clic', clicking)
-
-    function clicking(cli){
-        
+    // les objets
+    let pokemon = {
+        score : 0,
+        multiplicateur  :1 ,
+        autoclicker : 0 ,
     }
 
+    let bonus = {
+        active : "false",
 
-//exo 4
-var multiplicarteur= ;
+    }
+
+    // les variables
+
+    let cli = document.getElementById('clic');
+    let aff = document.getElementById('affichage');
+    let multi = document.getElementById('multiplier'); 
+    let boost = document.getElementById('boost')
+
+    
+    //les fonctions
+
+
+    function clicking () {
+        pokemon.score = pokemon.score + (1 * pokemon.multiplicateur)
+        console.log (pokemon.score)
+        let txt = "Votre score est de " + pokemon.score + " pikachu !"
+        aff.innerText = txt
+        return pokemon.score
+    };
+
+    function activate () {
+        // stackoverflow propose
+        // document.getElementById('id').style.pointerEvents = 'none';
+        // document.getElementById('id').style.pointerEvents = 'auto'; 
+        // mais rendra aussi indispo le over à mon avis
+    };
+
+    function augmenterMultiplicateur () {
+        pokemon.multiplicateur++
+        console.log(pokemon.multiplicateur);
+    };
+
+    function booster () {
+        // clicking()
+        pokemon.score = pokemon.score * 2
+        console.log(pokemon.score)
+    };
+
+
+
+    // appel fonction affiche le score à chaque clic
+    cli.addEventListener('click', clicking)
+
+    // appel fonction pour compter le nombre de multiplicateur utilisé
+    multi.addEventListener("click", augmenterMultiplicateur);
+
+    // appel fonction pour lancer le boost
+    boost.addEventListener("click", booster);
 }
 
-
-// Test Corneliu 9h14 
