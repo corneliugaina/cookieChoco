@@ -10,8 +10,22 @@ window.onload = function(){
         
     }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+//exo 4
+var multiplicarteur= ;
+}
+=======
+}
+>>>>>>> DevCorn
+=======
 //exo 4
 var multiplicarteur= ;
 }
 
+<<<<<<< HEAD
 "TEST CORNELIU fevrier 9h OK" 
+=======
+"TEST CORNELIU 7fevrier 9h"
+>>>>>>> DevCorn
+>>>>>>> developpementMain

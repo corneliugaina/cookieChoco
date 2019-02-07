@@ -1,1 +1,7 @@
-{"version":3,"sourceRoot":"","sources":["../scss/style.scss"],"names":[],"mappings":"AAAA;EACI","file":"style.css"}
+{
+"version": 3,
+"mappings": "AACE,YAAa;EACX,OAAO,EAAC,KAAK;EACb,KAAK,EAAE,IAAI;EACX,WAAW,EAAC,IAAI;EAChB,YAAY,EAAC,IAAI",
+"sources": ["../scss/style.scss"],
+"names": [],
+"file": "style.css"
+}
