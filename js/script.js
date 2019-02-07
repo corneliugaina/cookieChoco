@@ -9,7 +9,7 @@ window.onload = function(){
     }
 
     let bonus = {
-        active : "true",
+        active : false,
 
     }
 
@@ -19,7 +19,7 @@ window.onload = function(){
     let aff = document.getElementById('affichage');
     let multi = document.getElementById('multiplier'); 
     let boost = document.getElementById('boost')
-    let buttonSide = document.getElementsByClassName('pokeButtonSide');
+    let buttonSide = document.getElementsByClassName('container')[0];
     
     //les fonctions
 
@@ -33,10 +33,14 @@ window.onload = function(){
     };
 
     function activate () {
-        if (bonus.active == false) {
+        if (bonus.active === false) {
+            console.log(false)
             buttonSide.style.pointerEvents = 'none';
         } else {
+            console.log(true)
             buttonSide.style.pointerEvents = 'auto';
+
+            // ca ne marche pas, mais je me demande si cette fonction doit etre appelée à l'user event ou être toujours active... Mais comment faire ?
         }
     };
 
@@ -57,12 +61,12 @@ window.onload = function(){
     cli.addEventListener('click', clicking)
 
     // appel fonction pour compter le nombre de multiplicateur utilisé
-    multi.addEventListener("click", augmenterMultiplicateur);
+    multi.addEventListener('click', augmenterMultiplicateur);
 
     // appel fonction pour lancer le boost
-    boost.addEventListener("click", booster);
+    boost.addEventListener('click', booster);
 
     // appel fonction sur boutons bonus
-    buttonSide.addEventListener(PointerEvent, activate);
+    buttonSide.addEventListener('focus', activate);
 }
 
