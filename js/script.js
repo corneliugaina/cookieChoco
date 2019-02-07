@@ -1,5 +1,18 @@
 window.onload = function(){
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    let cli = document.getElementById('clic');
+    let aff = document.getElementById('affichage');
+    let score =0;
+=======
+<<<<<<< HEAD
+     let cli = document.getElementById('clic');
+     let aff = document.getElementById('affichage');
+     let score =0;
+=======
+>>>>>>> 3d825ad326cb4a1e823a0ab1c43dece6309e19fa
     let score = 0;
     var multiplicateur =1 ;
 
@@ -32,14 +45,37 @@ window.onload = function(){
 
     let cli = document.getElementById('clic');
     let aff = document.getElementById('affichage');
+<<<<<<< HEAD
     let multi= document.getElementById('multiplier'); 
 
+=======
+>>>>>>> devEmi
+>>>>>>> e5c476c980a4b16603dcd98f9c788889f4cbba00
+
+
+
+    //exo 4
+>>>>>>> 3d825ad326cb4a1e823a0ab1c43dece6309e19fa
 
     // fonction affiche le score à chaque clic
     cli.addEventListener('click', pokemon.clicking)
 
+<<<<<<< HEAD
     // fonction pour compter le nombre de multiplicateur utilisé
     multi.addEventListener("click", augmenterMultiplicateur);
 
+=======
+let multi= document.getElementById('multiplier');   
+multi.addEventListener("click", augmenterMultiplicateur);
+
+var multiplicateur=1;
+function augmenterMultiplicateur(){
+    
+    multiplicateur++
+    console.log(multiplicateur);
+    
+}
+
+>>>>>>> 3d825ad326cb4a1e823a0ab1c43dece6309e19fa
 
 }
