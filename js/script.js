@@ -9,7 +9,7 @@ window.onload = function(){
     }
 
     let bonus = {
-        active : "false",
+        active : "true",
 
     }
 
@@ -19,7 +19,7 @@ window.onload = function(){
     let aff = document.getElementById('affichage');
     let multi = document.getElementById('multiplier'); 
     let boost = document.getElementById('boost')
-
+    let buttonSide = document.getElementsByClassName('pokeButtonSide');
     
     //les fonctions
 
@@ -33,10 +33,11 @@ window.onload = function(){
     };
 
     function activate () {
-        // stackoverflow propose
-        // document.getElementById('id').style.pointerEvents = 'none';
-        // document.getElementById('id').style.pointerEvents = 'auto'; 
-        // mais rendra aussi indispo le over à mon avis
+        if (bonus.active == false) {
+            buttonSide.style.pointerEvents = 'none';
+        } else {
+            buttonSide.style.pointerEvents = 'auto';
+        }
     };
 
     function augmenterMultiplicateur () {
@@ -60,5 +61,8 @@ window.onload = function(){
 
     // appel fonction pour lancer le boost
     boost.addEventListener("click", booster);
+
+    // appel fonction sur boutons bonus
+    buttonSide.addEventListener(PointerEvent, activate);
 }
 
