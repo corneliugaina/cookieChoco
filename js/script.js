@@ -9,6 +9,9 @@ window.onload = function(){
                     console.log(txt)
                     aff.innerText = txt
         },
+        bonus {
+
+        },
         multiCount : 0,
 
 
