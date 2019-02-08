@@ -13,25 +13,25 @@ window.onload = function(){
             multi : document.getElementById('multiplier'),
             autoclic : document.getElementById('autoclic'),
             boost : document.getElementById('boost'),
-        }
-        
+        },
+        bonus : false,
+        boost : 1,
     }
 
-    let bonus = {
-        active : false,
+   
+    
 
-    }
-
+ 
     
     //les fonctions
 
     function affScore () {
         let txt = "Votre score est de " + pokemon.score + " pikachu !"
-        aff.innerText = txt
+        pokemon.button.aff.innerText = txt
     };
 
     function clicking () {
-        pokemon.score = pokemon.score + (1 * pokemon.multiplicateur)
+        pokemon.score = pokemon.score + (1 * pokemon.multiplicateur * pokemon.boost)
         console.log (pokemon.score)
         affScore()
     };
@@ -54,7 +54,6 @@ window.onload = function(){
     };
 
     function booster () {
-        clicking()
         pokemon.score = pokemon.score * 2
         console.log(pokemon.score)
     };
@@ -62,15 +61,15 @@ window.onload = function(){
 
 
     // appel fonction affiche le score à chaque clic
-    cli.addEventListener('click', clicking)
+    pokemon.button.cli.addEventListener('click', clicking)
 
     // appel fonction pour compter le nombre de multiplicateur utilisé
-    multi.addEventListener('click', augmenterMultiplicateur);
+    pokemon.button.multi.addEventListener('click', augmenterMultiplicateur);
 
     // appel fonction pour lancer le boost
-    boost.addEventListener('click', booster);
+    pokemon.button.boost.addEventListener('click', booster);
 
     // appel fonction sur boutons bonus
-    buttonSide.addEventListener('focus', activate);
+    pokemon.button.buttonSide.addEventListener('focus', activate);
 }
 
