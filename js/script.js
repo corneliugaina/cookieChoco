@@ -35,8 +35,9 @@ window.onload = function(){
 
     function clicking () {
         boost()
-        console.log(pokemon.boost)
-        pokemon.score = pokemon.score + (1 * pokemon.multiplicateur * pokemon.boost)
+        //console.log(pokemon.boost)
+        pokemon.score = pokemon.score + (1 * pokemon.multiplicateur)
+            //* pokemon.boost)
         console.log (pokemon.score)
         affScore()
     };
@@ -60,7 +61,7 @@ window.onload = function(){
         t0 = new Date()
         t0S = t0.getSeconds();
         t = t0 - pokemon.tclicS
-        console.log(t)
+        //console.log(t)
         return t
     };
 
