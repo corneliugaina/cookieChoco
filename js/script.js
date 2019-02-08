@@ -5,7 +5,7 @@ window.onload = function(){
     let pokemon = {
         score : 0,
         multiplicateur  :1 ,
-        autoclicker : 0 ,
+        nombreAutoclics: myIntervalId,
     }
 
     let bonus = {
@@ -18,9 +18,10 @@ window.onload = function(){
     let cli = document.getElementById('clic');
     let aff = document.getElementById('affichage');
     let multi = document.getElementById('multiplier'); 
-    let autoclic = document.getElementById('autoclic');
+    let autoclic = document.getElementById('autoclic'); // variable autoclic
     let boost = document.getElementById('boost');
-
+ 
+    
     
     //les fonctions
 
@@ -52,20 +53,19 @@ window.onload = function(){
     };
 
 
-    setInterval(function autoclicker() {
-        pokemon.score = pokemon.score++
+    // autoclicker, qui fait qu'a chaque achat, il augmente 
+    // un clic auto est fait chaque seconde
+    setInterval(function autoclicker() { 
+        document
+        pokemon.score = pokemon.score + 1;
         console.log(pokemon.score)
-    }, 1)
-    // autoclickerLabo, qui fait qu'a chaque achat, il augmente 
-    // un clic auto est fait chaque seconde 
+        pokemon.nombreAutoclics = pokemon.nombreAutoclics + 1;
+    }, 1000)
+
+    myIntervalId = setInterval;
+
+   
  
-
-
-    // appel fonction affiche le score à chaque clic
-    cli.addEventListener('click', clicking)   function autoclickerLabo () {
-        pokemon.score++
-        console.log(pokemon.score++)
-    }
 
     // appel fonction pour compter le nombre de multiplicateur utilisé
     multi.addEventListener("click", augmenterMultiplicateur);
