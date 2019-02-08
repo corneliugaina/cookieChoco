@@ -16,12 +16,9 @@ window.onload = function(){
         },
         bonus : false,
         boost : 1,
-<<<<<<< HEAD
         tclic: 2,
         tclicS : 0,
         t0S : 0,
-=======
->>>>>>> 66e03adeabb07b3723309dfccf97f01a1b72dae0
     }
 
    
@@ -51,7 +48,6 @@ window.onload = function(){
         console.log(pokemon.multiplicateur);
     };
 
-<<<<<<< HEAD
     function boostTiming () {
         tclic = 2;
         t0 = new Date()
@@ -59,10 +55,6 @@ window.onload = function(){
         t = t0-tclic
         console.log('blabla')
         boost(tOS)
-=======
-    function booster () {
-       
->>>>>>> 66e03adeabb07b3723309dfccf97f01a1b72dae0
     };
 
     function boost(T) {
@@ -91,11 +83,7 @@ window.onload = function(){
     multi.addEventListener("click", augmenterMultiplicateur);
 
     // appel fonction pour lancer le boost
-<<<<<<< HEAD
     pokemon.button.boost.addEventListener('click', boostTiming);
-=======
-    pokemon.button.boost.addEventListener('click', booster);
->>>>>>> 66e03adeabb07b3723309dfccf97f01a1b72dae0
 
     // appel fonction pour lancer le boost
     boost.addEventListener("click", booster);
