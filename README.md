@@ -11,6 +11,7 @@ Projet de "CoinClicker" (CookieClicker-like) maison. Initiation au developpement
 - François Massart : @frmassar
 - Jussi Ccoyllo : @JussiCcoyllo
 - Corneliu Gaina : @corneliushka
+- Julien 
 
 # Timing :
 
