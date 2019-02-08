@@ -22,8 +22,7 @@ window.onload = function(){
 
     }
 
-    // les variables
-
+ 
     
     //les fonctions
 
@@ -62,15 +61,15 @@ window.onload = function(){
 
 
     // appel fonction affiche le score à chaque clic
-    cli.addEventListener('click', clicking)
+    pokemon.button.cli.addEventListener('click', clicking)
 
     // appel fonction pour compter le nombre de multiplicateur utilisé
-    multi.addEventListener('click', augmenterMultiplicateur);
+    pokemon.button.multi.addEventListener('click', augmenterMultiplicateur);
 
     // appel fonction pour lancer le boost
-    boost.addEventListener('click', booster);
+    pokemon.button.boost.addEventListener('click', booster);
 
     // appel fonction sur boutons bonus
-    buttonSide.addEventListener('focus', activate);
+    pokemon.button.buttonSide.addEventListener('focus', activate);
 }
 
