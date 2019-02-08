@@ -70,6 +70,17 @@ window.onload = function(){
         }
     }
 
+    // autoclickerLabo, qui fait qu'a chaque achat, il augmente 
+    // un clic auto est fait chaque 
+    setInterval(function autoclickerLabo(){
+         alert("Hello"); 
+    }, 000;
+
+
+    function autoclickerLabo () {
+        pokemon.score++
+        console.log(pokemon.score++)
+    }
 
     // appel fonction affiche le score à chaque clic
     pokemon.button.cli.addEventListener('click', clicking)
