@@ -6,6 +6,15 @@ window.onload = function(){
         score : 0,
         multiplicateur  :1 ,
         autoclicker : 0 ,
+        button : {
+            aff : document.getElementById('affichage'),
+            cli : document.getElementById('clic'),
+            buttonSide : document.getElementsByClassName('container')[0],
+            multi : document.getElementById('multiplier'),
+            autoclic : document.getElementById('autoclic'),
+            boost : document.getElementById('boost'),
+        }
+        
     }
 
     let bonus = {
@@ -15,11 +24,6 @@ window.onload = function(){
 
     // les variables
 
-    let cli = document.getElementById('clic');
-    let aff = document.getElementById('affichage');
-    let multi = document.getElementById('multiplier'); 
-    let boost = document.getElementById('boost')
-    let buttonSide = document.getElementsByClassName('container')[0];
     
     //les fonctions
 
@@ -50,7 +54,7 @@ window.onload = function(){
     };
 
     function booster () {
-        // clicking()
+        clicking()
         pokemon.score = pokemon.score * 2
         console.log(pokemon.score)
     };
