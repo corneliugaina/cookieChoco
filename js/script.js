@@ -5,33 +5,31 @@ window.onload = function(){
     let pokemon = {
         score : 0,
         multiplicateur  :1 ,
-        nombreAutoclics: myIntervalId,
+        autoclicker : 0 ,
+        button : {
+            aff : document.getElementById('affichage'),
+            cli : document.getElementById('clic'),
+            buttonSide : document.getElementsByClassName('container')[0],
+            multi : document.getElementById('multiplier'),
+            autoclic : document.getElementById('autoclic'),
+            boost : document.getElementById('boost'),
+        },
+        bonus : false,
+        boost : 1,
     }
 
-    let bonus = {
-        active : "false",
-
-    }
-
-    // les variables
-
-    let cli = document.getElementById('clic');
-    let aff = document.getElementById('affichage');
-    let multi = document.getElementById('multiplier'); 
-    let autoclic = document.getElementById('autoclic'); // variable autoclic
-    let boost = document.getElementById('boost');
- 
+   
     
+
+ 
     
     //les fonctions
 
 
     function clicking () {
-        pokemon.score = pokemon.score + (1 * pokemon.multiplicateur)
+        pokemon.score = pokemon.score + (1 * pokemon.multiplicateur * pokemon.boost)
         console.log (pokemon.score)
-        let txt = "Votre score est de " + pokemon.score + " pikachu !"
-        aff.innerText = txt
-        return pokemon.score
+        affScore()
     };
 
     function activate () {
@@ -47,11 +45,16 @@ window.onload = function(){
     };
 
     function booster () {
-        // clicking()
-        pokemon.score = pokemon.score * 2
-        console.log(pokemon.score)
+       
     };
 
+    function boost(T) {
+        if (T - tclicS < 30) {
+            pokemon.boost = 2;
+        } else if (T - tclicS > 30) {
+            pokemon.boost = 1;
+        }
+    }
 
     // autoclicker, qui fait qu'a chaque achat, il augmente 
     // un clic auto est fait chaque seconde
@@ -70,8 +73,8 @@ window.onload = function(){
     // appel fonction pour compter le nombre de multiplicateur utilisé
     multi.addEventListener("click", augmenterMultiplicateur);
 
-    // appel fonction pour lancer l'achat d'un autoclick
-    autoclic.addEventListener("click", autoclicker);
+    // appel fonction pour lancer le boost
+    pokemon.button.boost.addEventListener('click', booster);
 
     // appel fonction pour lancer le boost
     boost.addEventListener("click", booster);
