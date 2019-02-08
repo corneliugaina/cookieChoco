@@ -20,9 +20,8 @@ window.onload = function(){
             prixAutoclic : 500,
             prixBoost : 5000,
             boostCount: 1,
-            tclicS : 0,
-            t0S : 0,
-            t :0,
+            tclic : 0,
+            t0 : 1549640231912,
         }
     }
 
@@ -34,9 +33,15 @@ window.onload = function(){
     }
 
     function clicking () {
-        boost()
-        //console.log(pokemon.boost)
-        pokemon.score = pokemon.score + (1 * pokemon.multiplicateur)
+        tclic = new Date().getTime()
+        console.log(tclic)
+        if (pokemon.bonus.t0 - pokemon.bonus.tclic < 3000) {
+            pokemon.boost = 2;
+            } else if (pokemon.bonus.t0 - pokemon.bonus.tclic > 3000) {
+                pokemon.boost = 1;
+                pokemon.bonus.t0 = 1549640231912
+            }
+        pokemon.score = pokemon.score + (1 * pokemon.multiplicateur * pokemon.boost)
             //* pokemon.boost)
         console.log (pokemon.score)
         affScore()
@@ -57,21 +62,11 @@ window.onload = function(){
         affScore()
     };
 
-    function boostTiming () {
-        t0 = new Date()
-        t0S = t0.getSeconds();
-        t = t0 - pokemon.tclicS
-        //console.log(t)
-        return t
-    };
 
     function boost() {
-        boostTiming()
-        if ( t < 30) {
-        pokemon.boost = 2;
-        } else if (t > 30) {
-            pokemon.boost = 1;
-        }
+        t0 = new Date().getTime()
+        console.log(t0)
+
     }
 
     
