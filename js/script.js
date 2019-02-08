@@ -16,6 +16,7 @@ window.onload = function(){
         },
         bonus : false,
         boost : 1,
+        tclic: 2,
         tclicS : 0,
         t0S : 0,
     }
@@ -52,21 +53,24 @@ window.onload = function(){
     };
 
     function augmenterMultiplicateur () {
-        score -= 50
+        // score -= 50
         pokemon.multiplicateur++
         console.log(pokemon.multiplicateur);
     };
 
     function boostTiming () {
+        tclic = 2;
         t0 = new Date()
         t0S = t0.getSeconds();
+        t = t0-tclic
+        console.log('blabla')
         boost(tOS)
     };
 
     function boost(T) {
-        if (T - tclicS < 30) {
+        if (T - pokemon.tclicS < 30) {
             pokemon.boost = 2;
-        } else if (T - tclicS > 30) {
+        } else if (T - pokemon.tclicS > 30) {
             pokemon.boost = 1;
         }
     }
@@ -87,7 +91,7 @@ window.onload = function(){
     pokemon.button.multi.addEventListener('click', augmenterMultiplicateur);
 
     // appel fonction pour lancer le boost
-    pokemon.button.boost.addEventListener('click', boost);
+    pokemon.button.boost.addEventListener('click', boostTiming);
 
     // appel fonction sur boutons bonus
     pokemon.button.buttonSide.addEventListener('focus', activate);
