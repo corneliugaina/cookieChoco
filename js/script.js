@@ -54,8 +54,7 @@ window.onload = function(){
     };
 
     function booster () {
-        pokemon.score = pokemon.score * 2
-        console.log(pokemon.score)
+       
     };
 
 
