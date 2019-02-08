@@ -6,46 +6,38 @@ window.onload = function(){
         score : 0,
         multiplicateur  :1 ,
         autoclicker : 0 ,
-        button : {
-            aff : document.getElementById('affichage'),
-            cli : document.getElementById('clic'),
-            buttonSide : document.getElementsByClassName('container')[0],
-            multi : document.getElementById('multiplier'),
-            autoclic : document.getElementById('autoclic'),
-            boost : document.getElementById('boost'),
-        },
-        bonus : false,
-        boost : 1,
     }
 
-   
-    
+    let bonus = {
+        active : "false",
 
- 
+    }
+
+    // les variables
+
+    let cli = document.getElementById('clic');
+    let aff = document.getElementById('affichage');
+    let multi = document.getElementById('multiplier'); 
+    let autoclic = document.getElementById('autoclic');
+    let boost = document.getElementById('boost');
+
     
     //les fonctions
 
-    function affScore () {
-        let txt = "Votre score est de " + pokemon.score + " pikachu !"
-        pokemon.button.aff.innerText = txt
-    };
 
     function clicking () {
-        pokemon.score = pokemon.score + (1 * pokemon.multiplicateur * pokemon.boost)
+        pokemon.score = pokemon.score + (1 * pokemon.multiplicateur)
         console.log (pokemon.score)
-        affScore()
+        let txt = "Votre score est de " + pokemon.score + " pikachu !"
+        aff.innerText = txt
+        return pokemon.score
     };
 
     function activate () {
-        if (bonus.active === false) {
-            console.log(false)
-            buttonSide.style.pointerEvents = 'none';
-        } else {
-            console.log(true)
-            buttonSide.style.pointerEvents = 'auto';
-
-            // ca ne marche pas, mais je me demande si cette fonction doit etre appelée à l'user event ou être toujours active... Mais comment faire ?
-        }
+        // stackoverflow propose
+        // document.getElementById('id').style.pointerEvents = 'none';
+        // document.getElementById('id').style.pointerEvents = 'auto'; 
+        // mais rendra aussi indispo le over à mon avis
     };
 
     function augmenterMultiplicateur () {
@@ -54,32 +46,34 @@ window.onload = function(){
     };
 
     function booster () {
-       
+        // clicking()
+        pokemon.score = pokemon.score * 2
+        console.log(pokemon.score)
     };
 
 
+    setInterval(function autoclicker() {
+        pokemon.score = pokemon.score++
+        console.log(pokemon.score)
+    }, 1)
     // autoclickerLabo, qui fait qu'a chaque achat, il augmente 
-    // un clic auto est fait chaque 
-    setInterval(function autoclickerLabo(){
-         alert("Hello"); 
-    }, 000;
+    // un clic auto est fait chaque seconde 
+ 
 
 
-    function autoclickerLabo () {
+    // appel fonction affiche le score à chaque clic
+    cli.addEventListener('click', clicking)   function autoclickerLabo () {
         pokemon.score++
         console.log(pokemon.score++)
     }
 
-    // appel fonction affiche le score à chaque clic
-    pokemon.button.cli.addEventListener('click', clicking)
-
     // appel fonction pour compter le nombre de multiplicateur utilisé
-    pokemon.button.multi.addEventListener('click', augmenterMultiplicateur);
+    multi.addEventListener("click", augmenterMultiplicateur);
+
+    // appel fonction pour lancer l'achat d'un autoclick
+    autoclic.addEventListener("click", autoclicker);
 
     // appel fonction pour lancer le boost
-    pokemon.button.boost.addEventListener('click', booster);
-
-    // appel fonction sur boutons bonus
-    pokemon.button.buttonSide.addEventListener('focus', activate);
+    boost.addEventListener("click", booster);
 }
 
