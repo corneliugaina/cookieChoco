@@ -1,22 +1,43 @@
-img.pokeball {
-  display: block;
-  width: auto;
-  margin-left: auto;
-  margin-right: auto; }
+body {
+  width: 100%;
+  margin: 0; }
 
 .container {
-  width: auto;
-  margin: auto;
-  padding: auto;
+  width: 100%;
   display: flex;
   align-content: center;
   justify-content: space-around;
   text-align: center; }
+  .container .pokeButtonSide {
+    max-width: 100px;
+    min-width: 80px;
+    transition: 0.1s; }
+    .container .pokeButtonSide .pokeImage {
+      width: 100%; }
+    .container .pokeButtonSide:active {
+      font-size: 1em;
+      color: #e9331b;
+      transform: scale(6.1); }
+    .container .pokeButtonSide .multiplication {
+      background-color: red;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      color: white;
+      position: relative;
+      top: -80%;
+      left: 80%;
+      text-align: center;
+      line-height: 17px; }
 
 img {
-  width: 50%;
-  height: 50%; }
+  width: 100%;
+  height: 100%; }
 
-
+#clic {
+  max-width: 350px;
+  margin: 10px auto; }
+  #clic:active {
+    transform: scale(0.9); }
 
 /*# sourceMappingURL=style.css.map */
