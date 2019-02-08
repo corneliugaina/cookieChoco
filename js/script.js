@@ -79,13 +79,14 @@ window.onload = function(){
    
  
 
+     // appel fonction pour compter le nombre de multiplicateur utilisé
+     pokemon.button.cli.addEventListener("click", clicking);
+
     // appel fonction pour compter le nombre de multiplicateur utilisé
-    multi.addEventListener("click", augmenterMultiplicateur);
+    pokemon.button.multi.addEventListener("click", augmenterMultiplicateur);
 
     // appel fonction pour lancer le boost
     pokemon.button.boost.addEventListener('click', boostTiming);
 
-    // appel fonction pour lancer le boost
-    boost.addEventListener("click", booster);
 }
 
