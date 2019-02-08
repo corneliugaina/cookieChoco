@@ -22,18 +22,18 @@ window.onload = function(){
 
     }
 
-    // les variables
-
     
     //les fonctions
 
+    function affScore () {
+        let txt = "Votre score est de " + pokemon.score + " pikachu !"
+        aff.innerText = txt
+    };
 
     function clicking () {
         pokemon.score = pokemon.score + (1 * pokemon.multiplicateur)
         console.log (pokemon.score)
-        let txt = "Votre score est de " + pokemon.score + " pikachu !"
-        aff.innerText = txt
-        return pokemon.score
+        affScore()
     };
 
     function activate () {
