@@ -16,13 +16,11 @@ window.onload = function(){
         },
         bonus : false,
         boost : 1,
+        tclicS : 0,
+        t0S : 0,
     }
 
    
-    
-
- 
-    
     //les fonctions
 
     function affScore () {
@@ -31,8 +29,13 @@ window.onload = function(){
     };
 
     function clicking () {
+        tclic = new Date();
+        tclicS = tclic.getSeconds();
+
         pokemon.score = pokemon.score + (1 * pokemon.multiplicateur * pokemon.boost)
-        console.log (pokemon.score)
+
+        console.log(pokemon.boost);
+        console.log(tclicS);
         affScore()
     };
 
@@ -53,10 +56,19 @@ window.onload = function(){
         console.log(pokemon.multiplicateur);
     };
 
-    function booster () {
-       
+    function boostTiming () {
+        t0 = new Date()
+        t0S = t0.getSeconds();
+        boost(tOS)
     };
 
+    function boost(T) {
+        if (T - tclicS < 30) {
+            pokemon.boost = 2;
+        } else if (T - tclicS > 30) {
+            pokemon.boost = 1;
+        }
+    }
 
 
     // appel fonction affiche le score à chaque clic
@@ -66,7 +78,7 @@ window.onload = function(){
     pokemon.button.multi.addEventListener('click', augmenterMultiplicateur);
 
     // appel fonction pour lancer le boost
-    pokemon.button.boost.addEventListener('click', booster);
+    pokemon.button.boost.addEventListener('click', boost);
 
     // appel fonction sur boutons bonus
     pokemon.button.buttonSide.addEventListener('focus', activate);
