@@ -23,7 +23,7 @@ body {
   color: #e9331b;
   transform: scale(6.1);
 }
-.container .pokeButtonSide .multiplication {
+.container .pokeButtonSide #multiplication {
   background-color: red;
   border-radius: 50%;
   width: 20px;
