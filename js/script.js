@@ -11,11 +11,19 @@ window.onload = function(){
             aff : document.getElementById('affichage'),
             cli : document.getElementById('clic'),
             buttonSide : document.getElementsByClassName('container')[0],
+<<<<<<< HEAD
             multi : document.getElementById('multiActive'),
+=======
+            multi : document.getElementById('multiplier'),
+>>>>>>> 5918b1c1b9d713a350bbc6f349b3c0ed095182ec
             affMul : document.getElementById('multiplication'),
             autoClic : document.getElementById('autoclicActive'),
             affautoClic: document.getElementById('autoClicker'),
+<<<<<<< HEAD
             boost : document.getElementById('boostActive'),
+=======
+            boost : document.getElementById('boost'),
+>>>>>>> 5918b1c1b9d713a350bbc6f349b3c0ed095182ec
         },
         bonus : { 
             active : false,
@@ -139,7 +147,11 @@ window.onload = function(){
     pokemon.button.boost.addEventListener('click', boost);
 
     // appel fonction autoclic    
+<<<<<<< HEAD
     //pokemon.button.autoClic.addEventListener('click', autoclicker);
 
 }
 
+=======
+    pokemon.button.autoclic.addEventListener('click', autoclicker);}
+>>>>>>> 5918b1c1b9d713a350bbc6f349b3c0ed095182ec
