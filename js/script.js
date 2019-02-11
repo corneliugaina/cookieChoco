@@ -1,5 +1,5 @@
 window.onload = function(){
-
+    
 
     // les objets
     let pokemon = {
@@ -86,6 +86,7 @@ window.onload = function(){
 
     // fonction pour activer, desactiver les bonus
     function activation () {
+        console.log("activation")
         if (pokemon.score >= pokemon.bonus.prixMulti) {
             document.getElementById('multiActive').style.display = 'initial';
             document.getElementById('multiplication').style.display = 'inline-block';
@@ -102,7 +103,8 @@ window.onload = function(){
             document.getElementById('autoclicActive').style.display = 'none';
             document.getElementById('autoclicInactive').style.display = 'initial';
         }
-        if (pokemon.score >= pokemon.bonus.prixBoost) {
+        console.error(pokemon.boost);
+        if (pokemon.score >= pokemon.bonus.prixBoost && pokemon.boost == 1) {
             document.getElementById('boostActive').style.display = 'initial';
             document.getElementById('booster').style.display = 'inline-block';
             document.getElementById('boostInactive').style.display = 'none';
@@ -132,25 +134,31 @@ window.onload = function(){
         pokemon.bonus.tBoosterOn = new Date().getTime()
         console.log(pokemon.bonus.tclic +" " + pokemon.bonus.tBoosterOn)
         console.log(pokemon.bonus.tclic - pokemon.bonus.tBoosterOn)
-
+        
         if (pokemon.boost == 1) {
-            pokemon.score -= 5000;
+            pokemon.score -= pokemon.bonus.prixBoost;
+            pokemon.boost=2;
             affichageTempsBooster();
+            affScore();
             pokemon.bonus.prixBoost = pokemon.bonus.prixBoost * 2;
         } else {
             console.log("Booster déjà acheté!") // Mettre un beau message par après? // 
         }
-
+        activation();
     }
 
     function affichageTempsBooster(){
         var timeleft = 30;
+        console.warn("affichageTempsBooster")
         var downloadTimer = setInterval(function(){
-            affBooster.innerHTML = timeleft + " seconds remaining";
-            timeleft -= 1;
+            console.warn(timeleft)
+            timeleft--;
+            document.getElementById("booster").innerHTML = timeleft;
             if(timeleft <= 0){
                 clearInterval(downloadTimer);
-                affBooster.innerHTML = "Finished"
+                document.getElementById("booster").innerHTML = "0";
+                pokemon.boost= 1;
+                activation();
             }
         }, 1000);
     }
@@ -207,6 +215,5 @@ window.onload = function(){
 
     // appel fonction autoclic    
     //pokemon.button.autoClic.addEventListener('click', autoclicker);
-
 }
 
