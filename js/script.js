@@ -49,9 +49,8 @@ window.onload = function(){
     }
 
     function affBooster() {
-        txt = "temps:" + (//julien rajouter sa fonction temps!!!)
+        txt = "temps:" + ("//julien rajouter sa fonction temps!!!")
         pokemon.button.affBoost.innerText = txt 
-
     }
 
     function prMultiplication() {
