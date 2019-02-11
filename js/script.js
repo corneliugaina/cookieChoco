@@ -13,6 +13,7 @@ window.onload = function(){
             multi : document.getElementById('multiplier'),
             affMul : document.getElementById('multiplication'),
             autoClic : document.getElementById('autoclic'),
+            affautoClic: document.getElementById('autoClicker'),
             boost : document.getElementById('boost'),
         },
         bonus : { 
@@ -33,12 +34,14 @@ window.onload = function(){
         pokemon.button.aff.innerText = txt
     }
 
-    // francois affichage multiplicateur :
+    // francois affichage multiplicateur + aff autoclick:
     function affMulti() {
         txt = "x" + pokemon.multiplicateur
         pokemon.button.affMul.innerText = txt 
-        txt = "x " + pokemon.multiplicateur
-        pokemon.button.affMul.innerText = txt 
+    }
+    function affautoClic() {
+        txt = "x" + pokemon.autoclicker
+        pokemon.button.affautoClic.innerText = txt 
     }
 
 
@@ -112,4 +115,4 @@ window.onload = function(){
     pokemon.button.boost.addEventListener('click', boost);
 
     // appel fonction autoclic    
-    pokemon.button.autoclic.addEventListener('click', autoclicker);
+    pokemon.button.autoclic.addEventListener('click', autoclicker);}
