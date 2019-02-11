@@ -5,7 +5,7 @@ window.onload = function(){
     let pokemon = {
         score : 0,
         multiplicateur  :1 ,
-        autoclicker : 0,
+        autoclicker : 1,
         boost : 1,
         button : {
             aff : document.getElementById('affichage'),
@@ -20,7 +20,7 @@ window.onload = function(){
         bonus : { 
             active : false,
             prixMulti : 50,
-            prixAutoclic : 500,
+            prixAutoclic : 50,
             prixBoost : 5000,
             boostCount: 1,
             tclic : Number.MAX_SAFE_INTEGER,
@@ -91,26 +91,30 @@ window.onload = function(){
 
     
     // CORNELIU - START //
-
+ 
 
     // fonction qui fait qu'a chaque achat d'un autoclicker :
     // 1) le prix d'achat est deduit du score,
     // 2) le prix du autoclicker suivant augmente,
     function achatAutoclicker () {
-        pokemon.score -= prixAutoclic;
+        pokemon.score =- pokemon.bonus.prixAutoclic;
         pokemon.autoclicker++;
+        pokemon.button.affautoClic = 
         pokemon.bonus.prixAutoclic = pokemon.bonus.prixAutoclic * 2;
-        setinterval (function autoclicker(), 1000)
+        console.log("Achat d'Autoclicker");
+        pokemon.score = pokemon.score - pokemon.bonus.Autoclic;
+        affautoClic();
+        
     }
   
-
     // un clic auto est fait chaque seconde
-    setInterval(function autoclicker() { 
-        pokemon.score += 1;
-        console.log(pokemon.score)
-        pokemon.nombreAutoclics = pokemon.nombreAutoclics + 1;
-    }, 1000)
-
+    
+    /* var majScore = setInterval(function autoclicker() { 
+                            pokemon.score += 1;
+                            console.log(pokemon.score)
+                            pokemon.cli = pokemon.cli + 1;
+                            }, 1000)
+     */
 
 
     /* function autoclicker(prixAchat, nombreAutoclics) { 
@@ -134,4 +138,4 @@ window.onload = function(){
     pokemon.button.boost.addEventListener('click', boost);
 
     // appel fonction autoclic    
-    pokemon.button.autoclic.addEventListener('click', autoclicker);}
+    pokemon.button.autoClic.addEventListener('click', achatAutoclicker);}
