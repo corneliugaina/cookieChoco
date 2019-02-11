@@ -31,10 +31,32 @@ body {
   height: 20px;
   color: white;
   position: relative;
+  top: -7.5em;
+  left: 2em;
+  text-align: center;
+  line-height: 17px;
+  display: none;
+}
+.container .pokeButtonSide #autoClicker {
+  background-color: red;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  color: white;
+  position: relative;
   top: -80%;
   left: 80%;
   text-align: center;
   line-height: 17px;
+}
+.container .pokeButtonSide #multiActive {
+  display: none;
+}
+.container .pokeButtonSide #autoclicActive {
+  display: none;
+}
+.container .pokeButtonSide #boostActive {
+  display: none;
 }
 
 img {
@@ -48,10 +70,6 @@ img {
 }
 #clic:active {
   transform: scale(0.9);
-}
-
-.disabled {
-  visibility: hidden;
 }
 
 /*# sourceMappingURL=style.css.map */

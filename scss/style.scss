@@ -30,11 +30,34 @@
         height: 20px;
         color: white;
         position: relative;
+        top: -7.5em;
+        left: 2em;
+        text-align: center;
+        line-height: 17px;
+        display : none;
+      }
+      #autoClicker{ background-color: red;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        color: white;
+        position: relative;
         top: -80%;
         left: 80%;
         text-align: center;
         line-height: 17px;
+
       }
+      #multiActive {
+        display : none;
+      }
+      #autoclicActive {
+        display : none;
+      }
+      #boostActive {
+        display : none;
+      }
+
     }
   }
    
@@ -52,9 +75,6 @@
 
   }
 
-  .disabled{
-    visibility: hidden;
-  }
 
 	
 // test
