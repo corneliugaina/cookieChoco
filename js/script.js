@@ -12,15 +12,14 @@ window.onload = function(){
             cli : document.getElementById('clic'),
             buttonSide : document.getElementsByClassName('container')[0],
             multi : document.getElementById('multiplier'),
-<<<<<<< HEAD
             affMul : document.getElementById('multiplication'),
+            praffMul : document.getElementById('prMultiplication'),
             autoClic : document.getElementById('autoclic'),
             affautoClic: document.getElementById('autoClicker'),
-=======
-            affmul : document.getElementById('multiplication'),
-            autoclic : document.getElementById('autoclic'),
->>>>>>> 7c1412f215c9e8e3f75f53dc1335f8ed65166c00
+            praffautoclic: document.getElementById('prAutoclicker'),
             boost : document.getElementById('boost'),
+            affBoost: document.getElementById('booster'),
+            prBoost: document.getElementById('prBooster'),
         },
         bonus : { 
             active : false,
@@ -40,7 +39,7 @@ window.onload = function(){
         pokemon.button.aff.innerText = txt
     }
 
-    // francois affichage multiplicateur + aff autoclick:
+    // francois affichage multiplicateur + aff autoclick+aff prix bonus:
     function affMulti() {
         txt = "x" + pokemon.multiplicateur
         pokemon.button.affMul.innerText = txt 
@@ -48,6 +47,25 @@ window.onload = function(){
     function affautoClic() {
         txt = "x" + pokemon.autoclicker
         pokemon.button.affautoClic.innerText = txt 
+    }
+
+    function affBooster() {
+        txt = "temps:" + (//julien rajouter sa fonction temps!!!)
+        pokemon.button.affBoost.innerText = txt 
+
+    }
+
+    function prMultiplication() {
+        text = "prix="+pokemon.bonus.prixMulti
+        pokemon.button.praffMul.innerText = txt
+    }
+    function prAutoclicker () {
+        text = "prix="+pokemon.bonus.prixAutoclic
+        pokemon.button.praffautoclic.innerText = txt
+    }
+    function prBooster (){
+        text = "prix="+pokemon.bonus.prixBoost
+        pokemon.button.prBoost.innerText = txt
     }
 
 
@@ -121,10 +139,4 @@ window.onload = function(){
     pokemon.button.boost.addEventListener('click', boost);
 
     // appel fonction autoclic    
-<<<<<<< HEAD
     pokemon.button.autoclic.addEventListener('click', autoclicker);}
-=======
-    pokemon.button.autoclic.addEventListener('click', autoclicker);
-
-}
->>>>>>> 7c1412f215c9e8e3f75f53dc1335f8ed65166c00
