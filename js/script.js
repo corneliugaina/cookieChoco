@@ -11,11 +11,20 @@ window.onload = function(){
             aff : document.getElementById('affichage'),
             cli : document.getElementById('clic'),
             buttonSide : document.getElementsByClassName('container')[0],
-            multi : document.getElementById('multiplier'),
+            multi : document.getElementById('multiActive'),
             affMul : document.getElementById('multiplication'),
-            autoClic : document.getElementById('autoclic'),
+            autoClic : document.getElementById('autoclicActive'),
             affautoClic: document.getElementById('autoClicker'),
-            boost : document.getElementById('boost'),
+            boost : document.getElementById('boostActive'),
+            praffMul : document.getElementById('prMultiplication'),
+            praffautoclic: document.getElementById('prAutoclicker'),
+            affBoost: document.getElementById('booster'),
+            prBoost: document.getElementById('prBooster'),
+            
+            
+            
+            
+            
         },
         bonus : { 
             active : false,
@@ -35,7 +44,7 @@ window.onload = function(){
         pokemon.button.aff.innerText = txt
     }
 
-    // francois affichage multiplicateur + aff autoclick:
+    // francois affichage multiplicateur + aff autoclick+aff prix bonus:
     function affMulti() {
         txt = "x" + pokemon.multiplicateur
         pokemon.button.affMul.innerText = txt 
@@ -45,13 +54,32 @@ window.onload = function(){
         pokemon.button.affautoClic.innerText = txt 
     }
 
+    function affBooster() {
+        txt = "temps:" + (//julien rajouter sa fonction temps!!!)
+        pokemon.button.affBoost.innerText = txt 
+
+    }
+
+    function prMultiplication() {
+        text = "prix="+pokemon.bonus.prixMulti
+        pokemon.button.praffMul.innerText = txt
+    }
+    function prAutoclicker () {
+        text = "prix="+pokemon.bonus.prixAutoclic
+        pokemon.button.praffautoclic.innerText = txt
+    }
+    function prBooster (){
+        text = "prix="+pokemon.bonus.prixBoost
+        pokemon.button.prBoost.innerText = txt
+    }
+
 
     function clicking () {
         pokemon.bonus.tclic = new Date().getTime()
         console.log(pokemon.bonus.tclic +" " + pokemon.bonus.tBoosterOn)
         if (pokemon.bonus.tclic - pokemon.bonus.tBoosterOn < 30000) {
             pokemon.boost = 2;
-            console.log("Booster x2");
+            console.log("Booster x" + pokemon.boost);
             } else if (pokemon.bonus.tclic - pokemon.bonus.tBoosterOn >= 30000) {
                 pokemon.boost = 1;
                 console.log("Booster x1");
@@ -60,18 +88,41 @@ window.onload = function(){
         pokemon.score = pokemon.score + (1 * pokemon.multiplicateur * pokemon.boost)
             //* pokemon.boost)
         console.log (pokemon.score)
+        activation()
         affScore()
     };
 
+
     // fonction pour activer, desactiver les bonus
-    function activate () {
-
-
-        // stackoverflow propose
-        // document.getElementById('id').style.pointerEvents = 'none';
-        // document.getElementById('id').style.pointerEvents = 'auto'; 
-        // mais rendra aussi indispo le over à mon avis
-    };
+    function activation () {
+        if (pokemon.score >= 50) {
+            document.getElementById('multiActive').style.display = 'initial';
+            document.getElementById('multiplication').style.display = 'inline-block';
+            document.getElementById('multiInactive').style.display = 'none';
+        } else {
+            document.getElementById('multiActive').style.display = 'none';
+            //document.getElementById('multiActive').addEventListerner('click', noClick);
+            document.getElementById('multiInactive').style.display = 'initial';
+        }
+        if (pokemon.score >= 500) {
+            document.getElementById('autoclicActive').style.display = 'initial';
+            document.getElementById('autoclicInactive').style.display = 'none';
+        } else {
+            document.getElementById('autoclicActive').style.display = 'none';
+            //document.getElementById('multiActive').addEventListerner('click', noClick);
+            document.getElementById('autoclicInactive').style.display = 'initial';
+        }
+        if (pokemon.score >= 5000) {
+            document.getElementById('boostActive').style.display = 'initial';
+            document.getElementById('boostInactive').style.display = 'none';
+        } else {
+            document.getElementById('boostActive').style.display = 'none';
+            //document.getElementById('multiActive').addEventListerner('click', noClick);
+            document.getElementById('boostInactive').style.display = 'initial';
+        }
+            // document.getElementById('id').style.pointerEvents = 'none';
+            // document.getElementById('id').style.pointerEvents = 'auto'; 
+    }
 
     function augmenterMultiplicateur () {
         pokemon.score =- pokemon.bonus.prixMulti
@@ -85,13 +136,24 @@ window.onload = function(){
 
     function boost() {
         pokemon.bonus.tBoosterOn = new Date().getTime()
-        console.log(pokemon.bonus.tBoosterOn)
+        console.log(pokemon.bonus.tclic +" " + pokemon.bonus.tBoosterOn)
+        console.log(pokemon.bonus.tclic - pokemon.bonus.tBoosterOn)
+
+        if (pokemon.boost == 1) {
+            pokemon.score -= 5000;
+            pokemon.bonus.prixBoost = pokemon.bonus.prixBoost * 2;
+        } else {
+            console.log("Booster déjà acheté!") // Mettre un beau message par après? // 
+        }
 
     }
 
     
     // CORNELIU - START //
  
+    function affichageTempsBooster(){
+        
+    }
 
     // fonction qui fait qu'a chaque achat d'un autoclicker :
     // 1) le prix d'achat est deduit du score,
@@ -138,4 +200,7 @@ window.onload = function(){
     pokemon.button.boost.addEventListener('click', boost);
 
     // appel fonction autoclic    
-    pokemon.button.autoClic.addEventListener('click', achatAutoclicker);}
+    //pokemon.button.autoClic.addEventListener('click', autoclicker);
+
+}
+
