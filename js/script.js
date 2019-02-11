@@ -38,7 +38,7 @@ window.onload = function(){
         pokemon.button.affMul.innerText = txt 
         
         
-    }
+    };
 
     function clicking () {
         tclic = new Date().getTime()
@@ -108,4 +108,3 @@ window.onload = function(){
 
     // appel fonction autoclic    
     pokemon.button.autoclic.addEventListener('click', autoclicker);
-
