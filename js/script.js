@@ -183,8 +183,6 @@ window.onload = function(){
     function achatAutoclicker () {
         if (pokemon.score >= 50) {
         pokemon.score = pokemon.score - pokemon.bonus.prixAutoclic;
-        pokemon.affautoclic++;
-        pokemon.autoclicker++;
         console.log("Achat d'Autoclicker");
         pokemon.bonus.prixAutoclic = pokemon.bonus.prixAutoclic * 2;
         } else {
@@ -194,6 +192,8 @@ window.onload = function(){
         prAutoclicker();
         affScore();
         affautoClic();
+        pokemon.button.affautoclic++;
+        pokemon.autoclicker++;
 
        } 
 
