@@ -22,7 +22,7 @@
         color: rgb(233, 51, 27);
         transform: scale(6.1);
       }
-      .multiplication{
+      #multiplication{
         background-color: red;
         border-radius: 50%;
         width: 20px;
@@ -33,6 +33,18 @@
         left: 80%;
         text-align: center;
         line-height: 17px;
+      }
+      #autoClicker{ background-color: red;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        color: white;
+        position: relative;
+        top: -80%;
+        left: 80%;
+        text-align: center;
+        line-height: 17px;
+
       }
     }
   }
