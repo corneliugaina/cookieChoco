@@ -11,8 +11,8 @@ window.onload = function(){
             cli : document.getElementById('clic'),
             buttonSide : document.getElementsByClassName('container')[0],
             multi : document.getElementById('multiplier'),
-            affmul : document.getElementById('multiplication')
-            autoclic : document.getElementById('autoclic'),
+            affMul : document.getElementById('multiplication'),
+            autoClic : document.getElementById('autoclic'),
             boost : document.getElementById('boost'),
         },
         bonus : { 
@@ -35,7 +35,7 @@ window.onload = function(){
 // francois:
     function affMulti() {
         txt = "x " + pokemon.multiplicateur
-        pokemon.button.affmul.innerText = txt 
+        pokemon.button.affMul.innerText = txt 
         
         
     }
@@ -68,6 +68,7 @@ window.onload = function(){
         pokemon.bonus.prixMulti = pokemon.bonus.prixMulti * 2
         console.log (pokemon.bonus.prixMulti);
         affScore()
+        affMulti()
     };
 
 
