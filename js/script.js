@@ -58,9 +58,12 @@ window.onload = function(){
     }
 
     // autoclicker, qui fait qu'a chaque achat, il augmente 
+    function achatAutoclicker () {
+        pokemon.score -= 200;
+    }
+
     // un clic auto est fait chaque seconde
     setInterval(function autoclicker() { 
-        document
         pokemon.score = pokemon.score + 1;
         console.log(pokemon.score)
         pokemon.nombreAutoclics = pokemon.nombreAutoclics + 1;
