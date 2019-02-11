@@ -1,43 +1,165 @@
-/*
-Error: Invalid CSS after "...adf92be796e16c3": expected "{", was ""
-        on line 215 of ./scss/style.scss
+@font-face {
+  font-family: 'anime_ace_2.0_bbregular';
+  src: url("./animeace2reg-webfont.woff2") format("woff2"), url("./animeace2reg-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+body {
+  width: 100%;
+  margin: 0; }
 
-210: 
-211: =======
-212: 	
-213: // test
-214: >>>>>>> 1af59b2cc015dc4bda4bd0197adf92be796e16c3
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-around;
+  text-align: center;
+  z-index: 1; }
+  .container .pokeButtonSide {
+    max-width: 100px;
+    min-width: 80px;
+    transition: 0.1s; }
+    .container .pokeButtonSide .pokeImage {
+      width: 100%; }
+    .container .pokeButtonSide:active {
+      font-size: 1em;
+      color: #e9331b;
+      transform: scale(1.1); }
+    .container .pokeButtonSide #multiplication {
+      background-color: red;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      color: white;
+      position: relative;
+      top: -7.5em;
+      left: 2em;
+      text-align: center;
+      line-height: 17px;
+      display: none; }
+    .container .pokeButtonSide #prMultiplication {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0px;
+      margin-top: 20px;
+      width: 100%;
+      opacity: 0.8;
+      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      font-size: 2em;
+      color: black;
+      text-shadow: -1px -1px 1px #111;
+      background-color: saddlebrown;
+      border-radius: 45%; }
+    .container .pokeButtonSide .font {
+      width: 145px; }
+    .container .pokeButtonSide #prAutoclicker {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0px;
+      width: 100%;
+      opacity: 0.8;
+      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      font-size: 2em;
+      color: black;
+      text-shadow: -1px -1px 1px #111;
+      background-color: silver;
+      border-radius: 45%; }
+    .container .pokeButtonSide #prBooster {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0px;
+      width: 100%;
+      opacity: 0.8;
+      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      font-size: 2em;
+      color: black;
+      text-shadow: -1px -1px 1px #111;
+      background-color: rgba(241, 200, 13, 0.863);
+      border-radius: 45%; }
+    .container .pokeButtonSide #autoClicker {
+      background-color: red;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      color: white;
+      position: relative;
+      top: -69%;
+      left: 80%;
+      text-align: center;
+      line-height: 17px; }
+    .container .pokeButtonSide #booster {
+      background-color: red;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      color: white;
+      position: relative;
+      top: -121px;
+      left: 80%;
+      text-align: center;
+      line-height: 17px; }
+    .container .pokeButtonSide #multiActive {
+      display: none; }
+    .container .pokeButtonSide #autoclicActive {
+      display: none; }
+    .container .pokeButtonSide #boostActive {
+      display: none; }
 
-Backtrace:
-./scss/style.scss:215
-/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:1207:in `expected'
-/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:1137:in `expected'
-/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:1132:in `tok!'
-/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:665:in `block'
-/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:658:in `ruleset'
-/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:684:in `block_child'
-/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:677:in `block_contents'
-/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:125:in `stylesheet'
-/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:41:in `parse'
-/usr/lib/ruby/vendor_ruby/sass/engine.rb:406:in `_to_tree'
-/usr/lib/ruby/vendor_ruby/sass/engine.rb:381:in `_render_with_sourcemap'
-/usr/lib/ruby/vendor_ruby/sass/engine.rb:298:in `render_with_sourcemap'
-/usr/lib/ruby/vendor_ruby/sass/plugin/compiler.rb:492:in `update_stylesheet'
-/usr/lib/ruby/vendor_ruby/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/usr/lib/ruby/vendor_ruby/sass/plugin/compiler.rb:209:in `each'
-/usr/lib/ruby/vendor_ruby/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/usr/lib/ruby/vendor_ruby/sass/plugin/compiler.rb:473:in `on_file_changed'
-/usr/lib/ruby/vendor_ruby/sass/plugin/compiler.rb:331:in `block in watch'
-/usr/lib/ruby/vendor_ruby/listen/event/config.rb:23:in `call'
-/usr/lib/ruby/vendor_ruby/listen/event/processor.rb:115:in `_process_changes'
-/usr/lib/ruby/vendor_ruby/listen/event/processor.rb:19:in `block in loop_for'
-/usr/lib/ruby/vendor_ruby/listen/event/processor.rb:15:in `loop'
-/usr/lib/ruby/vendor_ruby/listen/event/processor.rb:15:in `loop_for'
-/usr/lib/ruby/vendor_ruby/listen/event/loop.rb:84:in `_wait_for_changes'
-/usr/lib/ruby/vendor_ruby/listen/event/loop.rb:42:in `block in setup'
-/usr/lib/ruby/vendor_ruby/listen/internals/thread_pool.rb:6:in `block in add'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"...adf92be796e16c3\": expected \"{\", was \"\"\A         on line 215 of ./scss/style.scss\A \A 210: \A 211: =======\A 212: 	\A 213: // test\A 214: >>>>>>> 1af59b2cc015dc4bda4bd0197adf92be796e16c3"; }
+img {
+  width: 100%;
+  height: 100%; }
+
+#clic {
+  max-width: 350px;
+  margin: 10px auto; }
+  #clic:active {
+    transform: scale(0.9); }
+
+.i-large {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -2; }
+
+.i-large {
+  background: url("./pikachupluspetit.svg") repeat 0px 0px;
+  -webkit-animation: dropFlowParticles 25s linear infinite;
+  -o-animation: dropFlowParticles 25s linear infinite;
+  animation: dropFlowParticles 25s linear infinite; }
+
+@-webkit-keyframes dropFlowParticles {
+  from {
+    background-position: 0 0; }
+  to {
+    background-position: 0 800px; } }
+@keyframes dropFlowParticles {
+  from {
+    background-position: 0 0; }
+  to {
+    background-position: 0 800px; } }
+#affichage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 120px;
+  background-color: rgba(241, 200, 13, 0.863);
+  opacity: 0.8;
+  box-shadow: 4px 6px 9px #5c3e06; }
+
+p {
+  font-family: "anime_ace_2.0_bbregular", Arial, sans-serif;
+  font-size: 3em;
+  color: white;
+  text-shadow: -1px -1px 0 #000,   1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 1px 1px 2px #141414, 1px 1px 3px #141414, 1px 1px 5px #141414, 1px 1px 7px #141414, 1px 1px 10px #141414, 1px 1px 12px #141414, 1px 1px 18px #141414;
+  color: #fff; }
+
+/*# sourceMappingURL=style.css.map */
