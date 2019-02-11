@@ -11,25 +11,15 @@ window.onload = function(){
             aff : document.getElementById('affichage'),
             cli : document.getElementById('clic'),
             buttonSide : document.getElementsByClassName('container')[0],
-            multi : document.getElementById('multiplier'),
-            affmul : document.getElementById('multiplication'),
-            autoclic : document.getElementById('autoclic'),
-            boost : document.getElementById('boost'),
-        },
-        bonus : false,
-        boost : 1,
-        tclicS : 0,
-        t0S : 0,
             multi : document.getElementById('multiActive'),
             affMul : document.getElementById('multiplication'),
             autoClic : document.getElementById('autoclicActive'),
-            affautoClic: document.getElementById('autoClicker'),
             boost : document.getElementById('boostActive'),
+            affautoClic: document.getElementById('autoClicker'),
             praffMul : document.getElementById('prMultiplication'),
             praffautoclic: document.getElementById('prAutoclicker'),
             affBoost: document.getElementById('booster'),
-            prBoost: document.getElementById('prBooster'),
-            
+            prBoost: document.getElementById('prBooster'), 
         },
         bonus : { 
             active : false,
@@ -53,27 +43,24 @@ window.onload = function(){
     // francois affichage multiplicateur + aff autoclick+aff prix bonus:
     function affMulti() {
         txt = "x" + pokemon.multiplicateur
-        pokemon.button.affMul.innerText = txt 
-        txt = "x " + pokemon.multiplicateur
-        pokemon.button.affMul.innerText = txt 
+        pokemon.button.affMul.innerText = txt  
     }
 
     function affBooster() {
-        txt = "temps:" + (//julien rajouter sa fonction temps!!!)
+        txt = "temps:"  //julien rajouter sa fonction temps!!!
         pokemon.button.affBoost.innerText = txt 
-
     }
 
     function prMultiplication() {
-        text = "prix="+pokemon.bonus.prixMulti
+        txt = "prix="+pokemon.bonus.prixMulti
         pokemon.button.praffMul.innerText = txt
     }
     function prAutoclicker () {
-        text = "prix="+pokemon.bonus.prixAutoclic
+        txt = "prix="+pokemon.bonus.prixAutoclic
         pokemon.button.praffautoclic.innerText = txt
     }
     function prBooster (){
-        text = "prix="+pokemon.bonus.prixBoost
+        txt = "prix="+pokemon.bonus.prixBoost
         pokemon.button.prBoost.innerText = txt
     }
 
@@ -129,9 +116,14 @@ window.onload = function(){
     }
 
     function augmenterMultiplicateur () {
-        score -= 50
+        pokemon.score -= 50
         pokemon.multiplicateur++
+        pokemon.bonus.prixMulti=pokemon.bonus.prixMulti*2
         console.log(pokemon.multiplicateur);
+        affMulti()
+        affscore()
+        activation()
+        prMultiplication()
     };
 
     function boostTiming () {
