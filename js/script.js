@@ -6,14 +6,20 @@ window.onload = function(){
         score : 0,
         multiplicateur  :1 ,
         autoclicker : 0,
+        boost : 1,
         button : {
             aff : document.getElementById('affichage'),
             cli : document.getElementById('clic'),
             buttonSide : document.getElementsByClassName('container')[0],
             multi : document.getElementById('multiplier'),
+<<<<<<< HEAD
             affMul : document.getElementById('multiplication'),
             autoClic : document.getElementById('autoclic'),
             affautoClic: document.getElementById('autoClicker'),
+=======
+            affmul : document.getElementById('multiplication'),
+            autoclic : document.getElementById('autoclic'),
+>>>>>>> 7c1412f215c9e8e3f75f53dc1335f8ed65166c00
             boost : document.getElementById('boost'),
         },
         bonus : { 
@@ -22,8 +28,8 @@ window.onload = function(){
             prixAutoclic : 500,
             prixBoost : 5000,
             boostCount: 1,
-            tclic : 0,
-            t0 : 1549640231912,
+            tclic : Number.MAX_SAFE_INTEGER,
+            tBoosterOn : 0,
         }
     }
 
@@ -46,13 +52,15 @@ window.onload = function(){
 
 
     function clicking () {
-        tclic = new Date().getTime()
-        console.log(tclic)
-        if (pokemon.bonus.t0 - pokemon.bonus.tclic < 3000) {
+        pokemon.bonus.tclic = new Date().getTime()
+        console.log(pokemon.bonus.tclic +" " + pokemon.bonus.tBoosterOn)
+        if (pokemon.bonus.tclic - pokemon.bonus.tBoosterOn < 30000) {
             pokemon.boost = 2;
-            } else if (pokemon.bonus.t0 - pokemon.bonus.tclic > 3000) {
+            console.log("Booster x2");
+            } else if (pokemon.bonus.tclic - pokemon.bonus.tBoosterOn >= 30000) {
                 pokemon.boost = 1;
-                pokemon.bonus.t0 = 1549640231912
+                console.log("Booster x1");
+                //pokemon.bonus.tBoosterOn = 1549640231912
             }
         pokemon.score = pokemon.score + (1 * pokemon.multiplicateur * pokemon.boost)
             //* pokemon.boost)
@@ -81,8 +89,8 @@ window.onload = function(){
 
 
     function boost() {
-        t0 = new Date().getTime()
-        console.log(t0)
+        pokemon.bonus.tBoosterOn = new Date().getTime()
+        console.log(pokemon.bonus.tBoosterOn)
 
     }
 
@@ -99,8 +107,6 @@ window.onload = function(){
     setInterval(autoclicker(), 1000) */
 
    
-
-
         
    
  
@@ -115,4 +121,10 @@ window.onload = function(){
     pokemon.button.boost.addEventListener('click', boost);
 
     // appel fonction autoclic    
+<<<<<<< HEAD
     pokemon.button.autoclic.addEventListener('click', autoclicker);}
+=======
+    pokemon.button.autoclic.addEventListener('click', autoclicker);
+
+}
+>>>>>>> 7c1412f215c9e8e3f75f53dc1335f8ed65166c00
