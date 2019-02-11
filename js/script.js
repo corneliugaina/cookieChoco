@@ -11,19 +11,11 @@ window.onload = function(){
             aff : document.getElementById('affichage'),
             cli : document.getElementById('clic'),
             buttonSide : document.getElementsByClassName('container')[0],
-<<<<<<< HEAD
             multi : document.getElementById('multiActive'),
-=======
-            multi : document.getElementById('multiplier'),
->>>>>>> 5918b1c1b9d713a350bbc6f349b3c0ed095182ec
             affMul : document.getElementById('multiplication'),
             autoClic : document.getElementById('autoclicActive'),
             affautoClic: document.getElementById('autoClicker'),
-<<<<<<< HEAD
             boost : document.getElementById('boostActive'),
-=======
-            boost : document.getElementById('boost'),
->>>>>>> 5918b1c1b9d713a350bbc6f349b3c0ed095182ec
         },
         bonus : { 
             active : false,
@@ -59,7 +51,7 @@ window.onload = function(){
         console.log(pokemon.bonus.tclic +" " + pokemon.bonus.tBoosterOn)
         if (pokemon.bonus.tclic - pokemon.bonus.tBoosterOn < 30000) {
             pokemon.boost = 2;
-            console.log("Booster x2");
+            console.log("Booster x" + pokemon.boost);
             } else if (pokemon.bonus.tclic - pokemon.bonus.tBoosterOn >= 30000) {
                 pokemon.boost = 1;
                 console.log("Booster x1");
@@ -116,11 +108,21 @@ window.onload = function(){
 
     function boost() {
         pokemon.bonus.tBoosterOn = new Date().getTime()
-        console.log(pokemon.bonus.tBoosterOn)
+        console.log(pokemon.bonus.tclic +" " + pokemon.bonus.tBoosterOn)
+        console.log(pokemon.bonus.tclic - pokemon.bonus.tBoosterOn)
+
+        if (pokemon.boost == 1) {
+            pokemon.score -= 5000;
+            pokemon.bonus.prixBoost = pokemon.bonus.prixBoost * 2;
+        } else {
+            console.log("Booster déjà acheté!") // Mettre un beau message par après? // 
+        }
 
     }
 
-    
+    function affichageTempsBooster(){
+        
+    }
 
     // autoclicker, qui fait qu'a chaque achat, il augmente 
     // un clic auto est fait chaque seconde
@@ -147,11 +149,7 @@ window.onload = function(){
     pokemon.button.boost.addEventListener('click', boost);
 
     // appel fonction autoclic    
-<<<<<<< HEAD
     //pokemon.button.autoClic.addEventListener('click', autoclicker);
 
 }
 
-=======
-    pokemon.button.autoclic.addEventListener('click', autoclicker);}
->>>>>>> 5918b1c1b9d713a350bbc6f349b3c0ed095182ec
