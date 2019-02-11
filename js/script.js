@@ -135,6 +135,7 @@ window.onload = function(){
 
         if (pokemon.boost == 1) {
             pokemon.score -= 5000;
+            affichageTempsBooster();
             pokemon.bonus.prixBoost = pokemon.bonus.prixBoost * 2;
         } else {
             console.log("Booster déjà acheté!") // Mettre un beau message par après? // 
@@ -142,14 +143,20 @@ window.onload = function(){
 
     }
 
+    function affichageTempsBooster(){
+        var timeleft = 30;
+        var downloadTimer = setInterval(function(){
+            affBooster.innerHTML = timeleft + " seconds remaining";
+            timeleft -= 1;
+            if(timeleft <= 0){
+                clearInterval(downloadTimer);
+                affBooster.innerHTML = "Finished"
+            }
+        }, 1000);
+    }
     
     // CORNELIU - START //
- 
-    function affichageTempsBooster(){
-        
-    }
-
-    // fonction qui fait qu'a chaque achat d'un autoclicker :
+     // fonction qui fait qu'a chaque achat d'un autoclicker :
     // 1) le prix d'achat est deduit du score,
     // 2) le prix du autoclicker suivant augmente,
     function achatAutoclicker () {
