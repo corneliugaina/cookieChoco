@@ -35,15 +35,8 @@ window.onload = function(){
 
     // francois affichage multiplicateur :
     function affMulti() {
-<<<<<<< HEAD
         txt = "x" + pokemon.multiplicateur
         pokemon.button.affMul.innerText = txt 
-=======
-        txt = "x " + pokemon.multiplicateur
-        pokemon.button.affMul.innerText = txt 
-        
-        
->>>>>>> 7235a8f28ff8a5868e50ddeb33ddd925e7624077
     }
 
     function clicking () {
@@ -63,7 +56,20 @@ window.onload = function(){
 
     // fonction pour activer, desactiver les bonus
     function activate () {
-
+        if (pokemon.score >= 50) {
+            document.getElementById('multiActive').style.display = 'inline-block';
+            document.getElementById('multiInactive').style.display = 'none';
+        } else {
+            document.getElementById('multiActive').style.display = 'none';
+            document.getElementById('multiInactive').style.display = 'inline-block';
+        }
+        if (pokemon.score >= 500) {
+            document.getElementById('autoclicActive').style.display = 'inline-block';
+            document.getElementById('autoclicInactive').style.display = 'none';
+        } else {
+            document.getElementById('autoclicActive').style.display = 'none';
+            document.getElementById('autoclicInactive').style.display = 'inline-block';
+        }
 
         // stackoverflow propose
         // document.getElementById('id').style.pointerEvents = 'none';
@@ -77,11 +83,7 @@ window.onload = function(){
         pokemon.bonus.prixMulti = pokemon.bonus.prixMulti * 2
         console.log (pokemon.bonus.prixMulti);
         affScore()
-<<<<<<< HEAD
         affMulti();
-=======
-        affMulti()
->>>>>>> 7235a8f28ff8a5868e50ddeb33ddd925e7624077
     };
 
 
