@@ -18,24 +18,34 @@
     <div class = "container">
         <div class = "pokeButtonSide">
             <div class="pokeImage" id="multiplier">
-                <img src = "./images/pokeball-bronze.svg"  alt = "Button Pokeball"  title="Gagnez plus de points!" id="multiActive" />
-                <img src = "./images/pokeball-disabled.svg" alt = "Button Pokeball disabled" id="miltiInactive" />
+                <div id="multiActive">
+                    <img src = "./images/pokeball-bronze.svg"  alt = "Button Pokeball"  title="Gagnez plus de points!" />
+                </div>
+                <div id="mutliInactive">
+                    <img src = "./images/pokeball-disabled.svg" alt = "Button Pokeball disabled" />
+                </div>
             </div>
             MULTIPLIER
             <div id="multiplication">0</div>
-            
-        </div>
         <div class = "pokeButtonSide">
             <div class="pokeImage" id="autoclic">
-                <img src = "./images/pokeball-argent.svg"  alt = "Button Pokeball" id="autoclic1ctive" />
-                <img src = "./images/pokeball-disabled.svg" alt = "Button Pokeball disabled" id="autoclicInactive" />
+                <div id="autoclicActive">
+                    <img src = "./images/pokeball-argent.svg"  alt = "Button Pokeball" class="active" />
+                </div>
+                <div id="autoclicInactive">
+                    <img src = "./images/pokeball-disabled.svg" alt = "Button Pokeball disabled" class="inactive" />
+                </div>
             </div>
             AUTOCLICKER
-        </div>
+        </div>    
         <div class="pokeButtonSide">
             <div class="pokeImage" id="boost">
-                <img src = "./images/pokeball-or.svg"  alt = "Button Pokeball" id="boostActive" />            
-                <img src = "./images/pokeball-disabled.svg" alt = "Button Pokeball disabled" id="boostInactive" />
+                <div id="boostActive">
+                    <img src = "./images/pokeball-or.svg"  alt = "Button Pokeball" id="boostActive" />            
+                </div>
+                <div id="boostInactive">
+                    <img src = "./images/pokeball-disabled.svg" alt = "Button Pokeball disabled" id="boostInactive" />
+                </div>
             BOOSTER
         </div>
     </div>

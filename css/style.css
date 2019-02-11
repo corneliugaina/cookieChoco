@@ -6,6 +6,7 @@ body {
 .container {
   width: 100%;
   display: flex;
+  flex-direction: row;
   align-content: center;
   justify-content: space-around;
   text-align: center;
@@ -21,7 +22,7 @@ body {
 .container .pokeButtonSide:active {
   font-size: 1em;
   color: #e9331b;
-  transform: scale(6.1);
+  transform: scale(1.1);
 }
 .container .pokeButtonSide #multiplication {
   background-color: red;

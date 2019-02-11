@@ -39,6 +39,7 @@ window.onload = function(){
         pokemon.button.affMul.innerText = txt 
     }
 
+
     function clicking () {
         tclic = new Date().getTime()
         console.log(tclic)
@@ -55,27 +56,7 @@ window.onload = function(){
     };
 
     // fonction pour activer, desactiver les bonus
-    function activate () {
-        if (pokemon.score >= 50) {
-            document.getElementById('multiActive').style.display = 'inline-block';
-            document.getElementById('multiInactive').style.display = 'none';
-        } else {
-            document.getElementById('multiActive').style.display = 'none';
-            document.getElementById('multiInactive').style.display = 'inline-block';
-        }
-        if (pokemon.score >= 500) {
-            document.getElementById('autoclicActive').style.display = 'inline-block';
-            document.getElementById('autoclicInactive').style.display = 'none';
-        } else {
-            document.getElementById('autoclicActive').style.display = 'none';
-            document.getElementById('autoclicInactive').style.display = 'inline-block';
-        }
 
-        // stackoverflow propose
-        // document.getElementById('id').style.pointerEvents = 'none';
-        // document.getElementById('id').style.pointerEvents = 'auto'; 
-        // mais rendra aussi indispo le over à mon avis
-    };
 
     function augmenterMultiplicateur () {
         pokemon.score =- pokemon.bonus.prixMulti
@@ -122,6 +103,6 @@ window.onload = function(){
     pokemon.button.boost.addEventListener('click', boost);
 
     // appel fonction autoclic    
-   // pokemon.button.autoClic.addEventListener('click', autoclicker);
+    //pokemon.button.autoclic.addEventListener('click', autoclicker);
 
-}
+};
