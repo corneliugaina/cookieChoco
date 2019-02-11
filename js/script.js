@@ -25,7 +25,7 @@ window.onload = function(){
             active : false,
             prixMulti : 50,
             prixAutoclic : 50,
-            prixBoost : 5000,
+            prixBoost : 5,
             boostCount: 1,
             tclic : Number.MAX_SAFE_INTEGER,
             tBoosterOn : 0,
@@ -86,33 +86,30 @@ window.onload = function(){
 
     // fonction pour activer, desactiver les bonus
     function activation () {
-        if (pokemon.score >= 50) {
+        if (pokemon.score >= pokemon.bonus.prixMulti) {
             document.getElementById('multiActive').style.display = 'initial';
             document.getElementById('multiplication').style.display = 'inline-block';
             document.getElementById('multiInactive').style.display = 'none';
         } else {
             document.getElementById('multiActive').style.display = 'none';
-            //document.getElementById('multiActive').addEventListerner('click', noClick);
             document.getElementById('multiInactive').style.display = 'initial';
         }
-        if (pokemon.score >= 500) {
+        if (pokemon.score >= pokemon.bonus.prixAutoclic) {
             document.getElementById('autoclicActive').style.display = 'initial';
+            document.getElementById('autoClicker').style.display = 'inline-block';
             document.getElementById('autoclicInactive').style.display = 'none';
         } else {
             document.getElementById('autoclicActive').style.display = 'none';
-            //document.getElementById('multiActive').addEventListerner('click', noClick);
             document.getElementById('autoclicInactive').style.display = 'initial';
         }
-        if (pokemon.score >= 5000) {
+        if (pokemon.score >= pokemon.bonus.prixBoost) {
             document.getElementById('boostActive').style.display = 'initial';
+            document.getElementById('booster').style.display = 'inline-block';
             document.getElementById('boostInactive').style.display = 'none';
         } else {
             document.getElementById('boostActive').style.display = 'none';
-            //document.getElementById('multiActive').addEventListerner('click', noClick);
             document.getElementById('boostInactive').style.display = 'initial';
         }
-            // document.getElementById('id').style.pointerEvents = 'none';
-            // document.getElementById('id').style.pointerEvents = 'auto'; 
     }
 
     function augmenterMultiplicateur () {
