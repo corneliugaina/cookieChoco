@@ -52,8 +52,9 @@ window.onload = function(){
     }
 
     function affautoClic() {
-        txt = "Vous avez" + pokemon.    
-    }
+        txt = "Vous avez: " + pokemon.autoclicker    
+        pokemon.button.affautoClic.innerText = txt
+    } 
 
 
     // Fonctions PRIX : 
@@ -63,7 +64,7 @@ window.onload = function(){
         pokemon.button.praffMul.innerText = txt
     }
     function prAutoclicker () {
-        txt = "prix = "+pokemon.bonus.prixAutoclic
+        txt = "prix = "+ pokemon.bonus.prixAutoclic
         pokemon.button.praffautoclic.innerText = txt
     }
     function prBooster (){
@@ -161,19 +162,23 @@ window.onload = function(){
     // 1) le prix d'achat est deduit du score,
     // 2) le prix du autoclicker suivant augmente (wip)
 
+    // Fonction qui permettra d'effectuer l'achat d'autoclic
     function achatAutoclicker () {
         if (pokemon.score >= 50) {
-        pokemon.score = pokemon.score pokemon.bonus.prixAutoclic;
+        pokemon.score = pokemon.score - pokemon.bonus.prixAutoclic;
         pokemon.affautoclic++;
         pokemon.autoclicker++;
         console.log("Achat d'Autoclicker");
         pokemon.bonus.prixAutoclic = pokemon.bonus.prixAutoclic * 2;
         } else {
-            console.log("Vous n'avez pas assez de credit pour l'achat de l'Autoclicker");
+        console.log("Vous n'avez pas assez de credit pour l'achat de l'Autoclicker");
         }
         callAutoclic ();
-   } 
-    
+        prAutoclicker();
+
+       } 
+
+    // Fonction qui va lancer l'autoclic une fois l'achat effectue 
     function callAutoclic () { 
         if (pokemon.autoclicker = 1) {
             setInterval(function autoclicker () {
