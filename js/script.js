@@ -35,8 +35,15 @@ window.onload = function(){
 
     // francois affichage multiplicateur :
     function affMulti() {
+<<<<<<< HEAD
         txt = "x" + pokemon.multiplicateur
         pokemon.button.affMul.innerText = txt 
+=======
+        txt = "x " + pokemon.multiplicateur
+        pokemon.button.affMul.innerText = txt 
+        
+        
+>>>>>>> 7235a8f28ff8a5868e50ddeb33ddd925e7624077
     }
 
     function clicking () {
@@ -70,7 +77,11 @@ window.onload = function(){
         pokemon.bonus.prixMulti = pokemon.bonus.prixMulti * 2
         console.log (pokemon.bonus.prixMulti);
         affScore()
+<<<<<<< HEAD
         affMulti();
+=======
+        affMulti()
+>>>>>>> 7235a8f28ff8a5868e50ddeb33ddd925e7624077
     };
 
 
