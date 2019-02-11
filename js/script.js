@@ -25,7 +25,7 @@ window.onload = function(){
             active : false,
             prixMulti : 50,
             prixAutoclic : 50,
-            prixBoost : 5,
+            prixBoost : 5000,
             boostCount: 1,
             tclic : Number.MAX_SAFE_INTEGER,
             tBoosterOn : 0,
@@ -46,12 +46,25 @@ window.onload = function(){
         pokemon.button.affMul.innerText = txt 
     }
 
+    function affBooster() {
+        txt = "temps :" + ("//julien rajouter sa fonction temps!!!")
+        pokemon.button.affBoost.innerText = txt 
+    }
+
+    function affautoClic() {
+        txt = "Vous avez: " + pokemon.autoclicker    
+        pokemon.button.affautoClic.innerText = txt
+    } 
+
+
+    // Fonctions PRIX : 
+
     function prMultiplication() {
         txt = "prix = "+ pokemon.bonus.prixMulti
         pokemon.button.praffMul.innerText = txt
     }
     function prAutoclicker () {
-        txt = "prix = "+pokemon.bonus.prixAutoclic
+        txt = "prix pour l'achat suivant = "+ pokemon.bonus.prixAutoclic
         pokemon.button.praffautoclic.innerText = txt
     }
     function prBooster (){
@@ -62,18 +75,12 @@ window.onload = function(){
 
     function clicking () {
         pokemon.bonus.tclic = new Date().getTime()
-        console.log(pokemon.bonus.tclic +" " + pokemon.bonus.tBoosterOn)
         if (pokemon.bonus.tclic - pokemon.bonus.tBoosterOn < 30000) {
             pokemon.boost = 2;
-            console.log("Booster x" + pokemon.boost);
             } else if (pokemon.bonus.tclic - pokemon.bonus.tBoosterOn >= 30000) {
                 pokemon.boost = 1;
-                console.log("Booster x1");
-                //pokemon.bonus.tBoosterOn = 1549640231912
             }
         pokemon.score = pokemon.score + (1 * pokemon.multiplicateur * pokemon.boost)
-            //* pokemon.boost)
-        console.log (pokemon.score)
         activation()
         affScore()
     };
@@ -81,7 +88,6 @@ window.onload = function(){
 
     // fonction pour activer, desactiver les bonus
     function activation () {
-        console.log("activation")
         if (pokemon.score >= pokemon.bonus.prixMulti) {
             document.getElementById('multiActive').style.display = 'initial';
             document.getElementById('multiplication').style.display = 'inline-block';
@@ -98,7 +104,6 @@ window.onload = function(){
             document.getElementById('autoclicActive').style.display = 'none';
             document.getElementById('autoclicInactive').style.display = 'initial';
         }
-        console.error(pokemon.boost);
         if (pokemon.score >= pokemon.bonus.prixBoost && pokemon.boost == 1) {
             document.getElementById('boostActive').style.display = 'initial';
             document.getElementById('booster').style.display = 'inline-block';
@@ -126,8 +131,6 @@ window.onload = function(){
 
     function boost() {
         pokemon.bonus.tBoosterOn = new Date().getTime()
-        console.log(pokemon.bonus.tclic +" " + pokemon.bonus.tBoosterOn)
-        console.log(pokemon.bonus.tclic - pokemon.bonus.tBoosterOn)
         
         if (pokemon.boost == 1) {
             pokemon.score -= pokemon.bonus.prixBoost;
@@ -142,11 +145,12 @@ window.onload = function(){
         activation();
     }
 
+    
+  
+ 
     function affichageTempsBooster(){
         var timeleft = 30;
-        console.warn("affichageTempsBooster")
         var downloadTimer = setInterval(function(){
-            console.warn(timeleft)
             timeleft--;
             document.getElementById("booster").innerHTML = timeleft;
             if(timeleft <= 0){
@@ -161,43 +165,50 @@ window.onload = function(){
     // CORNELIU - START //
      // fonction qui fait qu'a chaque achat d'un autoclicker :
     // 1) le prix d'achat est deduit du score,
-    // 2) le prix du autoclicker suivant augmente,
+    // 2) le prix du autoclicker suivant augmente (wip)
+
+    // Fonction qui permettra d'effectuer l'achat d'autoclic
     function achatAutoclicker () {
-        pokemon.score =- pokemon.bonus.prixAutoclic;
+        if (pokemon.score >= 50) {
+        pokemon.score = pokemon.score - pokemon.bonus.prixAutoclic;
+        pokemon.affautoclic++;
         pokemon.autoclicker++;
-        pokemon.button.affautoClic = 
-        pokemon.bonus.prixAutoclic = pokemon.bonus.prixAutoclic * 2;
         console.log("Achat d'Autoclicker");
-        pokemon.score = pokemon.score - pokemon.bonus.Autoclic;
-        affautoClic();
-        
+        pokemon.bonus.prixAutoclic = pokemon.bonus.prixAutoclic * 2;
+        } else {
+        console.log("Vous n'avez pas assez de credit pour l'achat de l'Autoclicker");
+        }
+        callAutoclic ();
+        prAutoclicker();
+        affScore();
+
+       } 
+
+    // Fonction qui va lancer l'autoclic une fois l'achat effectue 
+    function callAutoclic () { 
+        if (pokemon.autoclicker = 1) {
+            setInterval(function autoclicker () {
+            pokemon.score += 1;
+            console.log(pokemon.score)
+            pokemon.cli = pokemon.cli + 1;
+            affScore();
+            }, 1000);
+            console.log("Lancement autoclic");
+        } else {    
+        console.log("pas d'autoclic a appeller");
+        }
     }
-  
-    // un clic auto est fait chaque seconde
-    
-    /* var majScore = setInterval(function autoclicker() { 
-                            pokemon.score += 1;
-                            console.log(pokemon.score)
-                            pokemon.cli = pokemon.cli + 1;
-                            }, 1000)
-     */
-
-
-    /* function autoclicker(prixAchat, nombreAutoclics) { 
-    pokemon.score -= 200;
-    pokemon.autoclicker += 1;
-    
-    setInterval(autoclicker(), 1000) */
     // CORNELIU - END //
    
         
    
  
 
-    function autoclickerLabo () {
+    /* A JETER 
+        function autoclickerLabo () {
         pokemon.score++
         console.log(pokemon.score++)
-    }
+    } */
 
     // appel fonction affiche le score à chaque clic
     pokemon.button.cli.addEventListener('click', clicking)
@@ -209,6 +220,6 @@ window.onload = function(){
     pokemon.button.boost.addEventListener('click', boost);
 
     // appel fonction autoclic    
-    //pokemon.button.autoClic.addEventListener('click', autoclicker);
-}
+    pokemon.button.autoClic.addEventListener('click', achatAutoclicker);
 
+}
