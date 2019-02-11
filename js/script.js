@@ -95,7 +95,7 @@ window.onload = function(){
     }, 1000)
 
 
-    
+
     /* function autoclicker(prixAchat, nombreAutoclics) { 
     pokemon.score = pokemon.score + 1;
     pokemon.nombreAutoclics = pokemon.nombreAutoclics + 1;
@@ -118,6 +118,5 @@ window.onload = function(){
     // appel fonction pour lancer le boost
     pokemon.button.boost.addEventListener('click', boost);
 
-    // appel fonction autoclic    
-    pokemon.button.autoclic.addEventListener('click', autoclicker);
-
+   /*  // appel fonction autoclic    
+    pokemon.button.autoclic.addEventListener('click', autoclicker); */
