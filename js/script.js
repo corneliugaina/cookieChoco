@@ -118,7 +118,6 @@ window.onload = function(){
         activation() 
         prMultiplication()
     };
-
     // function boostTiming () {
     //     t0 = new Date()
     //     t0S = t0.getSeconds();
