@@ -1,20 +1,13 @@
 body {
   width: 100%;
-<<<<<<< HEAD
   margin: 0; }
-=======
-  margin: 0;
-}
->>>>>>> 5a2107be2678c6810822de50dd1d7aa7737faec2
 
 .container {
   width: 100%;
   display: flex;
   align-content: center;
   justify-content: space-around;
-  text-align: center;
-<<<<<<< HEAD
-  z-index: 1; }
+  text-align: center; }
   .container .pokeButtonSide {
     max-width: 100px;
     min-width: 80px;
@@ -25,7 +18,18 @@ body {
       font-size: 1em;
       color: #e9331b;
       transform: scale(6.1); }
-    .container .pokeButtonSide .multiplication {
+    .container .pokeButtonSide #multiplication {
+      background-color: red;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      color: white;
+      position: relative;
+      top: -80%;
+      left: 80%;
+      text-align: center;
+      line-height: 17px; }
+    .container .pokeButtonSide #autoClicker {
       background-color: red;
       border-radius: 50%;
       width: 20px;
@@ -47,90 +51,8 @@ img {
   #clic:active {
     transform: scale(0.9); }
 
-.i-large,
-.i-medium,
-.i-small {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -2; }
-
-.i-large {
-  background: url("./pikachupluspetit.svg") repeat 0px 0px;
-  -webkit-animation: dropFlowParticles 6s linear infinite;
-  -o-animation: dropFlowParticles 6s linear infinite;
-  animation: dropFlowParticles 6s linear infinite; }
-
-/* .i-medium {
-  background: url("images/pikachupetit.svg") repeat 0px 0px;
-  -webkit-animation: dropFlowParticles 12s linear infinite;
-       -o-animation: dropFlowParticles 12s linear infinite;
-          animation: dropFlowParticles 12s linear infinite;
-} */
-/* .i-small {
-  background:url("images/pikachupetit.svg") repeat 0px 0px;
-  -webkit-animation: dropFlowParticles 27s linear infinite;
-       -o-animation: dropFlowParticles 27s linear infinite;
-          animation: dropFlowParticles 27s linear infinite;
-} */
-@-webkit-keyframes dropFlowParticles {
-  from {
-    background-position: 0 0; }
-  to {
-    background-position: 0 800px; } }
-@keyframes dropFlowParticles {
-  from {
-    background-position: 0 0; }
-  to {
-    background-position: 0 800px; } }
-/* background-image: url("./images/pikachu.svg") */
-
-=======
-}
-.container .pokeButtonSide {
-  max-width: 100px;
-  min-width: 80px;
-  transition: 0.1s;
-}
-.container .pokeButtonSide .pokeImage {
-  width: 100%;
-}
-.container .pokeButtonSide:active {
-  font-size: 1em;
-  color: #e9331b;
-  transform: scale(6.1);
-}
-.container .pokeButtonSide #multiplication {
-  background-color: red;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  color: white;
-  position: relative;
-  top: -80%;
-  left: 80%;
-  text-align: center;
-  line-height: 17px;
-}
-
-img {
-  width: 100%;
-  height: 100%;
-}
-
-#clic {
-  max-width: 350px;
-  margin: 10px auto;
-}
-#clic:active {
-  transform: scale(0.9);
-}
-
 .disabled {
-  visibility: hidden;
-}
+  visibility: hidden; }
 
 >>>>>>> 5a2107be2678c6810822de50dd1d7aa7737faec2
 /*# sourceMappingURL=style.css.map */

@@ -11,7 +11,9 @@ window.onload = function(){
             cli : document.getElementById('clic'),
             buttonSide : document.getElementsByClassName('container')[0],
             multi : document.getElementById('multiplier'),
+            affmul : document.getElementById('multiplication'),
             autoclic : document.getElementById('autoclic'),
+>>>>>>> 7c1412f215c9e8e3f75f53dc1335f8ed65166c00
             boost : document.getElementById('boost'),
         },
         bonus : false,
@@ -27,6 +29,15 @@ window.onload = function(){
         let txt = "Votre score est de " + pokemon.score + " pikachu !"
         pokemon.button.aff.innerText = txt
     };
+
+    // francois affichage multiplicateur :
+    function affMulti() {
+        txt = "x" + pokemon.multiplicateur
+        pokemon.button.affMul.innerText = txt 
+        txt = "x " + pokemon.multiplicateur
+        pokemon.button.affMul.innerText = txt 
+    }
+
 
     function clicking () {
         tclic = new Date();
@@ -89,7 +100,7 @@ window.onload = function(){
     // appel fonction pour lancer le boost
     pokemon.button.boost.addEventListener('click', boost);
 
-    // appel fonction sur boutons bonus
-    pokemon.button.buttonSide.addEventListener('focus', activate);
-}
+    // appel fonction autoclic    
+    pokemon.button.autoclic.addEventListener('click', autoclicker);
 
+}
