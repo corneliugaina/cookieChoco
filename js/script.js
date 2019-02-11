@@ -19,7 +19,7 @@ window.onload = function(){
             praffMul : document.getElementById('prMultiplication'),
             praffautoclic: document.getElementById('prAutoclicker'),
             affBoost: document.getElementById('booster'),
-            prBoost: document.getElementById('prBooster'),            
+            prBoost: document.getElementById('prBooster'), 
         },
         bonus : { 
             active : false,
