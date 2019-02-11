@@ -12,7 +12,7 @@ window.onload = function(){
             cli : document.getElementById('clic'),
             buttonSide : document.getElementsByClassName('container')[0],
             multi : document.getElementById('multiActive'),
-            affmul : document.getElementById('multiplication'),
+            affMul : document.getElementById('multiplication'),
             autoClic : document.getElementById('autoclicActive'),
             boost : document.getElementById('boostActive'),
             affautoClic: document.getElementById('autoClicker'),
@@ -44,25 +44,23 @@ window.onload = function(){
     function affMulti() {
         txt = "x" + pokemon.multiplicateur
         pokemon.button.affMul.innerText = txt 
-        txt = "x " + pokemon.multiplicateur
-        pokemon.button.affMul.innerText = txt 
     }
 
     function affBooster() {
-        txt = "temps:" + ("//julien rajouter sa fonction temps!!!")
+        txt = "temps :" + ("//julien rajouter sa fonction temps!!!")
         pokemon.button.affBoost.innerText = txt 
     }
 
     function prMultiplication() {
-        text = "prix="+pokemon.bonus.prixMulti
+        txt = "prix = "+ pokemon.bonus.prixMulti
         pokemon.button.praffMul.innerText = txt
     }
     function prAutoclicker () {
-        text = "prix="+pokemon.bonus.prixAutoclic
+        txt = "prix = "+pokemon.bonus.prixAutoclic
         pokemon.button.praffautoclic.innerText = txt
     }
     function prBooster (){
-        text = "prix="+pokemon.bonus.prixBoost
+        txt = "prix = "+pokemon.bonus.prixBoost
         pokemon.button.prBoost.innerText = txt
     }
 
@@ -118,16 +116,20 @@ window.onload = function(){
     }
 
     function augmenterMultiplicateur () {
-        score -= 50
+        pokemon.score -= 50
         pokemon.multiplicateur++
-        console.log(pokemon.multiplicateur);
+        pokemon.bonus.prixMulti = pokemon.bonus.prixMulti * 2
+        affMulti() 
+        affScore()
+        activation() 
+        prMultiplication()
     };
 
-    function boostTiming () {
-        t0 = new Date()
-        t0S = t0.getSeconds();
-        boost(tOS)
-    };
+    // function boostTiming () {
+    //     t0 = new Date()
+    //     t0S = t0.getSeconds();
+    //     boost(tOS)
+    // };
 
     function boost() {
         pokemon.bonus.tBoosterOn = new Date().getTime()
