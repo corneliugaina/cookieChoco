@@ -5,12 +5,13 @@ window.onload = function(){
     let pokemon = {
         score : 0,
         multiplicateur  :1 ,
-        autoclicker : 0 ,
+        autoclicker : 0,
         button : {
             aff : document.getElementById('affichage'),
             cli : document.getElementById('clic'),
             buttonSide : document.getElementsByClassName('container')[0],
             multi : document.getElementById('multiplier'),
+            affmul : document.getElementById('multiplication')
             autoclic : document.getElementById('autoclic'),
             boost : document.getElementById('boost'),
         },
@@ -30,6 +31,13 @@ window.onload = function(){
     function affScore() {
         txt = "Votre score est de " + pokemon.score + " pikachu."
         pokemon.button.aff.innerText = txt
+    }
+// francois:
+    function affMulti() {
+        txt = "x " + pokemon.multiplicateur
+        pokemon.button.affmul.innerText = txt 
+        
+        
     }
 
     function clicking () {
@@ -73,15 +81,18 @@ window.onload = function(){
 
     // autoclicker, qui fait qu'a chaque achat, il augmente 
     // un clic auto est fait chaque seconde
-    // function autoclicker() { 
-    //     document
-    //     pokemon.score = pokemon.score + 1;
-    //     pokemon.nombreAutoclics = pokemon.nombreAutoclics + 1;
-    // }
-    // setInterval(autoclicker(), 1000)
+
+    /* function autoclicker(prixAchat, nombreAutoclics) { 
+    pokemon.score = pokemon.score + 1;
+    pokemon.nombreAutoclics = pokemon.nombreAutoclics + 1;
+    
+    
+    setInterval(autoclicker(), 1000) */
 
    
 
+
+        
    
  
 
@@ -94,8 +105,6 @@ window.onload = function(){
     // appel fonction pour lancer le boost
     pokemon.button.boost.addEventListener('click', boost);
 
-    // appel fonction autoclic
-    // pokemon.button.autoclic.addEventListener('click', autoclicker);
-
-}
+    // appel fonction autoclic    
+    pokemon.button.autoclic.addEventListener('click', autoclicker);
 
