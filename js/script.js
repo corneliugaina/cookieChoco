@@ -1,5 +1,5 @@
 window.onload = function(){
-
+    
 
     // les objets
     let pokemon = {
@@ -25,7 +25,7 @@ window.onload = function(){
             active : false,
             prixMulti : 50,
             prixAutoclic : 50,
-            prixBoost : 5000,
+            prixBoost : 5,
             boostCount: 1,
             tclic : Number.MAX_SAFE_INTEGER,
             tBoosterOn : 0,
@@ -43,24 +43,19 @@ window.onload = function(){
     // francois affichage multiplicateur + aff autoclick+aff prix bonus:
     function affMulti() {
         txt = "x" + pokemon.multiplicateur
-        pokemon.button.affMul.innerText = txt  
-    }
-
-    function affBooster() {
-        txt = "temps:"  //julien rajouter sa fonction temps!!!
-        pokemon.button.affBoost.innerText = txt 
+        pokemon.button.affMul.innerText = txt 
     }
 
     function prMultiplication() {
-        txt = "prix="+pokemon.bonus.prixMulti
+        txt = "prix = "+ pokemon.bonus.prixMulti
         pokemon.button.praffMul.innerText = txt
     }
     function prAutoclicker () {
-        txt = "prix="+pokemon.bonus.prixAutoclic
+        txt = "prix = "+pokemon.bonus.prixAutoclic
         pokemon.button.praffautoclic.innerText = txt
     }
     function prBooster (){
-        txt = "prix="+pokemon.bonus.prixBoost
+        txt = "prix = "+pokemon.bonus.prixBoost
         pokemon.button.prBoost.innerText = txt
     }
 
@@ -86,74 +81,85 @@ window.onload = function(){
 
     // fonction pour activer, desactiver les bonus
     function activation () {
-        if (pokemon.score >= 50) {
+        console.log("activation")
+        if (pokemon.score >= pokemon.bonus.prixMulti) {
             document.getElementById('multiActive').style.display = 'initial';
             document.getElementById('multiplication').style.display = 'inline-block';
             document.getElementById('multiInactive').style.display = 'none';
         } else {
             document.getElementById('multiActive').style.display = 'none';
-            //document.getElementById('multiActive').addEventListerner('click', noClick);
             document.getElementById('multiInactive').style.display = 'initial';
         }
-        if (pokemon.score >= 500) {
+        if (pokemon.score >= pokemon.bonus.prixAutoclic) {
             document.getElementById('autoclicActive').style.display = 'initial';
+            document.getElementById('autoClicker').style.display = 'inline-block';
             document.getElementById('autoclicInactive').style.display = 'none';
         } else {
             document.getElementById('autoclicActive').style.display = 'none';
-            //document.getElementById('multiActive').addEventListerner('click', noClick);
             document.getElementById('autoclicInactive').style.display = 'initial';
         }
-        if (pokemon.score >= 5000) {
+        console.error(pokemon.boost);
+        if (pokemon.score >= pokemon.bonus.prixBoost && pokemon.boost == 1) {
             document.getElementById('boostActive').style.display = 'initial';
+            document.getElementById('booster').style.display = 'inline-block';
             document.getElementById('boostInactive').style.display = 'none';
         } else {
             document.getElementById('boostActive').style.display = 'none';
-            //document.getElementById('multiActive').addEventListerner('click', noClick);
             document.getElementById('boostInactive').style.display = 'initial';
         }
-            // document.getElementById('id').style.pointerEvents = 'none';
-            // document.getElementById('id').style.pointerEvents = 'auto'; 
     }
 
     function augmenterMultiplicateur () {
-        pokemon.score -= 50
+        pokemon.score -= pokemon.bonus.prixMulti
         pokemon.multiplicateur++
-        pokemon.bonus.prixMulti=pokemon.bonus.prixMulti*2
-        console.log(pokemon.multiplicateur);
-        affMulti()
-        affscore()
-        activation()
+        pokemon.bonus.prixMulti = pokemon.bonus.prixMulti * 2
+        affMulti() 
+        affScore()
+        activation() 
         prMultiplication()
     };
-
-    function boostTiming () {
-        t0 = new Date()
-        t0S = t0.getSeconds();
-        boost(tOS)
-    };
+    // function boostTiming () {
+    //     t0 = new Date()
+    //     t0S = t0.getSeconds();
+    //     boost(tOS)
+    // };
 
     function boost() {
         pokemon.bonus.tBoosterOn = new Date().getTime()
         console.log(pokemon.bonus.tclic +" " + pokemon.bonus.tBoosterOn)
         console.log(pokemon.bonus.tclic - pokemon.bonus.tBoosterOn)
-
+        
         if (pokemon.boost == 1) {
-            pokemon.score -= 5000;
+            pokemon.score -= pokemon.bonus.prixBoost;
+            pokemon.boost=2;
+            affichageTempsBooster();
+            affScore();
             pokemon.bonus.prixBoost = pokemon.bonus.prixBoost * 2;
+            prBooster();
         } else {
             console.log("Booster déjà acheté!") // Mettre un beau message par après? // 
         }
-
+        activation();
     }
 
+    function affichageTempsBooster(){
+        var timeleft = 30;
+        console.warn("affichageTempsBooster")
+        var downloadTimer = setInterval(function(){
+            console.warn(timeleft)
+            timeleft--;
+            document.getElementById("booster").innerHTML = timeleft;
+            if(timeleft <= 0){
+                clearInterval(downloadTimer);
+                document.getElementById("booster").innerHTML = "0";
+                pokemon.boost= 1;
+                activation();
+            }
+        }, 1000);
+    }
     
     // CORNELIU - START //
- 
-    function affichageTempsBooster(){
-        
-    }
-
-    // fonction qui fait qu'a chaque achat d'un autoclicker :
+     // fonction qui fait qu'a chaque achat d'un autoclicker :
     // 1) le prix d'achat est deduit du score,
     // 2) le prix du autoclicker suivant augmente,
     function achatAutoclicker () {
@@ -204,6 +210,5 @@ window.onload = function(){
 
     // appel fonction autoclic    
     //pokemon.button.autoClic.addEventListener('click', autoclicker);
-
 }
 

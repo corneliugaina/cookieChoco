@@ -13,13 +13,16 @@ body {
   .container .pokeButtonSide {
     max-width: 100px;
     min-width: 80px;
-    transition: 0.1s; }
+    transition: 0.1s; 
+  }
     .container .pokeButtonSide .pokeImage {
-      width: 100%; }
+      width: 100%; 
+    }
     .container .pokeButtonSide:active {
       font-size: 1em;
       color: #e9331b;
-      transform: scale(1.1); }
+      transform: scale(1.1); 
+    }
     .container .pokeButtonSide #multiplication {
       background-color: red;
       border-radius: 50%;
@@ -31,7 +34,8 @@ body {
       left: 2em;
       text-align: center;
       line-height: 17px;
-      display: none; }
+      display: none; 
+    }
     .container .pokeButtonSide #prMultiplication {
       display: flex;
       align-items: center;
@@ -45,9 +49,11 @@ body {
       color: black;
       text-shadow: -1px -1px 1px #111;
       background-color: saddlebrown;
-      border-radius: 45%; }
+      border-radius: 45%; 
+    }
     .container .pokeButtonSide .font {
-      width: 145px; }
+      width: 145px; 
+    }
     .container .pokeButtonSide #prAutoclicker {
       display: flex;
       align-items: center;
@@ -60,7 +66,8 @@ body {
       color: black;
       text-shadow: -1px -1px 1px #111;
       background-color: silver;
-      border-radius: 45%; }
+      border-radius: 45%; 
+    }
     .container .pokeButtonSide #prBooster {
       display: flex;
       align-items: center;
@@ -73,7 +80,8 @@ body {
       color: black;
       text-shadow: -1px -1px 1px #111;
       background-color: rgba(241, 200, 13, 0.863);
-      border-radius: 45%; }
+      border-radius: 45%; 
+    }
     .container .pokeButtonSide #autoClicker {
       background-color: red;
       border-radius: 50%;
@@ -84,7 +92,8 @@ body {
       top: -69%;
       left: 80%;
       text-align: center;
-      line-height: 17px; }
+      line-height: 17px; 
+    }
     .container .pokeButtonSide #booster {
       background-color: red;
       border-radius: 50%;
@@ -95,21 +104,27 @@ body {
       top: -121px;
       left: 80%;
       text-align: center;
-      line-height: 17px; }
+      line-height: 17px; 
+    }
     .container .pokeButtonSide #multiActive {
-      display: none; }
+      display: none; 
+    }
     .container .pokeButtonSide #autoclicActive {
-      display: none; }
+      display: none; 
+    }
     .container .pokeButtonSide #boostActive {
-      display: none; }
+      display: none; 
+    }
 
 img {
   width: 100%;
-  height: 100%; }
+  height: 100%; 
+}
 
 #clic {
   max-width: 350px;
-  margin: 10px auto; }
+  margin: 10px auto; 
+}
   #clic:active {
     transform: scale(0.9); }
 
