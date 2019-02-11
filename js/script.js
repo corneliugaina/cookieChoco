@@ -12,7 +12,7 @@ window.onload = function(){
             cli : document.getElementById('clic'),
             buttonSide : document.getElementsByClassName('container')[0],
             multi : document.getElementById('multiActive'),
-            affmul : document.getElementById('multiplication'),
+            affMul : document.getElementById('multiplication'),
             autoClic : document.getElementById('autoclicActive'),
             boost : document.getElementById('boostActive'),
             affautoClic: document.getElementById('autoClicker'),
@@ -25,7 +25,7 @@ window.onload = function(){
             active : false,
             prixMulti : 50,
             prixAutoclic : 50,
-            prixBoost : 5000,
+            prixBoost : 5,
             boostCount: 1,
             tclic : Number.MAX_SAFE_INTEGER,
             tBoosterOn : 0,
@@ -44,12 +44,10 @@ window.onload = function(){
     function affMulti() {
         txt = "x" + pokemon.multiplicateur
         pokemon.button.affMul.innerText = txt 
-        txt = "x " + pokemon.multiplicateur
-        pokemon.button.affMul.innerText = txt 
     }
 
     function affBooster() {
-        txt = "temps:" + ("//julien rajouter sa fonction temps!!!")
+        txt = "temps :" + ("//julien rajouter sa fonction temps!!!")
         pokemon.button.affBoost.innerText = txt 
     }
 
@@ -61,15 +59,15 @@ window.onload = function(){
     // Fonctions PRIX : 
 
     function prMultiplication() {
-        text = "prix="+pokemon.bonus.prixMulti
+        txt = "prix = "+ pokemon.bonus.prixMulti
         pokemon.button.praffMul.innerText = txt
     }
     function prAutoclicker () {
-        text = "prix="+pokemon.bonus.prixAutoclic
+        txt = "prix = "+pokemon.bonus.prixAutoclic
         pokemon.button.praffautoclic.innerText = txt
     }
     function prBooster (){
-        text = "prix="+pokemon.bonus.prixBoost
+        txt = "prix = "+pokemon.bonus.prixBoost
         pokemon.button.prBoost.innerText = txt
     }
 
@@ -95,46 +93,47 @@ window.onload = function(){
 
     // fonction pour activer, desactiver les bonus
     function activation () {
-        if (pokemon.score >= 50) {
+        if (pokemon.score >= pokemon.bonus.prixMulti) {
             document.getElementById('multiActive').style.display = 'initial';
             document.getElementById('multiplication').style.display = 'inline-block';
             document.getElementById('multiInactive').style.display = 'none';
         } else {
             document.getElementById('multiActive').style.display = 'none';
-            //document.getElementById('multiActive').addEventListerner('click', noClick);
             document.getElementById('multiInactive').style.display = 'initial';
         }
-        if (pokemon.score >= 50) {
+        if (pokemon.score >= pokemon.bonus.prixAutoclic) {
             document.getElementById('autoclicActive').style.display = 'initial';
+            document.getElementById('autoClicker').style.display = 'inline-block';
             document.getElementById('autoclicInactive').style.display = 'none';
         } else {
             document.getElementById('autoclicActive').style.display = 'none';
-            //document.getElementById('multiActive').addEventListerner('click', noClick);
             document.getElementById('autoclicInactive').style.display = 'initial';
         }
-        if (pokemon.score >= 5000) {
+        if (pokemon.score >= pokemon.bonus.prixBoost) {
             document.getElementById('boostActive').style.display = 'initial';
+            document.getElementById('booster').style.display = 'inline-block';
             document.getElementById('boostInactive').style.display = 'none';
         } else {
             document.getElementById('boostActive').style.display = 'none';
-            //document.getElementById('multiActive').addEventListerner('click', noClick);
             document.getElementById('boostInactive').style.display = 'initial';
         }
-            // document.getElementById('id').style.pointerEvents = 'none';
-            // document.getElementById('id').style.pointerEvents = 'auto'; 
     }
 
     function augmenterMultiplicateur () {
-        score -= 50
+        pokemon.score -= 50
         pokemon.multiplicateur++
-        console.log(pokemon.multiplicateur);
+        pokemon.bonus.prixMulti = pokemon.bonus.prixMulti * 2
+        affMulti() 
+        affScore()
+        activation() 
+        prMultiplication()
     };
 
-    function boostTiming () {
-        t0 = new Date()
-        t0S = t0.getSeconds();
-        boost(tOS)
-    };
+    // function boostTiming () {
+    //     t0 = new Date()
+    //     t0S = t0.getSeconds();
+    //     boost(tOS)
+    // };
 
     function boost() {
         pokemon.bonus.tBoosterOn = new Date().getTime()
