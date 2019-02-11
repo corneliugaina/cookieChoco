@@ -21,10 +21,6 @@ window.onload = function(){
             affBoost: document.getElementById('booster'),
             prBoost: document.getElementById('prBooster'),
             
-            
-            
-            
-            
         },
         bonus : { 
             active : false,
