@@ -2,6 +2,7 @@
   body{
     width: 100%;
     margin: 0;
+    
   }
 
   .container {
@@ -10,6 +11,7 @@
     align-content: center;
     justify-content: space-around;
     text-align: center;
+    z-index: 1;
     .pokeButtonSide {
       max-width: 100px;
       min-width: 80px;
@@ -40,8 +42,12 @@
   img {
     width:100%;
     height:100%;
+   
   }
 
+  // .pokeball {
+  //   z-index: 9999!important;
+  // }
   #clic {
     max-width: 350px;
     margin: 10px auto;
@@ -50,6 +56,60 @@
     }
 
   }
+  // .illustration {
+  //   position: relative;
+  //   margin: 0 auto;
+  //   width : 1200px;
+  //   height: 1200px;
+  //   // background : url("./images/image1.jpg") no-repeat top center;
+  // }
+   
+  .i-large,
+  .i-medium,
+  .i-small {
+    position : absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -2;
+  }
+   
+  .i-large {
+    background: url("./pikachupluspetit.svg") repeat 0px 0px;
+    -webkit-animation: dropFlowParticles 6s linear infinite;
+         -o-animation: dropFlowParticles 6s linear infinite;
+            animation: dropFlowParticles 6s linear infinite;
+  }
+  /* .i-medium {
+    background: url("images/pikachupetit.svg") repeat 0px 0px;
+    -webkit-animation: dropFlowParticles 12s linear infinite;
+         -o-animation: dropFlowParticles 12s linear infinite;
+            animation: dropFlowParticles 12s linear infinite;
+  } */
+  /* .i-small {
+    background:url("images/pikachupetit.svg") repeat 0px 0px;
+    -webkit-animation: dropFlowParticles 27s linear infinite;
+         -o-animation: dropFlowParticles 27s linear infinite;
+            animation: dropFlowParticles 27s linear infinite;
+  } */
+   
+  @-webkit-keyframes dropFlowParticles {
+    from { background-position: 0 0; }
+    to { background-position: 0 800px; }
+  }
+  @keyframes dropFlowParticles {
+    from { background-position: 0 0; }
+    to { background-position: 0 800px; }
+  }
+// .illustration{
+//   animation: yourAnimation 7s infinite 0s linear;
+// }
+  
 
-	
+// .illustration {
+//   height: 600px;
+//   position: absolute;
+//   z-index: 1;
+// }
+ 
+  /* background-image: url("./images/pikachu.svg") */
+// }
 // test

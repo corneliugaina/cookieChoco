@@ -93,3 +93,9 @@ window.onload = function(){
     pokemon.button.buttonSide.addEventListener('focus', activate);
 }
 
+//Pikachu qui tombe
+// let pika = document.getElementById("pika");
+// let pokeball = document.getElementById("pokeball");
+// pokeball.addEventListener("",function()){
+// pika.setAttribute("class","pikabouge");
+// }
