@@ -52,7 +52,7 @@ window.onload = function(){
     }
 
     function affautoClic() {
-        txt = "Vous avez: " + pokemon.autoclicker    
+        txt = "x" + pokemon.autoclicker    
         pokemon.button.affautoClic.innerText = txt
     } 
 
@@ -193,6 +193,7 @@ window.onload = function(){
         callAutoclic ();
         prAutoclicker();
         affScore();
+        affautoClic();
 
        } 
 
