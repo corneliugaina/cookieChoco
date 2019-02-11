@@ -1,50 +1,68 @@
 body {
   width: 100%;
-  margin: 0; }
+  margin: 0;
+}
 
 .container {
   width: 100%;
   display: flex;
+  flex-direction: row;
   align-content: center;
   justify-content: space-around;
   text-align: center;
-  z-index: 1; }
-  .container .pokeButtonSide {
-    max-width: 100px;
-    min-width: 80px;
-    transition: 0.1s; }
-    .container .pokeButtonSide .pokeImage {
-      width: 100%; }
-    .container .pokeButtonSide:active {
-      font-size: 1em;
-      color: #e9331b;
-      transform: scale(6.1); }
-    .container .pokeButtonSide #multiplication {
-      background-color: red;
-      border-radius: 50%;
-      width: 20px;
-      height: 20px;
-      color: white;
-      position: relative;
-      top: -80%;
-      left: 80%;
-      text-align: center;
-      line-height: 17px; }
-    .container .pokeButtonSide #autoClicker {
-      background-color: red;
-      border-radius: 50%;
-      width: 20px;
-      height: 20px;
-      color: white;
-      position: relative;
-      top: -80%;
-      left: 80%;
-      text-align: center;
-      line-height: 17px; }
+}
+.container .pokeButtonSide {
+  max-width: 100px;
+  min-width: 80px;
+  transition: 0.1s;
+}
+.container .pokeButtonSide .pokeImage {
+  width: 100%;
+}
+.container .pokeButtonSide:active {
+  font-size: 1em;
+  color: #e9331b;
+  transform: scale(1.1);
+}
+.container .pokeButtonSide #multiplication {
+  background-color: red;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  color: white;
+  position: relative;
+  top: -7.5em;
+  left: 2em;
+  text-align: center;
+  line-height: 17px;
+  display: none;
+}
+.container .pokeButtonSide #autoClicker {
+  background-color: red;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  color: white;
+  position: relative;
+  top: -80%;
+  left: 80%;
+  text-align: center;
+  line-height: 17px;
+}
+.container .pokeButtonSide #multiActive {
+  display: none;
+}
+.container .pokeButtonSide #autoclicActive {
+  display: none;
+}
+.container .pokeButtonSide #boostActive {
+  display: none;
+}
 
 img {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+}
 
 #clic {
   max-width: 350px;
