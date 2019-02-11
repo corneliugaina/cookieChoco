@@ -47,16 +47,78 @@
         line-height: 17px;
         display : none;
       }
-      #autoClicker{ background-color: red;
+      #prMultiplication{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0px;
+        margin-top: 20px;
+        width: 100%;
+        opacity: 0.8;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        font-size: 2em;
+        color: black;
+        text-shadow: -1px -1px 1px #111;
+        background-color: rgb(139,69,19);
+        border-radius: 45%;
+      }
+      .font{
+        width: 145px;
+      }
+      #prAutoclicker{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0px;
+        width: 100%;
+        opacity: 0.8;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        font-size: 2em;
+        color: black;
+        text-shadow: -1px -1px 1px #111;
+        background-color: rgb(192,192,192);
+        border-radius:45%;
+      }
+      #prBooster{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0px;
+        width: 100%;
+        opacity: 0.8;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        font-size: 2em;
+        color: black;
+        text-shadow: -1px -1px 1px #111;
+        background-color: rgba(241, 200, 13, 0.863);
+        border-radius:45%;
+      }
+      #autoClicker{ 
+        background-color: red;
         border-radius: 50%;
         width: 20px;
         height: 20px;
         color: white;
         position: relative;
-        top: -80%;
+        top: -69%;
         left: 80%;
         text-align: center;
         line-height: 17px;
+
+      }
+      #booster{
+        background-color: red;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        color: white;
+        position: relative;
+        top: -121px;
+        left: 80%;
+        text-align: center;
+        line-height: 17px;
+        
+
 
       }
       #multiActive {
@@ -112,6 +174,7 @@
     to { background-position: 0 800px; }
   }
 
+<<<<<<< HEAD
   #affichage{ 
     display: flex;
     align-items: center;
@@ -145,3 +208,7 @@
   } 
 
 
+=======
+	
+// test
+>>>>>>> 1af59b2cc015dc4bda4bd0197adf92be796e16c3
