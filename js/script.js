@@ -1,5 +1,5 @@
 window.onload = function(){
-
+    
 
     // les objets
     let pokemon = {
@@ -64,7 +64,7 @@ window.onload = function(){
         pokemon.button.praffMul.innerText = txt
     }
     function prAutoclicker () {
-        txt = "prix = "+ pokemon.bonus.prixAutoclic
+        txt = "prix pour l'achat suivant = "+ pokemon.bonus.prixAutoclic
         pokemon.button.praffautoclic.innerText = txt
     }
     function prBooster (){
@@ -94,6 +94,7 @@ window.onload = function(){
 
     // fonction pour activer, desactiver les bonus
     function activation () {
+        console.log("activation")
         if (pokemon.score >= pokemon.bonus.prixMulti) {
             document.getElementById('multiActive').style.display = 'initial';
             document.getElementById('multiplication').style.display = 'inline-block';
@@ -110,7 +111,8 @@ window.onload = function(){
             document.getElementById('autoclicActive').style.display = 'none';
             document.getElementById('autoclicInactive').style.display = 'initial';
         }
-        if (pokemon.score >= pokemon.bonus.prixBoost) {
+        console.error(pokemon.boost);
+        if (pokemon.score >= pokemon.bonus.prixBoost && pokemon.boost == 1) {
             document.getElementById('boostActive').style.display = 'initial';
             document.getElementById('booster').style.display = 'inline-block';
             document.getElementById('boostInactive').style.display = 'none';
@@ -121,7 +123,7 @@ window.onload = function(){
     }
 
     function augmenterMultiplicateur () {
-        pokemon.score -= 50
+        pokemon.score -= pokemon.bonus.prixMulti
         pokemon.multiplicateur++
         pokemon.bonus.prixMulti = pokemon.bonus.prixMulti * 2
         affMulti() 
@@ -129,7 +131,6 @@ window.onload = function(){
         activation() 
         prMultiplication()
     };
-
     // function boostTiming () {
     //     t0 = new Date()
     //     t0S = t0.getSeconds();
@@ -140,25 +141,41 @@ window.onload = function(){
         pokemon.bonus.tBoosterOn = new Date().getTime()
         console.log(pokemon.bonus.tclic +" " + pokemon.bonus.tBoosterOn)
         console.log(pokemon.bonus.tclic - pokemon.bonus.tBoosterOn)
-
+        
         if (pokemon.boost == 1) {
-            pokemon.score -= 5000;
+            pokemon.score -= pokemon.bonus.prixBoost;
+            pokemon.boost=2;
+            affichageTempsBooster();
+            affScore();
             pokemon.bonus.prixBoost = pokemon.bonus.prixBoost * 2;
+            prBooster();
         } else {
             console.log("Booster déjà acheté!") // Mettre un beau message par après? // 
         }
-
+        activation();
     }
 
     
   
  
     function affichageTempsBooster(){
-        
+        var timeleft = 30;
+        console.warn("affichageTempsBooster")
+        var downloadTimer = setInterval(function(){
+            console.warn(timeleft)
+            timeleft--;
+            document.getElementById("booster").innerHTML = timeleft;
+            if(timeleft <= 0){
+                clearInterval(downloadTimer);
+                document.getElementById("booster").innerHTML = "0";
+                pokemon.boost= 1;
+                activation();
+            }
+        }, 1000);
     }
-
+    
     // CORNELIU - START //
-    // fonction qui fait qu'a chaque achat d'un autoclicker :
+     // fonction qui fait qu'a chaque achat d'un autoclicker :
     // 1) le prix d'achat est deduit du score,
     // 2) le prix du autoclicker suivant augmente (wip)
 
@@ -175,6 +192,7 @@ window.onload = function(){
         }
         callAutoclic ();
         prAutoclicker();
+        affScore();
 
        } 
 
@@ -185,6 +203,7 @@ window.onload = function(){
             pokemon.score += 1;
             console.log(pokemon.score)
             pokemon.cli = pokemon.cli + 1;
+            affScore();
             }, 1000);
             console.log("Lancement autoclic");
         } else {    
