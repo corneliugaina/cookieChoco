@@ -72,4 +72,37 @@ img {
   transform: scale(0.9);
 }
 
+.i-large {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -2;
+}
+
+.i-large {
+  background: url("./pikachupluspetit.svg") repeat 0px 0px;
+  -webkit-animation: dropFlowParticles 6s linear infinite;
+  -o-animation: dropFlowParticles 6s linear infinite;
+  animation: dropFlowParticles 6s linear infinite;
+}
+
+@-webkit-keyframes dropFlowParticles {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 800px;
+  }
+}
+@keyframes dropFlowParticles {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 800px;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
