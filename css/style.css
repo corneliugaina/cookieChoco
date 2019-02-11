@@ -1,3 +1,14 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: 'anime_ace_2.0_bbregular';
+  src: url("./animeace2reg-webfont.woff2") format("woff2"), url("./animeace2reg-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
 body {
   width: 100%;
   margin: 0; }
@@ -9,124 +20,102 @@ body {
   align-content: center;
   justify-content: space-around;
   text-align: center;
-  z-index: 1; }
-  .container .pokeButtonSide {
-    max-width: 100px;
-    min-width: 80px;
-    transition: 0.1s; 
-  }
-    .container .pokeButtonSide .pokeImage {
-      width: 100%; 
-    }
-    .container .pokeButtonSide:active {
-      font-size: 1em;
-      color: #e9331b;
-      transform: scale(1.1); 
-    }
-    .container .pokeButtonSide #multiplication {
-      background-color: red;
-      border-radius: 50%;
-      width: 20px;
-      height: 20px;
-      color: white;
-      position: relative;
-      top: -7.5em;
-      left: 2em;
-      text-align: center;
-      line-height: 17px;
-      display: none; 
-    }
-    .container .pokeButtonSide #prMultiplication {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0px;
-      margin-top: 20px;
-      width: 100%;
-      opacity: 0.8;
-      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-      font-size: 2em;
-      color: black;
-      text-shadow: -1px -1px 1px #111;
-      background-color: saddlebrown;
-      border-radius: 45%; 
-    }
-    .container .pokeButtonSide .font {
-      width: 145px; 
-    }
-    .container .pokeButtonSide #prAutoclicker {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0px;
-      width: 100%;
-      opacity: 0.8;
-      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-      font-size: 2em;
-      color: black;
-      text-shadow: -1px -1px 1px #111;
-      background-color: silver;
-      border-radius: 45%; 
-    }
-    .container .pokeButtonSide #prBooster {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0px;
-      width: 100%;
-      opacity: 0.8;
-      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-      font-size: 2em;
-      color: black;
-      text-shadow: -1px -1px 1px #111;
-      background-color: rgba(241, 200, 13, 0.863);
-      border-radius: 45%; 
-    }
-    .container .pokeButtonSide #autoClicker {
-      background-color: red;
-      border-radius: 50%;
-      width: 20px;
-      height: 20px;
-      color: white;
-      position: relative;
-      top: -69%;
-      left: 80%;
-      text-align: center;
-      line-height: 17px; 
-    }
-    .container .pokeButtonSide #booster {
-      background-color: red;
-      border-radius: 50%;
-      width: 20px;
-      height: 20px;
-      color: white;
-      position: relative;
-      top: -121px;
-      left: 80%;
-      text-align: center;
-      line-height: 17px; 
-    }
-    .container .pokeButtonSide #multiActive {
-      display: none; 
-    }
-    .container .pokeButtonSide #autoclicActive {
-      display: none; 
-    }
-    .container .pokeButtonSide #boostActive {
-      display: none; 
-    }
+  z-index: 1;
+}
+.container .pokeButtonSide {
+  max-width: 100px;
+  min-width: 80px;
+  transition: 0.1s;
+}
+.container .pokeButtonSide .pokeImage {
+  width: 100%;
+}
+.container .pokeButtonSide .pokeImage .active img {
+  margin-bottom: 40%;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  top: 1.5px;
+  background-color: #000;
+  border-radius: 50%;
+  -webkit-box-shadow: 0px 0px 62px 4px #f1bc1b, 0px 0px 62px 8px #f4c847, 0px 0px 62px 46px #e6ca78;
+  -moz-box-shadow: 0px 0px 62px 4px #f1bc1b, 0px 0px 62px 8px #f4c847, 0px 0px 62px 46px #e6ca78;
+  box-shadow: 0px 0px 62px 4px #f1bc1b, 0px 0px 62px 8px #f4c847, 0px 0px 62px 46px #e6ca78;
+}
+.container .pokeButtonSide .pokeImage .inactive img {
+  margin-bottom: 40%;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  top: 1.5px;
+  background-color: #000;
+  border-radius: 50%;
+  -webkit-box-shadow: 0px 0px 62px 4px #f1bc1b, 0px 0px 62px 8px #f4c847, 0px 0px 62px 46px #e6ca78;
+  -moz-box-shadow: 0px 0px 62px 4px #f1bc1b, 0px 0px 62px 8px #f4c847, 0px 0px 62px 46px #e6ca78;
+  box-shadow: 0px 0px 62px 4px #f1bc1b, 0px 0px 62px 8px #f4c847, 0px 0px 62px 46px #e6ca78;
+}
+.container .pokeButtonSide:active {
+  font-size: 1em;
+  color: #e9331b;
+  transform: scale(1.1);
+}
+.container .pokeButtonSide #multiplication {
+  background-color: red;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  color: white;
+  position: relative;
+  top: -7.5em;
+  left: 2em;
+  text-align: center;
+  line-height: 17px;
+  display: none;
+}
+.container .pokeButtonSide #autoClicker {
+  background-color: red;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  color: white;
+  position: relative;
+  top: -80%;
+  left: 80%;
+  text-align: center;
+  line-height: 17px;
+}
+.container .pokeButtonSide #multiActive {
+  display: none;
+}
+.container .pokeButtonSide #autoclicActive {
+  display: none;
+}
+.container .pokeButtonSide #boostActive {
+  display: none;
+}
 
 img {
   width: 100%;
-  height: 100%; 
-}
+  height: 100%; }
 
 #clic {
   max-width: 350px;
-  margin: 10px auto; 
+  margin: 10px auto 10%;
+  background-color: #041d3b;
+  border-radius: 50%;
 }
-  #clic:active {
-    transform: scale(0.9); }
+#clic img {
+  position: relative;
+  top: 2px;
+  background-color: #000;
+  border-radius: 50%;
+  -webkit-box-shadow: 0px 0px 62px 4px #f1bc1b, 0px 0px 62px 8px #f4c847, 0px 0px 62px 46px #e6ca78;
+  -moz-box-shadow: 0px 0px 62px 4px #f1bc1b, 0px 0px 62px 8px #f4c847, 0px 0px 62px 46px #e6ca78;
+  box-shadow: 0px 0px 62px 4px #f1bc1b, 0px 0px 62px 8px #f4c847, 0px 0px 62px 46px #e6ca78;
+}
+#clic:active {
+  transform: scale(0.9);
+}
 
 .i-large {
   position: absolute;
@@ -138,9 +127,9 @@ img {
 
 .i-large {
   background: url("./pikachupluspetit.svg") repeat 0px 0px;
-  -webkit-animation: dropFlowParticles 6s linear infinite;
-  -o-animation: dropFlowParticles 6s linear infinite;
-  animation: dropFlowParticles 6s linear infinite; }
+  -webkit-animation: dropFlowParticles 25s linear infinite;
+  -o-animation: dropFlowParticles 25s linear infinite;
+  animation: dropFlowParticles 25s linear infinite; }
 
 @-webkit-keyframes dropFlowParticles {
   from {
@@ -152,29 +141,24 @@ img {
     background-position: 0 0; }
   to {
     background-position: 0 800px; } }
-.i-large {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -2; }
+#affichage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 120px;
+  background-color: rgba(241, 200, 13, 0.863);
+  opacity: 0.8;
+  box-shadow: 4px 6px 9px #5c3e06; }
 
-.i-large {
-  background: url("./pikachupluspetit.svg") repeat 0px 0px;
-  -webkit-animation: dropFlowParticles 6s linear infinite;
-  -o-animation: dropFlowParticles 6s linear infinite;
-  animation: dropFlowParticles 6s linear infinite; }
-
-@-webkit-keyframes dropFlowParticles {
-  from {
-    background-position: 0 0; }
-  to {
-    background-position: 0 800px; } }
-@keyframes dropFlowParticles {
-  from {
-    background-position: 0 0; }
-  to {
-    background-position: 0 800px; } }
+p {
+  font-family: "anime_ace_2.0_bbregular", Arial, sans-serif;
+  font-size: 3em;
+  color: white;
+  text-shadow: -1px -1px 0 #000,   1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 1px 1px 2px #141414, 1px 1px 3px #141414, 1px 1px 5px #141414, 1px 1px 7px #141414, 1px 1px 10px #141414, 1px 1px 12px #141414, 1px 1px 18px #141414;
+  color: #fff; }
 
 /*# sourceMappingURL=style.css.map */
