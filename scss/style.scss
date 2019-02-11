@@ -7,6 +7,7 @@
   .container {
     width: 100%;
     display: flex;
+    flex-direction : row;
     align-content: center;
     justify-content: space-around;
     text-align: center;
@@ -20,7 +21,7 @@
       &:active {
         font-size: 1em;
         color: rgb(233, 51, 27);
-        transform: scale(6.1);
+        transform: scale(1.1);
       }
       #multiplication{
         background-color: red;
@@ -29,10 +30,11 @@
         height: 20px;
         color: white;
         position: relative;
-        top: -80%;
-        left: 80%;
+        top: -7.5em;
+        left: 2em;
         text-align: center;
         line-height: 17px;
+        display : none;
       }
       #autoClicker{ background-color: red;
         border-radius: 50%;
@@ -46,6 +48,16 @@
         line-height: 17px;
 
       }
+      #multiActive {
+        display : none;
+      }
+      #autoclicActive {
+        display : none;
+      }
+      #boostActive {
+        display : none;
+      }
+
     }
   }
    
@@ -63,9 +75,6 @@
 
   }
 
-  .disabled{
-    visibility: hidden;
-  }
 
 	
 // test

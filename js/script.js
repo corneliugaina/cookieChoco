@@ -11,15 +11,20 @@ window.onload = function(){
             aff : document.getElementById('affichage'),
             cli : document.getElementById('clic'),
             buttonSide : document.getElementsByClassName('container')[0],
-            multi : document.getElementById('multiplier'),
+            multi : document.getElementById('multiActive'),
             affMul : document.getElementById('multiplication'),
-            praffMul : document.getElementById('prMultiplication'),
-            autoClic : document.getElementById('autoclic'),
+            autoClic : document.getElementById('autoclicActive'),
             affautoClic: document.getElementById('autoClicker'),
+            boost : document.getElementById('boostActive'),
+            praffMul : document.getElementById('prMultiplication'),
             praffautoclic: document.getElementById('prAutoclicker'),
-            boost : document.getElementById('boost'),
             affBoost: document.getElementById('booster'),
             prBoost: document.getElementById('prBooster'),
+            
+            
+            
+            
+            
         },
         bonus : { 
             active : false,
@@ -74,7 +79,7 @@ window.onload = function(){
         console.log(pokemon.bonus.tclic +" " + pokemon.bonus.tBoosterOn)
         if (pokemon.bonus.tclic - pokemon.bonus.tBoosterOn < 30000) {
             pokemon.boost = 2;
-            console.log("Booster x2");
+            console.log("Booster x" + pokemon.boost);
             } else if (pokemon.bonus.tclic - pokemon.bonus.tBoosterOn >= 30000) {
                 pokemon.boost = 1;
                 console.log("Booster x1");
@@ -83,18 +88,41 @@ window.onload = function(){
         pokemon.score = pokemon.score + (1 * pokemon.multiplicateur * pokemon.boost)
             //* pokemon.boost)
         console.log (pokemon.score)
+        activation()
         affScore()
     };
 
+
     // fonction pour activer, desactiver les bonus
-    function activate () {
-
-
-        // stackoverflow propose
-        // document.getElementById('id').style.pointerEvents = 'none';
-        // document.getElementById('id').style.pointerEvents = 'auto'; 
-        // mais rendra aussi indispo le over à mon avis
-    };
+    function activation () {
+        if (pokemon.score >= 50) {
+            document.getElementById('multiActive').style.display = 'initial';
+            document.getElementById('multiplication').style.display = 'inline-block';
+            document.getElementById('multiInactive').style.display = 'none';
+        } else {
+            document.getElementById('multiActive').style.display = 'none';
+            //document.getElementById('multiActive').addEventListerner('click', noClick);
+            document.getElementById('multiInactive').style.display = 'initial';
+        }
+        if (pokemon.score >= 500) {
+            document.getElementById('autoclicActive').style.display = 'initial';
+            document.getElementById('autoclicInactive').style.display = 'none';
+        } else {
+            document.getElementById('autoclicActive').style.display = 'none';
+            //document.getElementById('multiActive').addEventListerner('click', noClick);
+            document.getElementById('autoclicInactive').style.display = 'initial';
+        }
+        if (pokemon.score >= 5000) {
+            document.getElementById('boostActive').style.display = 'initial';
+            document.getElementById('boostInactive').style.display = 'none';
+        } else {
+            document.getElementById('boostActive').style.display = 'none';
+            //document.getElementById('multiActive').addEventListerner('click', noClick);
+            document.getElementById('boostInactive').style.display = 'initial';
+        }
+            // document.getElementById('id').style.pointerEvents = 'none';
+            // document.getElementById('id').style.pointerEvents = 'auto'; 
+    }
 
     function augmenterMultiplicateur () {
         pokemon.score =- pokemon.bonus.prixMulti
@@ -108,11 +136,21 @@ window.onload = function(){
 
     function boost() {
         pokemon.bonus.tBoosterOn = new Date().getTime()
-        console.log(pokemon.bonus.tBoosterOn)
+        console.log(pokemon.bonus.tclic +" " + pokemon.bonus.tBoosterOn)
+        console.log(pokemon.bonus.tclic - pokemon.bonus.tBoosterOn)
+
+        if (pokemon.boost == 1) {
+            pokemon.score -= 5000;
+            pokemon.bonus.prixBoost = pokemon.bonus.prixBoost * 2;
+        } else {
+            console.log("Booster déjà acheté!") // Mettre un beau message par après? // 
+        }
 
     }
 
-    
+    function affichageTempsBooster(){
+        
+    }
 
     // autoclicker, qui fait qu'a chaque achat, il augmente 
     // un clic auto est fait chaque seconde
@@ -139,4 +177,7 @@ window.onload = function(){
     pokemon.button.boost.addEventListener('click', boost);
 
     // appel fonction autoclic    
-    pokemon.button.autoclic.addEventListener('click', autoclicker);}
+    //pokemon.button.autoClic.addEventListener('click', autoclicker);
+
+}
+
