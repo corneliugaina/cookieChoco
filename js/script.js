@@ -5,12 +5,21 @@ window.onload = function(){
     let pokemon = {
         score : 0,
         multiplicateur  :1 ,
-        autoclicker : 0,
+        autoclicker : 1,
         boost : 1,
         button : {
             aff : document.getElementById('affichage'),
             cli : document.getElementById('clic'),
             buttonSide : document.getElementsByClassName('container')[0],
+            multi : document.getElementById('multiplier'),
+            affmul : document.getElementById('multiplication'),
+            autoclic : document.getElementById('autoclic'),
+            boost : document.getElementById('boost'),
+        },
+        bonus : false,
+        boost : 1,
+        tclicS : 0,
+        t0S : 0,
             multi : document.getElementById('multiActive'),
             affMul : document.getElementById('multiplication'),
             autoClic : document.getElementById('autoclicActive'),
@@ -25,7 +34,7 @@ window.onload = function(){
         bonus : { 
             active : false,
             prixMulti : 50,
-            prixAutoclic : 500,
+            prixAutoclic : 50,
             prixBoost : 5000,
             boostCount: 1,
             tclic : Number.MAX_SAFE_INTEGER,
@@ -33,21 +42,20 @@ window.onload = function(){
         }
     }
 
-
+   
     //les fonctions
-    function affScore() {
-        txt = "Votre score est de " + pokemon.score + " pikachu."
+
+    function affScore () {
+        let txt = "Votre score est de " + pokemon.score + " pikachu !"
         pokemon.button.aff.innerText = txt
-    }
+    };
 
     // francois affichage multiplicateur + aff autoclick+aff prix bonus:
     function affMulti() {
         txt = "x" + pokemon.multiplicateur
         pokemon.button.affMul.innerText = txt 
-    }
-    function affautoClic() {
-        txt = "x" + pokemon.autoclicker
-        pokemon.button.affautoClic.innerText = txt 
+        txt = "x " + pokemon.multiplicateur
+        pokemon.button.affMul.innerText = txt 
     }
 
     function affBooster() {
@@ -121,14 +129,16 @@ window.onload = function(){
     }
 
     function augmenterMultiplicateur () {
-        pokemon.score =- pokemon.bonus.prixMulti
+        score -= 50
         pokemon.multiplicateur++
-        pokemon.bonus.prixMulti = pokemon.bonus.prixMulti * 2
-        console.log (pokemon.bonus.prixMulti);
-        affScore()
-        affMulti();
+        console.log(pokemon.multiplicateur);
     };
 
+    function boostTiming () {
+        t0 = new Date()
+        t0S = t0.getSeconds();
+        boost(tOS)
+    };
 
     function boost() {
         pokemon.bonus.tBoosterOn = new Date().getTime()
@@ -144,30 +154,58 @@ window.onload = function(){
 
     }
 
+    
+    // CORNELIU - START //
+ 
     function affichageTempsBooster(){
         
     }
 
-    // autoclicker, qui fait qu'a chaque achat, il augmente 
+    // fonction qui fait qu'a chaque achat d'un autoclicker :
+    // 1) le prix d'achat est deduit du score,
+    // 2) le prix du autoclicker suivant augmente,
+    function achatAutoclicker () {
+        pokemon.score =- pokemon.bonus.prixAutoclic;
+        pokemon.autoclicker++;
+        pokemon.button.affautoClic = 
+        pokemon.bonus.prixAutoclic = pokemon.bonus.prixAutoclic * 2;
+        console.log("Achat d'Autoclicker");
+        pokemon.score = pokemon.score - pokemon.bonus.Autoclic;
+        affautoClic();
+        
+    }
+  
     // un clic auto est fait chaque seconde
+    
+    /* var majScore = setInterval(function autoclicker() { 
+                            pokemon.score += 1;
+                            console.log(pokemon.score)
+                            pokemon.cli = pokemon.cli + 1;
+                            }, 1000)
+     */
+
 
     /* function autoclicker(prixAchat, nombreAutoclics) { 
     pokemon.score -= 200;
     pokemon.autoclicker += 1;
     
-    
     setInterval(autoclicker(), 1000) */
-
+    // CORNELIU - END //
    
         
    
  
 
-    // appel fonction pour compter le nombre de multiplicateur utilisé
-    pokemon.button.cli.addEventListener("click", clicking);
+    function autoclickerLabo () {
+        pokemon.score++
+        console.log(pokemon.score++)
+    }
+
+    // appel fonction affiche le score à chaque clic
+    pokemon.button.cli.addEventListener('click', clicking)
 
     // appel fonction pour compter le nombre de multiplicateur utilisé
-    pokemon.button.multi.addEventListener("click", augmenterMultiplicateur);
+    pokemon.button.multi.addEventListener('click', augmenterMultiplicateur);
 
     // appel fonction pour lancer le boost
     pokemon.button.boost.addEventListener('click', boost);
