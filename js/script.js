@@ -46,11 +46,6 @@ window.onload = function(){
         pokemon.button.affMul.innerText = txt 
     }
 
-    function affBooster() {
-        txt = "temps:" + ("julien rajouter sa fonction temps!!!" )
-        pokemon.button.affBoost.innerText = txt 
-    }
-
     function prMultiplication() {
         txt = "prix = "+ pokemon.bonus.prixMulti
         pokemon.button.praffMul.innerText = txt
@@ -115,7 +110,7 @@ window.onload = function(){
     }
 
     function augmenterMultiplicateur () {
-        pokemon.score -= 50
+        pokemon.score -= pokemon.bonus.prixMulti
         pokemon.multiplicateur++
         pokemon.bonus.prixMulti = pokemon.bonus.prixMulti * 2
         affMulti() 
@@ -141,6 +136,7 @@ window.onload = function(){
             affichageTempsBooster();
             affScore();
             pokemon.bonus.prixBoost = pokemon.bonus.prixBoost * 2;
+            prBooster();
         } else {
             console.log("Booster déjà acheté!") // Mettre un beau message par après? // 
         }
