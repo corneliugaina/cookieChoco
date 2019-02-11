@@ -62,18 +62,12 @@ window.onload = function(){
 
     function clicking () {
         pokemon.bonus.tclic = new Date().getTime()
-        console.log(pokemon.bonus.tclic +" " + pokemon.bonus.tBoosterOn)
         if (pokemon.bonus.tclic - pokemon.bonus.tBoosterOn < 30000) {
             pokemon.boost = 2;
-            console.log("Booster x" + pokemon.boost);
             } else if (pokemon.bonus.tclic - pokemon.bonus.tBoosterOn >= 30000) {
                 pokemon.boost = 1;
-                console.log("Booster x1");
-                //pokemon.bonus.tBoosterOn = 1549640231912
             }
         pokemon.score = pokemon.score + (1 * pokemon.multiplicateur * pokemon.boost)
-            //* pokemon.boost)
-        console.log (pokemon.score)
         activation()
         affScore()
     };
@@ -81,7 +75,6 @@ window.onload = function(){
 
     // fonction pour activer, desactiver les bonus
     function activation () {
-        console.log("activation")
         if (pokemon.score >= pokemon.bonus.prixMulti) {
             document.getElementById('multiActive').style.display = 'initial';
             document.getElementById('multiplication').style.display = 'inline-block';
@@ -98,7 +91,6 @@ window.onload = function(){
             document.getElementById('autoclicActive').style.display = 'none';
             document.getElementById('autoclicInactive').style.display = 'initial';
         }
-        console.error(pokemon.boost);
         if (pokemon.score >= pokemon.bonus.prixBoost && pokemon.boost == 1) {
             document.getElementById('boostActive').style.display = 'initial';
             document.getElementById('booster').style.display = 'inline-block';
@@ -126,8 +118,6 @@ window.onload = function(){
 
     function boost() {
         pokemon.bonus.tBoosterOn = new Date().getTime()
-        console.log(pokemon.bonus.tclic +" " + pokemon.bonus.tBoosterOn)
-        console.log(pokemon.bonus.tclic - pokemon.bonus.tBoosterOn)
         
         if (pokemon.boost == 1) {
             pokemon.score -= pokemon.bonus.prixBoost;
@@ -144,9 +134,7 @@ window.onload = function(){
 
     function affichageTempsBooster(){
         var timeleft = 30;
-        console.warn("affichageTempsBooster")
         var downloadTimer = setInterval(function(){
-            console.warn(timeleft)
             timeleft--;
             document.getElementById("booster").innerHTML = timeleft;
             if(timeleft <= 0){
@@ -167,7 +155,6 @@ window.onload = function(){
         pokemon.autoclicker++;
         pokemon.button.affautoClic = 
         pokemon.bonus.prixAutoclic = pokemon.bonus.prixAutoclic * 2;
-        console.log("Achat d'Autoclicker");
         pokemon.score = pokemon.score - pokemon.bonus.Autoclic;
         affautoClic();
         
