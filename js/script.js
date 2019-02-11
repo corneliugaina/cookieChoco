@@ -78,15 +78,20 @@ window.onload = function(){
     }
 
     
-
-    // autoclicker, qui fait qu'a chaque achat, il augmente 
-    function achatAutoclicker () {
-        pokemon.score -= 200;
-    }
-
-
-
     // CORNELIU - START //
+
+
+    // fonction qui fait qu'a chaque achat d'un autoclicker :
+    // 1) le prix d'achat est deduit du score,
+    // 2) le prix du autoclicker suivant augmente,
+    function achatAutoclicker () {
+        pokemon.score -= prixAutoclic;
+        pokemon.autoclicker++;
+        pokemon.bonus.prixAutoclic = pokemon.bonus.prixAutoclic * 2;
+        setinterval (function autoclicker(), 1000)
+    }
+  
+
     // un clic auto est fait chaque seconde
     setInterval(function autoclicker() { 
         pokemon.score += 1;
@@ -118,5 +123,5 @@ window.onload = function(){
     // appel fonction pour lancer le boost
     pokemon.button.boost.addEventListener('click', boost);
 
-   /*  // appel fonction autoclic    
-    pokemon.button.autoclic.addEventListener('click', autoclicker); */
+    // appel fonction autoclic    
+    pokemon.button.autoclic.addEventListener('click', autoclicker); 
