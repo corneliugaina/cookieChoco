@@ -233,7 +233,9 @@ window.onload = function(){
             break;
         case (pokemon.score < 50000): 'Level 10 : "Les pikachu sont hors controle, ils envahissent les dimensions paralleles';
             break;
-        } quoteDisplay();
+        } 
+        quoteDisplay();
+        selectionQuote();
     }
     // CORNELIU - END //
    
