@@ -27,6 +27,13 @@
     justify-content: space-around;
     text-align: center;
     z-index: 1;
+    background-image: url("../images/leg.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.8;
+    .container:hover{
+      opacity:1.0;
+    }
     .pokeButtonSide {
       max-width: 100px;
       min-width: 80px;
