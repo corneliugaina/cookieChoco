@@ -5,8 +5,9 @@ window.onload = function(){
     let pokemon = {
         score : 0,
         multiplicateur  :1 ,
-        autoclicker : 1,
+        autoclicker :0 ,
         boost : 1,
+        affQuote : document.getElementById('quoteDisplay'),
         button : {
             aff : document.getElementById('affichage'),
             cli : document.getElementById('clic'),
@@ -46,6 +47,22 @@ window.onload = function(){
         pokemon.button.affMul.innerText = txt 
     }
 
+    function affBooster() {
+        txt = "temps :" + ("//julien rajouter sa fonction temps!!!")
+        pokemon.button.affBoost.innerText = txt 
+    }
+
+    function affautoClic() {
+        txt = "x" + pokemon.autoclicker    
+        pokemon.button.affautoClic.innerText = txt
+    } 
+
+    function quoteDisplay () {
+        txt = "Test : " + po
+        pokemon.affQuote.innerText = txt
+    }
+
+
     // Fonctions PRIX : 
 
     function prMultiplication() {
@@ -53,7 +70,7 @@ window.onload = function(){
         pokemon.button.praffMul.innerText = txt
     }
     function prAutoclicker () {
-        txt = "prix : "+ pokemon.bonus.prixAutoclic
+        txt = "Buy: "+ pokemon.bonus.prixAutoclic + " ₽"
         pokemon.button.praffautoclic.innerText = txt
     }
     function prBooster (){
@@ -147,24 +164,30 @@ window.onload = function(){
         }, 1000);
     }
     
+    // CORNELIU - START //
+     // fonction qui fait qu'a chaque achat d'un autoclicker :
+    // 1) le prix d'achat est deduit du score,
+    // 2) le prix du autoclicker suivant augmente (wip)
+
+    prAutoclicker(); // appel de la fonction affichage prix
+
+    // Fonction qui permettra d'effectuer l'achat d'autoclic
     function achatAutoclicker () {
         if (pokemon.score >= 50) {
         pokemon.score = pokemon.score - pokemon.bonus.prixAutoclic;
-        pokemon.affautoclic++;
-        pokemon.autoclicker++;
         console.log("Achat d'Autoclicker");
         pokemon.bonus.prixAutoclic = pokemon.bonus.prixAutoclic * 2;
         } else {
         console.log("Vous n'avez pas assez de credit pour l'achat de l'Autoclicker");
         }
         callAutoclic ();
-        prAutoclicker();
-        affScore();
-
-    } 
+        activation()
+        prAutoclicker();        
+       } 
 
     function callAutoclic () { 
-        if (pokemon.autoclicker = 1) {
+        if (pokemon.autoclicker >= 0) {
+            pokemon.autoclicker++;
             setInterval(function autoclicker () {
             pokemon.score += 1;
             console.log(pokemon.score)
@@ -174,10 +197,50 @@ window.onload = function(){
             console.log("Lancement autoclic");
         } else {    
         console.log("pas d'autoclic a appeller");
-        }
+        } 
+        affautoClic();
+        affScore();
     }
-    // CORNELIU - END
 
+    /////////////////////////////////////////////////////////////////
+
+    // Differentes phrases de narration du pika-clicker assignees a la variable quote, de 0 a 9 (10 niveaux)
+
+    function selectionQuote () {
+    switch (true) {
+        case (pokemon.score < 100): 'Level 1 : Invasion de Pikachu dans ton jardin';
+            break;
+        case (pokemon.score < 200): 'Level 2 : Invasion de Pikachu dans ton quartier';
+            break;
+        case (pokemon.score < 400): 'Level 3 : Invasion de Pikachu dans la region';
+            break;
+        case (pokemon.score < 800): 'Level 4 : Invasion de Pikachu dans tout le pays';
+            break;
+        case (pokemon.score < 1600): 'Level 5 : Invasion de Pikachu sur le continent';
+            break;
+        case (pokemon.score < 2500): 'Level 6 : Invasion de Pikachu sur le monde entier';
+            break;
+        case (pokemon.score < 5000): 'Level 7 : Invasion de Pikachu dans tout le systeme solaire';
+            break;
+        case (pokemon.score < 10000): 'Level 8 : Invasion de Pikachu dans toute la Voie Lactee';
+            break;
+        case (pokemon.score < 20000): 'Level 9 : Invasion de Pikachu dans tout l\'univers';
+            break;
+        case (pokemon.score < 50000): 'Level 10 : "Les pikachu sont hors controle, ils envahissent les dimensions paralleles';
+            break;
+        } 
+        quoteDisplay();
+        selectionQuote();
+    }
+    // CORNELIU - END //
+   
+        
+
+    /* A JETER 
+        function autoclickerLabo () {
+        pokemon.score++
+        console.log(pokemon.score++)
+    } */
 
     // appel fonction affiche le score à chaque clic
     pokemon.button.cli.addEventListener('click', clicking)
