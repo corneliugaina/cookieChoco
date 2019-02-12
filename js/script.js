@@ -45,7 +45,7 @@ window.onload = function(){
     //les fonctions
 
     function affScore () {
-        let txt = "Votre score est de " + pokemon.score + " pikachu !"
+        let txt = pokemon.score + " pikachu !"
         pokemon.button.aff.innerText = txt
     };
 
