@@ -55,17 +55,6 @@ window.onload = function(){
         pokemon.button.affMul.innerText = txt 
     }
 
-    function affBooster() {
-        txt = "temps :" + ("//julien rajouter sa fonction temps!!!")
-        pokemon.button.affBoost.innerText = txt 
-    }
-
-    function affautoClic() {
-        txt = "Vous avez: " + pokemon.autoclicker    
-        pokemon.button.affautoClic.innerText = txt
-    } 
-
-
     // Fonctions PRIX : 
 
     function prMultiplication() {
@@ -132,11 +121,6 @@ window.onload = function(){
         activation() 
         prMultiplication()
     };
-    // function boostTiming () {
-    //     t0 = new Date()
-    //     t0S = t0.getSeconds();
-    //     boost(tOS)
-    // };
 
     function boost() {
         pokemon.bonus.tBoosterOn = new Date().getTime()
@@ -148,14 +132,9 @@ window.onload = function(){
             affScore();
             pokemon.bonus.prixBoost = pokemon.bonus.prixBoost * 2;
             prBooster();
-        } else {
-            console.log("Booster déjà acheté!") // Mettre un beau message par après? // 
-        }
+        } 
         activation();
     }
-
-    
-  
  
     function affichageTempsBooster(){
         var timeleft = 30;
@@ -210,15 +189,6 @@ window.onload = function(){
     // CORNELIU - END //
    
         
-   
- 
-
-    /* A JETER 
-        function autoclickerLabo () {
-        pokemon.score++
-        console.log(pokemon.score++)
-    } */
-
     // appel fonction affiche le score à chaque clic
     pokemon.button.cli.addEventListener('click', clicking)
 
