@@ -12,7 +12,8 @@
 }
 body {
   max-width: 1600px;
-  height: 100vh;
+  width: 100vw;
+  max-height: 800px;
 }
 
 #containerGrid {
@@ -21,12 +22,11 @@ body {
   justify-content: space-between;
   align-content: center;
   width: 95%;
-  height: 100vh;
   margin: auto;
 }
 
 .container {
-  width: 100%;
+  width: 98vw;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
@@ -40,34 +40,38 @@ body {
   align-items: center;
   margin-top: 5px;
   transition: 0.1s;
+  position: relative;
+  /* vignettes */
+  /* compteur de bonus*/
+  /* Affichage prix */
 }
 .container .pokeButtonSide .pokeImage .active img {
   display: flex;
   align-items: center;
   justify-content: space-around;
   width: 70%;
-  margin: 10% auto 10%;
+  margin: 10% auto 20%;
   position: relative;
   top: 1.5px;
   border-radius: 50%;
   background-color: #000;
-  -webkit-box-shadow: 0px 0px 62px 2px #f1bc1b, 0px 0px 62px 4px #f4c847, 0px 0px 62px 8px #e6ca78;
-  -moz-box-shadow: 0px 0px 62px 2px #f1bc1b, 0px 0px 62px 4px #f4c847, 0px 0px 62px 8px #e6ca78;
-  box-shadow: 0px 0px 62px 2px #f1bc1b, 0px 0px 62px 4px #f4c847, 0px 0px 62px 8px #e6ca78;
+  -webkit-box-shadow: 0px 0px 62px 2px #f1bc1b, 0px 0px 62px 4px #e6ca78;
+  -moz-box-shadow: 0px 0px 62px 2px #f1bc1b, 0px 0px 62px 4px #e6ca78;
+  box-shadow: 0px 0px 62px 2px #f1bc1b, 0px 0px 62px 4px #e6ca78;
 }
 .container .pokeButtonSide .pokeImage .inactive img {
   display: flex;
   align-items: center;
   justify-content: space-around;
   width: 70%;
-  margin: 10% auto 10%;
+  margin: 10% auto 20%;
   position: relative;
   top: 1.5px;
   border-radius: 50%;
   background-color: #000;
-  -webkit-box-shadow: 0px 0px 62px 2px #f1bc1b, 0px 0px 62px 4px #f4c847, 0px 0px 62px 8px #e6ca78;
-  -moz-box-shadow: 0px 0px 62px 2px #f1bc1b, 0px 0px 62px 4px #f4c847, 0px 0px 62px 8px #e6ca78;
-  box-shadow: 0px 0px 62px 2px #f1bc1b, 0px 0px 62px 4px #f4c847, 0px 0px 62px 8px #e6ca78;
+  -webkit-box-shadow: 0px 0px 62px 2px #f1bc1b, 0px 0px 62px 4px #f4c847;
+  -moz-box-shadow: 0px 0px 62px 2px #f1bc1b, 0px 0px 62px 4px #f4c847;
+  box-shadow: 0px 0px 62px 2px #f1bc1b, 0px 0px 62px 4px #f4c847;
 }
 .container .pokeButtonSide:active {
   font-size: 1em;
@@ -88,45 +92,45 @@ body {
   align-content: center;
   width: 80%;
   height: 80%;
-  margin: 10px;
+  margin: 5%;
 }
 .container .pokeButtonSide #multiplication {
   background-color: red;
   border-radius: 50%;
-  width: 20px;
-  height: 20px;
+  width: 20%;
+  height: 8%;
   color: white;
-  position: relative;
-  top: -7.5em;
-  left: 2em;
+  position: absolute;
+  top: 5%;
+  right: 20%;
   text-align: center;
-  line-height: 17px;
+  line-height: 2.5em;
   display: none;
 }
 .container .pokeButtonSide #autoClicker {
   background-color: red;
   border-radius: 50%;
-  width: 20px;
-  height: 20px;
+  width: 20%;
+  height: 8%;
   color: white;
-  position: relative;
-  top: -69%;
-  left: 80%;
+  position: absolute;
+  top: 5%;
+  right: 20%;
   text-align: center;
-  line-height: 17px;
+  line-height: 2.5em;
   display: none;
 }
 .container .pokeButtonSide #booster {
   background-color: red;
   border-radius: 50%;
-  width: 20px;
-  height: 20px;
+  width: 20%;
+  height: 8%;
   color: white;
-  position: relative;
-  top: -121px;
-  left: 80%;
+  position: absolute;
+  top: 5%;
+  right: 20%;
   text-align: center;
-  line-height: 17px;
+  line-height: 2.5em;
   display: none;
 }
 .container .pokeButtonSide .prix {
@@ -135,11 +139,11 @@ body {
   justify-content: center;
   margin: 5%;
   padding: 6px;
-  width: 80%;
+  width: 70%;
   height: 30%;
   opacity: 0.8;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 0.9em;
+  font-size: 0.8em;
   color: black;
   text-shadow: -1px -1px 1px #111;
   border-radius: 45%;
@@ -157,7 +161,7 @@ body {
 #clic {
   grid-area: clic;
   max-width: 350px;
-  width: 90%;
+  width: 80%;
   margin: 0 auto 10%;
   border-radius: 50%;
 }
@@ -167,9 +171,9 @@ body {
   top: 2px;
   background-color: #000;
   border-radius: 50%;
-  -webkit-box-shadow: 0px 0px 62px 4px #f1bc1b, 0px 0px 62px 8px #f4c847, 0px 0px 62px 46px #e6ca78;
-  -moz-box-shadow: 0px 0px 62px 4px #f1bc1b, 0px 0px 62px 8px #f4c847, 0px 0px 62px 46px #e6ca78;
-  box-shadow: 0px 0px 62px 4px #f1bc1b, 0px 0px 62px 8px #f4c847, 0px 0px 62px 46px #e6ca78;
+  -webkit-box-shadow: 0px 0px 62px 4px #f1bc1b, 0px 0px 62px 8px #f4c847, 0px 0px 62px 16px #e6ca78;
+  -moz-box-shadow: 0px 0px 62px 4px #f1bc1b, 0px 0px 62px 8px #f4c847, 0px 0px 62px 16px #e6ca78;
+  box-shadow: 0px 0px 62px 4px #f1bc1b, 0px 0px 62px 8px #f4c847, 0px 0px 62px 16px #e6ca78;
 }
 #clic:active {
   transform: scale(0.9);
@@ -223,15 +227,23 @@ body {
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 1px 1px 2px #141414, 1px 1px 3px #141414, 1px 1px 5px #141414, 1px 1px 7px #141414, 1px 1px 10px #141414, 1px 1px 12px #141414, 1px 1px 18px #141414;
 }
 
-@media screen and (min-width: 400px) and (max-width: 900px) {
+@media screen and (min-width: 500px) and (max-width: 1100px) {
   .container .pokeButtonSide .prix {
-    font-size: 2em;
+    font-size: 1.4em;
+    margin-bottom: 40%;
+  }
+
+  #clic {
+    margin: 5% auto 10%;
   }
 }
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1100px) {
   #containerGrid {
+    width: 100%;
     display: grid;
     grid-template-areas: "score score" "clic bonus";
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 20% 80%;
   }
 
   #affichage {
@@ -240,6 +252,7 @@ body {
 
   #clic {
     grid-area: clic;
+    margin: 10% auto;
   }
 
   .container {
@@ -248,9 +261,28 @@ body {
     flex-flow: column nowrap;
     align-items: center;
     justify-content: space-around;
+    width: 90%;
+  }
+  .container .pokeButtonSide .pokeImage .active img {
+    width: 25%;
+    margin: 0;
+  }
+  .container .pokeButtonSide .pokeImage .inactive img {
+    width: 25%;
+    margin: 0;
+  }
+  .container .pokeButtonSide .font {
+    width: 30%;
+    margin: 0;
+    position: relative;
+    top: -50%;
   }
   .container .pokeButtonSide .prix {
-    font-size: 2em;
+    width: 40%;
+    margin: 0;
+    font-size: 1.5em;
+    position: relative;
+    top: -50%;
   }
 }
 

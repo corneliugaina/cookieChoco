@@ -23,9 +23,9 @@ window.onload = function(){
         },
         bonus : { 
             active : false,
-            prixMulti : 50,
-            prixAutoclic : 50,
-            prixBoost : 5000,
+            prixMulti : 5,
+            prixAutoclic : 10,
+            prixBoost : 15,
             boostCount: 1,
             tclic : Number.MAX_SAFE_INTEGER,
             tBoosterOn : 0,
@@ -60,19 +60,19 @@ window.onload = function(){
     // Fonctions PRIX : 
 
     function prMultiplication() {
-        txt = "prix = "+ pokemon.bonus.prixMulti
+        txt = "prix : "+ pokemon.bonus.prixMulti
         pokemon.button.praffMul.innerText = txt
     }
     function prAutoclicker () {
-        txt = "prix pour l'achat suivant = "+ pokemon.bonus.prixAutoclic
+        txt = "prix : "+ pokemon.bonus.prixAutoclic
         pokemon.button.praffautoclic.innerText = txt
     }
     function prBooster (){
-        txt = "prix = "+pokemon.bonus.prixBoost
+        txt = "prix : "+pokemon.bonus.prixBoost
         pokemon.button.prBoost.innerText = txt
     }
 
-
+    // Emilie
     function clicking () {
         pokemon.bonus.tclic = new Date().getTime()
         if (pokemon.bonus.tclic - pokemon.bonus.tBoosterOn < 30000) {
@@ -85,8 +85,6 @@ window.onload = function(){
         affScore()
     };
 
-
-    // fonction pour activer, desactiver les bonus
     function activation () {
         if (pokemon.score >= pokemon.bonus.prixMulti) {
             document.getElementById('multiActive').style.display = 'initial';
@@ -113,7 +111,10 @@ window.onload = function(){
             document.getElementById('boostInactive').style.display = 'initial';
         }
     }
+    //fin Emilie
 
+
+    // Francois
     function augmenterMultiplicateur () {
         pokemon.score -= pokemon.bonus.prixMulti
         pokemon.multiplicateur++
@@ -123,12 +124,9 @@ window.onload = function(){
         activation() 
         prMultiplication()
     };
-    // function boostTiming () {
-    //     t0 = new Date()
-    //     t0S = t0.getSeconds();
-    //     boost(tOS)
-    // };
+    //fin Francois
 
+    // Julien
     function boost() {
         pokemon.bonus.tBoosterOn = new Date().getTime()
         
@@ -145,9 +143,9 @@ window.onload = function(){
         activation();
     }
 
-    
-  
- 
+    // fin Julien
+
+    // Corneliu 
     function affichageTempsBooster(){
         var timeleft = 30;
         var downloadTimer = setInterval(function(){
@@ -162,12 +160,6 @@ window.onload = function(){
         }, 1000);
     }
     
-    // CORNELIU - START //
-     // fonction qui fait qu'a chaque achat d'un autoclicker :
-    // 1) le prix d'achat est deduit du score,
-    // 2) le prix du autoclicker suivant augmente (wip)
-
-    // Fonction qui permettra d'effectuer l'achat d'autoclic
     function achatAutoclicker () {
         if (pokemon.score >= 50) {
         pokemon.score = pokemon.score - pokemon.bonus.prixAutoclic;
@@ -182,9 +174,8 @@ window.onload = function(){
         prAutoclicker();
         affScore();
 
-       } 
+    } 
 
-    // Fonction qui va lancer l'autoclic une fois l'achat effectue 
     function callAutoclic () { 
         if (pokemon.autoclicker = 1) {
             setInterval(function autoclicker () {
@@ -198,17 +189,8 @@ window.onload = function(){
         console.log("pas d'autoclic a appeller");
         }
     }
-    // CORNELIU - END //
-   
-        
-   
- 
+    // CORNELIU - END
 
-    /* A JETER 
-        function autoclickerLabo () {
-        pokemon.score++
-        console.log(pokemon.score++)
-    } */
 
     // appel fonction affiche le score à chaque clic
     pokemon.button.cli.addEventListener('click', clicking)
