@@ -24,9 +24,9 @@ window.onload = function(){
         },
         bonus : { 
             active : false,
-            prixMulti : 50,
-            prixAutoclic : 50,
-            prixBoost : 5000,
+            prixMulti : 5,
+            prixAutoclic : 6,
+            prixBoost : 7,
             boostCount: 1,
             tclic : Number.MAX_SAFE_INTEGER,
             tBoosterOn : 0,
@@ -37,7 +37,7 @@ window.onload = function(){
     //les fonctions
 
     function affScore () {
-        let txt = "Votre score est de " + pokemon.score + " pikachu !"
+        let txt = pokemon.score + " pikachu(s) !"
         pokemon.button.aff.innerText = txt
     };
 
@@ -66,7 +66,7 @@ window.onload = function(){
     // Fonctions PRIX : 
 
     function prMultiplication() {
-        txt = "prix = "+ pokemon.bonus.prixMulti
+        txt = "prix : "+ pokemon.bonus.prixMulti
         pokemon.button.praffMul.innerText = txt
     }
     function prAutoclicker () {
@@ -74,11 +74,11 @@ window.onload = function(){
         pokemon.button.praffautoclic.innerText = txt
     }
     function prBooster (){
-        txt = "prix = "+pokemon.bonus.prixBoost
+        txt = "prix : "+pokemon.bonus.prixBoost
         pokemon.button.prBoost.innerText = txt
     }
 
-
+    // Emilie
     function clicking () {
         pokemon.bonus.tclic = new Date().getTime()
         if (pokemon.bonus.tclic - pokemon.bonus.tBoosterOn < 30000) {
@@ -91,8 +91,6 @@ window.onload = function(){
         affScore()
     };
 
-
-    // fonction pour activer, desactiver les bonus
     function activation () {
         if (pokemon.score >= pokemon.bonus.prixMulti) {
             document.getElementById('multiActive').style.display = 'initial';
@@ -119,7 +117,10 @@ window.onload = function(){
             document.getElementById('boostInactive').style.display = 'initial';
         }
     }
+    //fin Emilie
 
+
+    // Francois
     function augmenterMultiplicateur () {
         pokemon.score -= pokemon.bonus.prixMulti
         pokemon.multiplicateur++
@@ -129,12 +130,9 @@ window.onload = function(){
         activation() 
         prMultiplication()
     };
-    // function boostTiming () {
-    //     t0 = new Date()
-    //     t0S = t0.getSeconds();
-    //     boost(tOS)
-    // };
+    //fin Francois
 
+    // Julien
     function boost() {
         pokemon.bonus.tBoosterOn = new Date().getTime()
         
@@ -145,15 +143,13 @@ window.onload = function(){
             affScore();
             pokemon.bonus.prixBoost = pokemon.bonus.prixBoost * 2;
             prBooster();
-        } else {
-            console.log("Booster déjà acheté!") // Mettre un beau message par après? // 
-        }
+        } 
         activation();
     }
 
-    
-  
- 
+    // fin Julien
+
+    // Corneliu 
     function affichageTempsBooster(){
         var timeleft = 30;
         var downloadTimer = setInterval(function(){
@@ -189,7 +185,6 @@ window.onload = function(){
         prAutoclicker();        
        } 
 
-    // Fonction qui va lancer l'autoclic une fois l'achat effectue 
     function callAutoclic () { 
         if (pokemon.autoclicker >= 0) {
             pokemon.autoclicker++;
@@ -240,6 +235,12 @@ window.onload = function(){
     // CORNELIU - END //
    
         
+
+    /* A JETER 
+        function autoclickerLabo () {
+        pokemon.score++
+        console.log(pokemon.score++)
+    } */
 
     // appel fonction affiche le score à chaque clic
     pokemon.button.cli.addEventListener('click', clicking)
