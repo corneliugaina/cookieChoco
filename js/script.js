@@ -57,6 +57,7 @@ window.onload = function(){
         pokemon.button.affautoClic.innerText = txt
     } 
 
+    // affichage quote
     function quoteDisplay () {
         txt = affQuote;
         pokemon.button.affQuote.innerText = txt
@@ -216,25 +217,25 @@ window.onload = function(){
         quoteDisplay();
         // Conditionnelles d'affichage du message, selon le score. 
         if (pokemon.score < 10) {
-            affQuote = "Level 0 : Ton Pikachu fout le bordel dans la cuisine";
+            affQuote = 'Level 0 : Ton Pikachu fout le bordel dans la cuisine !';
         } else if (pokemon.score < 50) {
-            affQuote = 'Level 1 : Invasion de Pikachu dans ton jardin';
+            affQuote = 'Level 1 : Un gang de Pikachus sevit dans ton jardin !';
         } else if (pokemon.score < 100) {
-            affQuote = 'Level 2 : Invasion de Pikachu dans ton quartier';
+            affQuote = 'Level 2 : Une foule de Pikachus enfilent leur gilets jaunes et cassent le quartier !';
         } else if (pokemon.score < 500) {
-            affQuote = 'Level 3 : Invasion de Pikachu dans la region';
+            affQuote = 'Level 3 : Les Pikachus creent un syndicat et bloquent toute la region !';
         } else if (pokemon.score < 1000) {
-            affQuote = 'Level 5 : Invasion de Pikachu sur le continent, ils font concurrence aux lapins cretins';
+            affQuote = 'Level 5 : Invasion de Pikachu sur le continent, ils font concurrence aux lapins cretins !';
         } else if (pokemon.score < 20000) {
-            affQuote = 'Level 6 : Invasion de Pikachu sur le monde entier';
+            affQuote = 'Level 6 : Les Pikachus envahissent le monde entier !';
         } else if (pokemon.score < 500000) {
-            affQuote = 'Level 7 : Invasion de Pikachu dans tout le systeme solaire'; 
+            affQuote = 'Level 7 : Invasion de Pikachus dans tout le systeme solaire !'; 
         } else if (pokemon.score < 1000000) {
-            affQuote = 'Level 8 : Invasion de Pikachu dans toute la Voie Lactee';
+            affQuote = 'Level 8 : Invasion de Pikachus dans toute la Voie Lactee !';
         } else if (pokemon.score < 10000000) {
-            affQuote = 'Level 9 : Invasion de Pikachu dans tout l\'univers';
+            affQuote = 'Level 9 : Les Pikachus explorent l\'Univers entier !';
         } else {
-            affQuote = 'Level 10 : "Les pikachu sont hors controle, ils envahissent les dimensions paralleles';
+            affQuote = 'Level 10 : "Les Pikachus sont hors controle, ils soumettent des dimensions paralleles !';
         } 
     }
 
