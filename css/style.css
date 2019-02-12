@@ -59,7 +59,7 @@ body {
       height: 20px;
       color: white;
       position: relative;
-      top: -7.5em;
+      top: -11.5em;
       left: 2em;
       text-align: center;
       line-height: 17px;
@@ -69,7 +69,6 @@ body {
       align-items: center;
       justify-content: center;
       padding: 0px;
-      margin-top: 20px;
       width: 100%;
       opacity: 0.8;
       font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -114,10 +113,11 @@ body {
       height: 20px;
       color: white;
       position: relative;
-      top: -69%;
-      left: 80%;
+      top: -11.5em;
+      left: 2em;
       text-align: center;
-      line-height: 17px; }
+      line-height: 17px;
+      display: none; }
     .container .pokeButtonSide #booster {
       background-color: red;
       border-radius: 50%;
@@ -125,10 +125,11 @@ body {
       height: 20px;
       color: white;
       position: relative;
-      top: -121px;
-      left: 80%;
+      top: -11.5em;
+      left: 2em;
       text-align: center;
-      line-height: 17px; }
+      line-height: 17px;
+      display: none; }
     .container .pokeButtonSide #multiActive {
       display: none; }
     .container .pokeButtonSide #autoclicActive {
