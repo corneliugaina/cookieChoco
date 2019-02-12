@@ -64,7 +64,7 @@ window.onload = function(){
         pokemon.button.praffMul.innerText = txt
     }
     function prAutoclicker () {
-        txt = "prix pour l'achat suivant = "+ pokemon.bonus.prixAutoclic
+        txt = "Buy: "+ pokemon.bonus.prixAutoclic + " ₽"
         pokemon.button.praffautoclic.innerText = txt
     }
     function prBooster (){
@@ -167,6 +167,8 @@ window.onload = function(){
     // 1) le prix d'achat est deduit du score,
     // 2) le prix du autoclicker suivant augmente (wip)
 
+    prAutoclicker(); // appel de la fonction affichage prix
+
     // Fonction qui permettra d'effectuer l'achat d'autoclic
     function achatAutoclicker () {
         if (pokemon.score >= 50) {
@@ -176,13 +178,13 @@ window.onload = function(){
         } else {
         console.log("Vous n'avez pas assez de credit pour l'achat de l'Autoclicker");
         }
+        pokemon.button.affautoClic++;
+        pokemon.autoclicker++;
         callAutoclic ();
-        prAutoclicker();
         affScore();
         affautoClic();
-        pokemon.button.affautoclic++;
-        pokemon.autoclicker++;
-
+        prAutoclicker();
+        activation()
        } 
 
     // Fonction qui va lancer l'autoclic une fois l'achat effectue 
