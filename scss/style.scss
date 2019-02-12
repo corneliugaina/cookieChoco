@@ -1,85 +1,84 @@
 
-* {
-  box-sizing: border-box;
-  margin : 0;
-  padding: 0;  
-}
 
-@font-face {
-  font-family: 'anime_ace_2.0_bbregular';
-  src: url('./animeace2reg-webfont.woff2') format('woff2'),
-       url('./animeace2reg-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-body{
-  max-width: 1600px;
-  width: 100vw;
-  max-height : 800px;
-}
-
-#containerGrid {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-between;
-  align-content: center;
-  width : 95%;
-  margin: auto;
-}
-
-.container {
-  width: 98vw;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-around;
-  align-items: stretch;
-  z-index: 1;
-  .pokeButtonSide {
+  * {
+    box-sizing: border-box;
+    margin : 0;
+    padding: 0;  
+  }
+  
+  @font-face {
+    font-family: 'anime_ace_2.0_bbregular';
+    src: url('./animeace2reg-webfont.woff2') format('woff2'),
+         url('./animeace2reg-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  body{
+    max-width: 1600px;
+    width: 100vw;
+    max-height : 800px;
+  }
+  
+  #containerGrid {
     display: flex;
-<<<<<<< HEAD
-    flex-direction : row;
+    flex-flow: column nowrap;
+    justify-content: space-between;
     align-content: center;
+    width : 95%;
+    margin: auto;
+  }
+  
+  .container {
+    width: 98vw;
+    display: flex;
+    flex-flow: row nowrap;
     justify-content: space-around;
-    text-align: center;
+    align-items: stretch;
     z-index: 1;
     background-image: url("../images/leg.svg");
     background-repeat: no-repeat;
     background-size: cover;
     opacity: 0.8;
-    .container:hover{
+    &:hover{
       opacity:1.0;
     }
     .pokeButtonSide {
-      max-width: 100px;
-      min-width: 80px;
+      display: flex;
+      flex-flow : column nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      margin-top: 5px;
       transition: 0.1s;
+      position: relative;
       .pokeImage{
-        width: 100%;
-        
         .active img {
-          margin-bottom: 40%;
-          height: 100%;
-          width : 100%;
+          display : flex;
+          align-items: center;
+          justify-content: space-around;
+          width : 70%;
+          margin: 10% auto 20%;
           position: relative;
           top: 1.5px;
-          background-color: #000;
           border-radius : 50%;
-          -webkit-box-shadow: 0px 0px 62px 4px #f1bc1b, 0px 0px 62px 8px #f4c847, 0px 0px 62px 46px #e6ca78;
-          -moz-box-shadow: 0px 0px 62px 4px #f1bc1b, 0px 0px 62px 8px #f4c847, 0px 0px 62px 46px #e6ca78;
-          box-shadow: 0px 0px 62px 4px #f1bc1b, 0px 0px 62px 8px #f4c847, 0px 0px 62px 46px #e6ca78;
+          background-color: #000;
+          -webkit-box-shadow: 0px 0px 62px 2px #f1bc1b, 0px 0px 62px 4px #e6ca78;
+          -moz-box-shadow: 0px 0px 62px 2px #f1bc1b, 0px 0px 62px 4px #e6ca78;
+          box-shadow: 0px 0px 62px 2px #f1bc1b, 0px 0px 62px 4px #e6ca78;
         }
         .inactive img {
-          margin-bottom: 40%;
-          height: 100%;
-          width : 100%;
+          display : flex;
+          align-items: center;
+          justify-content: space-around;
+          width : 70%;
+          margin: 10% auto 20%;
           position: relative;
           top: 1.5px;
-          background-color: #000;
           border-radius : 50%;
-          -webkit-box-shadow: 0px 0px 62px 4px #f1bc1b, 0px 0px 62px 8px #f4c847, 0px 0px 62px 46px #e6ca78;
-          -moz-box-shadow: 0px 0px 62px 4px #f1bc1b, 0px 0px 62px 8px #f4c847, 0px 0px 62px 46px #e6ca78;
-          box-shadow: 0px 0px 62px 4px #f1bc1b, 0px 0px 62px 8px #f4c847, 0px 0px 62px 46px #e6ca78;
+          background-color: #000;
+          -webkit-box-shadow: 0px 0px 62px 2px #f1bc1b, 0px 0px 62px 4px #f4c847;
+          -moz-box-shadow: 0px 0px 62px 2px #f1bc1b, 0px 0px 62px 4px #f4c847;
+          box-shadow: 0px 0px 62px 2px #f1bc1b, 0px 0px 62px 4px #f4c847;
         }
       }
       &:active {
@@ -87,317 +86,240 @@ body{
         color: rgb(233, 51, 27);
         transform: scale(1.1);
       }
+      #multiActive {
+        display : none;
+      }
+      #autoclicActive {
+        display : none;
+      }
+      #boostActive {
+        display : none;
+      }
   
-      
+      /* vignettes */ 
+  
+  
+      .font{
+        img{
+          justify-content: center;
+          align-content: center;
+          width: 80%;
+          height: 80%;
+          margin: 5%;
+        }
+      }
+  
+      /* compteur de bonus*/
+  
       #multiplication{
         background-color: red;
         border-radius: 50%;
-        width: 20px;
-        height: 20px;
+        width: 20%;
+        height: 8%;
         color: white;
-        position: relative;
-        top: -11.5em;
-        left: 2em;
+        position: absolute;
+        top: 5%;
+        right: 20%;
         text-align: center;
-        line-height: 17px;
+        line-height: 2.5em;
         display : none;
       }
-      #prMultiplication{
+      #autoClicker{ 
+        background-color: red;
+        border-radius: 50%;
+        width: 20%;
+        height: 8%;
+        color: white;
+        position: absolute;
+        top: 5%;
+        right: 20%;
+        text-align: center;
+        line-height: 2.5em;
+        display : none;
+      }
+      #booster{
+        background-color: red;
+        border-radius: 50%;
+        width: 20%;
+        height: 8%;
+        color: white;
+        position: absolute;
+        top: 5%;
+        right: 20%;
+        text-align: center;
+        line-height: 2.5em;
+        display : none;
+      }
+  
+      /* Affichage prix */
+  
+      .prix {
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 0px;
-        width: 100%;
+        margin: 5%;
+        padding: 6px;
+        width: 70%;
+        height: 30%;
         opacity: 0.8;
         font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-        font-size: 2em;
+        font-size: 0.8em;
         color: black;
         text-shadow: -1px -1px 1px #111;
-        background-color: rgb(139,69,19);
         border-radius: 45%;
       }
-      .font{
-        width: 145px;
-        height: 50px;
+      #prMultiplication{
+        background-color: rgb(139,69,19);
       }
       #prAutoclicker{
-        display: flex;
-=======
-    flex-flow : column nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    margin-top: 5px;
-    transition: 0.1s;
-    position: relative;
-    .pokeImage{
-      .active img {
-        display : flex;
->>>>>>> 41c21387d2a2509b2a80e928a4b228d5f64766bd
-        align-items: center;
-        justify-content: space-around;
-        width : 70%;
-        margin: 10% auto 20%;
-        position: relative;
-        top: 1.5px;
-        border-radius : 50%;
-        background-color: #000;
-        -webkit-box-shadow: 0px 0px 62px 2px #f1bc1b, 0px 0px 62px 4px #e6ca78;
-        -moz-box-shadow: 0px 0px 62px 2px #f1bc1b, 0px 0px 62px 4px #e6ca78;
-        box-shadow: 0px 0px 62px 2px #f1bc1b, 0px 0px 62px 4px #e6ca78;
+        background-color: rgb(192,192,192);
       }
-      .inactive img {
-        display : flex;
-        align-items: center;
-        justify-content: space-around;
-        width : 70%;
-        margin: 10% auto 20%;
-        position: relative;
-        top: 1.5px;
-        border-radius : 50%;
-        background-color: #000;
-        -webkit-box-shadow: 0px 0px 62px 2px #f1bc1b, 0px 0px 62px 4px #f4c847;
-        -moz-box-shadow: 0px 0px 62px 2px #f1bc1b, 0px 0px 62px 4px #f4c847;
-        box-shadow: 0px 0px 62px 2px #f1bc1b, 0px 0px 62px 4px #f4c847;
+      #prBooster{
+        background-color: rgba(241, 200, 13, 0.863);
       }
-    }
-    &:active {
-      font-size: 1em;
-      color: rgb(233, 51, 27);
-      transform: scale(1.1);
-    }
-    #multiActive {
-      display : none;
-    }
-    #autoclicActive {
-      display : none;
-    }
-    #boostActive {
-      display : none;
-    }
-
-    /* vignettes */ 
-
-
-    .font{
-      img{
-        justify-content: center;
-        align-content: center;
-        width: 80%;
-        height: 80%;
-        margin: 5%;
-      }
-    }
-
-    /* compteur de bonus*/
-
-    #multiplication{
-      background-color: red;
-      border-radius: 50%;
-      width: 20%;
-      height: 8%;
-      color: white;
-      position: absolute;
-      top: 5%;
-      right: 20%;
-      text-align: center;
-      line-height: 2.5em;
-      display : none;
-    }
-    #autoClicker{ 
-      background-color: red;
-      border-radius: 50%;
-      width: 20%;
-      height: 8%;
-      color: white;
-      position: absolute;
-      top: 5%;
-      right: 20%;
-      text-align: center;
-      line-height: 2.5em;
-      display : none;
-    }
-    #booster{
-      background-color: red;
-      border-radius: 50%;
-      width: 20%;
-      height: 8%;
-      color: white;
-      position: absolute;
-      top: 5%;
-      right: 20%;
-      text-align: center;
-      line-height: 2.5em;
-      display : none;
-    }
-
-    /* Affichage prix */
-
-    .prix {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 5%;
-      padding: 6px;
-      width: 70%;
-      height: 30%;
-      opacity: 0.8;
-      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-      font-size: 0.8em;
-      color: black;
-      text-shadow: -1px -1px 1px #111;
-      border-radius: 45%;
-    }
-    #prMultiplication{
-      background-color: rgb(139,69,19);
-    }
-    #prAutoclicker{
-      background-color: rgb(192,192,192);
-    }
-    #prBooster{
-      background-color: rgba(241, 200, 13, 0.863);
-    }
-
-  }
-}
   
-#clic {
-  grid-area: clic;
-  max-width: 350px;
-  width : 80%;
-  margin: 0 auto 10%;
-  border-radius : 50%;
-  img {
-  // box-shadow
-  width: 100%;
-  position: relative;
-  top: 2px;
-  background-color: #000;
-  border-radius : 50%;
-  -webkit-box-shadow: 0px 0px 62px 4px #f1bc1b, 0px 0px 62px 8px #f4c847, 0px 0px 62px 16px #e6ca78;
-  -moz-box-shadow: 0px 0px 62px 4px #f1bc1b, 0px 0px 62px 8px #f4c847, 0px 0px 62px 16px #e6ca78;
-  box-shadow: 0px 0px 62px 4px #f1bc1b, 0px 0px 62px 8px #f4c847, 0px 0px 62px 16px #e6ca78;
+    }
   }
-  &:active {
-    transform: scale(0.9);
-  }
-
-}
     
-.i-large {
-  position : absolute;
-  top: 0; right: 0; left: 0; //bottom: 0;
-  z-index: -2;
-}
-  
-.i-large {
-  background: url("./pikachupluspetit.svg") repeat 0px 0px;
-  -webkit-animation: dropFlowParticles 25s linear infinite;
-        -o-animation: dropFlowParticles 25s linear infinite;
-          animation: dropFlowParticles 25s linear infinite;
-}
-  
-@-webkit-keyframes dropFlowParticles {
-  from { background-position: 0 0; }
-  to { background-position: 0 800px; }
-}
-@keyframes dropFlowParticles {
-  from { background-position: 0 0; }
-  to { background-position: 0 800px; }
-}
-
-#affichage{ 
-  grid-area: score;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 10px auto 50px;
-  width: 95%;
-  min-height: 100px; 
-  background-color: rgba(241, 200, 13, 0.863); 
-  opacity: 0.8;
-  box-shadow: 4px 6px 9px rgb(92, 62, 6);
-  font-family: 'anime_ace_2.0_bbregular', Arial, sans-serif ;
-  font-size: 2em;
-  color: white;
-  text-shadow:   -1px -1px 0 #000,  
-  1px -1px 0 #000,
-  -1px 1px 0 #000,
-  1px 1px 0 #000,
-  1px 1px 2px #141414,
-  1px 1px 3px #141414,
-  1px 1px 5px #141414,
-  1px 1px 7px #141414,
-  1px 1px 10px #141414,
-  1px 1px 12px #141414,
-  1px 1px 18px #141414;
-
-} 
-
-@media screen and (min-width: 500px) and (max-width: 1100px) {
-  .container {
-    .pokeButtonSide {
-      .prix {
-        font-size: 1.4em;
-        margin-bottom: 40%;
-      }
-    }
-  }
-  #clic {
-    margin: 5%  auto 10%;
-  }
-}
-
-@media screen and (min-width: 1100px) {
-  #containerGrid {
-    width: 100%;
-    // display: flex;
-    // flex-direction: row;
-    // justify-content: space-around;
-    display: grid;
-    grid-template-areas:
-              "score score"
-              "clic bonus";
-    grid-template-columns: 60% 40%;
-    grid-template-rows: 20% 80%;
-  }
-  #affichage {
-    grid-area: score;
-  }
   #clic {
     grid-area: clic;
-    margin : 10% auto;
+    max-width: 350px;
+    width : 80%;
+    margin: 0 auto 10%;
+    border-radius : 50%;
+    img {
+    // box-shadow
+    width: 100%;
+    position: relative;
+    top: 2px;
+    background-color: #000;
+    border-radius : 50%;
+    -webkit-box-shadow: 0px 0px 62px 4px #f1bc1b, 0px 0px 62px 8px #f4c847, 0px 0px 62px 16px #e6ca78;
+    -moz-box-shadow: 0px 0px 62px 4px #f1bc1b, 0px 0px 62px 8px #f4c847, 0px 0px 62px 16px #e6ca78;
+    box-shadow: 0px 0px 62px 4px #f1bc1b, 0px 0px 62px 8px #f4c847, 0px 0px 62px 16px #e6ca78;
+    }
+    &:active {
+      transform: scale(0.9);
+    }
+  
   }
-  .container {
-    grid-area: bonus;
+      
+  .i-large {
+    position : absolute;
+    top: 0; right: 0; left: 0; //bottom: 0;
+    z-index: -2;
+  }
+    
+  .i-large {
+    background: url("./pikachupluspetit.svg") repeat 0px 0px;
+    -webkit-animation: dropFlowParticles 25s linear infinite;
+          -o-animation: dropFlowParticles 25s linear infinite;
+            animation: dropFlowParticles 25s linear infinite;
+  }
+    
+  @-webkit-keyframes dropFlowParticles {
+    from { background-position: 0 0; }
+    to { background-position: 0 800px; }
+  }
+  @keyframes dropFlowParticles {
+    from { background-position: 0 0; }
+    to { background-position: 0 800px; }
+  }
+  
+  #affichage{ 
+    grid-area: score;
     display: flex;
-    flex-flow: column nowrap;
     align-items: center;
-    justify-content: space-around;
-    width : 90%;
-    .pokeButtonSide {
-      .pokeImage {
-        .active img {
-          width : 25%;
-          margin: 0;
-        }
-        .inactive img {
-          width : 25%;
-          margin: 0;
+    justify-content: center;
+    margin: 10px auto 50px;
+    width: 95%;
+    min-height: 100px; 
+    background-color: rgba(241, 200, 13, 0.863); 
+    opacity: 0.8;
+    box-shadow: 4px 6px 9px rgb(92, 62, 6);
+    font-family: 'anime_ace_2.0_bbregular', Arial, sans-serif ;
+    font-size: 2em;
+    color: white;
+    text-shadow:   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000,
+    1px 1px 2px #141414,
+    1px 1px 3px #141414,
+    1px 1px 5px #141414,
+    1px 1px 7px #141414,
+    1px 1px 10px #141414,
+    1px 1px 12px #141414,
+    1px 1px 18px #141414;
+  
+  } 
+  
+  @media screen and (min-width: 500px) and (max-width: 1100px) {
+    .container {
+      .pokeButtonSide {
+        .prix {
+          font-size: 1.4em;
+          margin-bottom: 40%;
         }
       }
-      .font {
-        width : 30%;
-        margin: 0;
-        position: relative;
-        top: -50%;
-      }
-      .prix {
-        width : 40%;
-        margin: 0;
-        font-size: 1.5em;
-        position: relative;
-        top: -50%;
+    }
+    #clic {
+      margin: 5%  auto 10%;
+    }
+  }
+  
+  @media screen and (min-width: 1100px) {
+    #containerGrid {
+      width: 100%;
+      // display: flex;
+      // flex-direction: row;
+      // justify-content: space-around;
+      display: grid;
+      grid-template-areas:
+                "score score"
+                "clic bonus";
+      grid-template-columns: 60% 40%;
+      grid-template-rows: 20% 80%;
+    }
+    #affichage {
+      grid-area: score;
+    }
+    #clic {
+      grid-area: clic;
+      margin : 10% auto;
+    }
+    .container {
+      grid-area: bonus;
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+      justify-content: space-around;
+      width : 90%;
+      .pokeButtonSide {
+        .pokeImage {
+          .active img {
+            width : 25%;
+            margin: 0;
+          }
+          .inactive img {
+            width : 25%;
+            margin: 0;
+          }
+        }
+        .font {
+          width : 30%;
+          margin: 0;
+          position: relative;
+          top: -50%;
+        }
+        .prix {
+          width : 40%;
+          margin: 0;
+          font-size: 1.5em;
+          position: relative;
+          top: -50%;
+        }
       }
     }
   }
-}
+  
