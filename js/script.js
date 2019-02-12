@@ -5,7 +5,7 @@ window.onload = function(){
     let pokemon = {
         score : 0,
         multiplicateur  :1 ,
-        autoclicker : 1,
+        autoclicker :0 ,
         boost : 1,
         button : {
             aff : document.getElementById('affichage'),
@@ -178,18 +178,15 @@ window.onload = function(){
         } else {
         console.log("Vous n'avez pas assez de credit pour l'achat de l'Autoclicker");
         }
-        pokemon.button.affautoClic++;
-        pokemon.autoclicker++;
         callAutoclic ();
-        affScore();
-        affautoClic();
-        prAutoclicker();
         activation()
+        prAutoclicker();        
        } 
 
     // Fonction qui va lancer l'autoclic une fois l'achat effectue 
     function callAutoclic () { 
-        if (pokemon.autoclicker = 1) {
+        if (pokemon.autoclicker >= 0) {
+            pokemon.autoclicker++;
             setInterval(function autoclicker () {
             pokemon.score += 1;
             console.log(pokemon.score)
@@ -199,19 +196,13 @@ window.onload = function(){
             console.log("Lancement autoclic");
         } else {    
         console.log("pas d'autoclic a appeller");
-        }
+        } 
+        affautoClic();
+        affScore();
     }
     // CORNELIU - END //
    
         
-   
- 
-
-    /* A JETER 
-        function autoclickerLabo () {
-        pokemon.score++
-        console.log(pokemon.score++)
-    } */
 
     // appel fonction affiche le score à chaque clic
     pokemon.button.cli.addEventListener('click', clicking)
