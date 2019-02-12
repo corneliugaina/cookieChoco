@@ -32,16 +32,7 @@ window.onload = function(){
         }
     }
 
-
-    //Affichage des prix de base//
-
-    pokemon.button.praffMul.innerHTML = "Prix: " + pokemon.bonus.prixMulti;
-    pokemon.button.praffautoclic.innerHTML = "Prix: " + pokemon.bonus.prixAutoclic;
-    pokemon.button.prBoost.innerHTML = "Prix: " + pokemon.bonus.prixBoost;
-
-
-
-
+   
     //les fonctions
 
     function affScore () {
