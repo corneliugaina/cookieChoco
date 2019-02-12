@@ -7,7 +7,6 @@ window.onload = function(){
         multiplicateur  :1 ,
         autoclicker :0 ,
         boost : 1,
-        affQuote : document.getElementById('quoteDisplay'),
         button : {
             aff : document.getElementById('affichage'),
             cli : document.getElementById('clic'),
@@ -24,9 +23,9 @@ window.onload = function(){
         },
         bonus : { 
             active : false,
-            prixMulti : 5,
-            prixAutoclic : 6,
-            prixBoost : 7,
+            prixMulti : 50,
+            prixAutoclic : 50,
+            prixBoost : 5000,
             boostCount: 1,
             tclic : Number.MAX_SAFE_INTEGER,
             tBoosterOn : 0,
@@ -37,7 +36,7 @@ window.onload = function(){
     //les fonctions
 
     function affScore () {
-        let txt = pokemon.score + " pikachu(s) !"
+        let txt = "Votre score est de " + pokemon.score + " pikachu !"
         pokemon.button.aff.innerText = txt
     };
 
@@ -57,16 +56,16 @@ window.onload = function(){
         pokemon.button.affautoClic.innerText = txt
     } 
 
-    function quoteDisplay () {
+    /* function quoteDisplay () {
         txt = "Test : " + po
         pokemon.affQuote.innerText = txt
     }
-
+ */
 
     // Fonctions PRIX : 
 
     function prMultiplication() {
-        txt = "prix : "+ pokemon.bonus.prixMulti
+        txt = "prix = "+ pokemon.bonus.prixMulti
         pokemon.button.praffMul.innerText = txt
     }
     function prAutoclicker () {
@@ -74,11 +73,11 @@ window.onload = function(){
         pokemon.button.praffautoclic.innerText = txt
     }
     function prBooster (){
-        txt = "prix : "+pokemon.bonus.prixBoost
+        txt = "prix = "+pokemon.bonus.prixBoost
         pokemon.button.prBoost.innerText = txt
     }
 
-    // Emilie
+
     function clicking () {
         pokemon.bonus.tclic = new Date().getTime()
         if (pokemon.bonus.tclic - pokemon.bonus.tBoosterOn < 30000) {
@@ -91,6 +90,8 @@ window.onload = function(){
         affScore()
     };
 
+
+    // fonction pour activer, desactiver les bonus
     function activation () {
         if (pokemon.score >= pokemon.bonus.prixMulti) {
             document.getElementById('multiActive').style.display = 'initial';
@@ -117,10 +118,7 @@ window.onload = function(){
             document.getElementById('boostInactive').style.display = 'initial';
         }
     }
-    //fin Emilie
 
-
-    // Francois
     function augmenterMultiplicateur () {
         pokemon.score -= pokemon.bonus.prixMulti
         pokemon.multiplicateur++
@@ -130,9 +128,12 @@ window.onload = function(){
         activation() 
         prMultiplication()
     };
-    //fin Francois
+    // function boostTiming () {
+    //     t0 = new Date()
+    //     t0S = t0.getSeconds();
+    //     boost(tOS)
+    // };
 
-    // Julien
     function boost() {
         pokemon.bonus.tBoosterOn = new Date().getTime()
         
@@ -143,13 +144,15 @@ window.onload = function(){
             affScore();
             pokemon.bonus.prixBoost = pokemon.bonus.prixBoost * 2;
             prBooster();
-        } 
+        } else {
+            console.log("Booster déjà acheté!") // Mettre un beau message par après? // 
+        }
         activation();
     }
 
-    // fin Julien
-
-    // Corneliu 
+    
+  
+ 
     function affichageTempsBooster(){
         var timeleft = 30;
         var downloadTimer = setInterval(function(){
@@ -185,6 +188,7 @@ window.onload = function(){
         prAutoclicker();        
        } 
 
+    // Fonction qui va lancer l'autoclic une fois l'achat effectue 
     function callAutoclic () { 
         if (pokemon.autoclicker >= 0) {
             pokemon.autoclicker++;
@@ -206,7 +210,13 @@ window.onload = function(){
 
     // Differentes phrases de narration du pika-clicker assignees a la variable quote, de 0 a 9 (10 niveaux)
 
-    function selectionQuote () {
+    /* function callQuote () {
+        if (pokemon.quote.ordreQuote = )
+    } */
+
+    
+
+/*     function selectionQuote () {
     switch (true) {
         case (pokemon.score < 100): 'Level 1 : Invasion de Pikachu dans ton jardin';
             break;
@@ -229,18 +239,12 @@ window.onload = function(){
         case (pokemon.score < 50000): 'Level 10 : "Les pikachu sont hors controle, ils envahissent les dimensions paralleles';
             break;
         } 
-        quoteDisplay();
-        selectionQuote();
     }
+
+    var callQuote = selectionQuote(); */
     // CORNELIU - END //
    
         
-
-    /* A JETER 
-        function autoclickerLabo () {
-        pokemon.score++
-        console.log(pokemon.score++)
-    } */
 
     // appel fonction affiche le score à chaque clic
     pokemon.button.cli.addEventListener('click', clicking)
