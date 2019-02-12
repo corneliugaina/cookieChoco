@@ -58,7 +58,7 @@ window.onload = function(){
     } 
 
     function quoteDisplay () {
-        txt = "Level : " + affQuote;
+        txt = affQuote;
         pokemon.button.affQuote.innerText = txt
     }
 
@@ -166,7 +166,9 @@ window.onload = function(){
             }
         }, 1000);
     }
+
     
+    /////////////////////////////////////////////////////////////////////
     // Partie "Autoclicker" qui fait qu'a chaque achat d'un autoclicker :
     // 1) le prix d'achat est deduit du score,
     // 2) le prix du autoclicker suivant augmente (wip)
@@ -204,65 +206,38 @@ window.onload = function(){
     }
 
     /////////////////////////////////////////////////////////////////
-
-
     // Differentes phrases de narration du pika-clicker assignees a la variable quote, de 0 a 9 (10 niveaux)
-/* 
+
+    var affQuote = ""; // variable servant dans la fonction de "quoteDisplay" 
+
+    // Fonction qui va afficher un message (BESOIN DE LE STYLER DANS SCSS !)
     function selectionQuote () {
-        if (pokemon.score > 5) {
-            affScore()
-        } else if (pokemon.score < 200) {
-            affScore()
-        } quoteDisplay();
-    } */
-
-
-    var affQuote = "";
-
-
-    function selectionQuote () {
-        //
         affScore();
         quoteDisplay();
-        switch (affQuote) {
-        case (pokemon.score < 5): 
-        affQuote = 'Level 1 : Invasion de Pikachu dans ton jardin';
-            break;
-        case (pokemon.score < 200): 
-        affQuote = 'Level 2 : Invasion de Pikachu dans ton quartier';
-            break;
-        case (pokemon.score < 400): 
-        affQuote = 'Level 3 : Invasion de Pikachu dans la region';
-            break;
-        case (pokemon.score < 800):
-        affQuote = 'Level 4 : Invasion de Pikachu dans tout le pays';
-            break;
-        case (pokemon.score < 1600):
-        affQuote = 'Level 5 : Invasion de Pikachu sur le continent, ils font concurrence aux lapins cretins';
-            break;
-        case (pokemon.score < 2500):
-        affQuote = 'Level 6 : Invasion de Pikachu sur le monde entier';
-            break;
-        case (pokemon.score < 5000):
-        affQuote = 'Level 7 : Invasion de Pikachu dans tout le systeme solaire';
-            break;
-        case (pokemon.score < 10000):
-        affQuote = 'Level 8 : Invasion de Pikachu dans toute la Voie Lactee';
-            break;
-        case (pokemon.score < 20000):
-        affQuote = 'Level 9 : Invasion de Pikachu dans tout l\'univers';
-            break;
-        case (pokemon.score < 50000):
-        affQuote = 'Level 10 : "Les pikachu sont hors controle, ils envahissent les dimensions paralleles';
-            break;
+        // Conditionnelles d'affichage du message, selon le score. 
+        if (pokemon.score < 10) {
+            affQuote = "Level 0 : Ton Pikachu fout le bordel dans la cuisine";
+        } else if (pokemon.score < 50) {
+            affQuote = 'Level 1 : Invasion de Pikachu dans ton jardin';
+        } else if (pokemon.score < 100) {
+            affQuote = 'Level 2 : Invasion de Pikachu dans ton quartier';
+        } else if (pokemon.score < 500) {
+            affQuote = 'Level 3 : Invasion de Pikachu dans la region';
+        } else if (pokemon.score < 1000) {
+            affQuote = 'Level 5 : Invasion de Pikachu sur le continent, ils font concurrence aux lapins cretins';
+        } else if (pokemon.score < 20000) {
+            affQuote = 'Level 6 : Invasion de Pikachu sur le monde entier';
+        } else if (pokemon.score < 500000) {
+            affQuote = 'Level 7 : Invasion de Pikachu dans tout le systeme solaire'; 
+        } else if (pokemon.score < 1000000) {
+            affQuote = 'Level 8 : Invasion de Pikachu dans toute la Voie Lactee';
+        } else if (pokemon.score < 10000000) {
+            affQuote = 'Level 9 : Invasion de Pikachu dans tout l\'univers';
+        } else {
+            affQuote = 'Level 10 : "Les pikachu sont hors controle, ils envahissent les dimensions paralleles';
         } 
-        quoteDisplay();
     }
 
-
-    // CORNELIU - END //
-   
-        
 
     // appel fonction affiche le score à chaque clic
     pokemon.button.cli.addEventListener('click', clicking)
@@ -276,6 +251,6 @@ window.onload = function(){
     // appel fonction autoclic    
     pokemon.button.autoClic.addEventListener('click', achatAutoclicker);
 
-    // appel fonction selectionQuote
-    window.addEventListener('click', selectionQuote);
+    // appel fonction selectionQuote 
+    window.addEventListener('click', selectionQuote); // DEBUG : appel de la fonction des le chargenement de la page ??? 
 }
