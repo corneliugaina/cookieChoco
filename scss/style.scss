@@ -181,6 +181,14 @@ body{
   }
 }
   
+    /* Affichage des Quotes */
+
+    #quoteDisplay{
+      color: black;
+      border: 3px solid black;
+      font-size: 4vw;
+    }
+
 #clic {
   grid-area: clic;
   max-width: 350px;
@@ -251,10 +259,6 @@ body{
   1px 1px 10px #141414,
   1px 1px 12px #141414,
   1px 1px 18px #141414;
-  #quoteDisplay{
-    color:white;
-    border: 3px solid black;
-  }
 } 
 
 @media screen and (min-width: 500px) and (max-width: 1100px) {
