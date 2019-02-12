@@ -7,6 +7,7 @@ window.onload = function(){
         multiplicateur  :1 ,
         autoclicker :0 ,
         boost : 1,
+        affQuote : document.getElementById('quoteDisplay'),
         button : {
             aff : document.getElementById('affichage'),
             cli : document.getElementById('clic'),
@@ -55,6 +56,11 @@ window.onload = function(){
         txt = "x" + pokemon.autoclicker    
         pokemon.button.affautoClic.innerText = txt
     } 
+
+    function quoteDisplay () {
+        txt = "Test : " + po
+        pokemon.affQuote.innerText = txt
+    }
 
 
     // Fonctions PRIX : 
@@ -199,6 +205,35 @@ window.onload = function(){
         } 
         affautoClic();
         affScore();
+    }
+
+    /////////////////////////////////////////////////////////////////
+
+    // Differentes phrases de narration du pika-clicker assignees a la variable quote, de 0 a 9 (10 niveaux)
+
+    function selectionQuote () {
+    switch (true) {
+        case (pokemon.score < 100): 'Level 1 : Invasion de Pikachu dans ton jardin';
+            break;
+        case (pokemon.score < 200): 'Level 2 : Invasion de Pikachu dans ton quartier';
+            break;
+        case (pokemon.score < 400): 'Level 3 : Invasion de Pikachu dans la region';
+            break;
+        case (pokemon.score < 800): 'Level 4 : Invasion de Pikachu dans tout le pays';
+            break;
+        case (pokemon.score < 1600): 'Level 5 : Invasion de Pikachu sur le continent';
+            break;
+        case (pokemon.score < 2500): 'Level 6 : Invasion de Pikachu sur le monde entier';
+            break;
+        case (pokemon.score < 5000): 'Level 7 : Invasion de Pikachu dans tout le systeme solaire';
+            break;
+        case (pokemon.score < 10000): 'Level 8 : Invasion de Pikachu dans toute la Voie Lactee';
+            break;
+        case (pokemon.score < 20000): 'Level 9 : Invasion de Pikachu dans tout l\'univers';
+            break;
+        case (pokemon.score < 50000): 'Level 10 : "Les pikachu sont hors controle, ils envahissent les dimensions paralleles';
+            break;
+        } quoteDisplay();
     }
     // CORNELIU - END //
    

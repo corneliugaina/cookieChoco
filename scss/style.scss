@@ -216,7 +216,10 @@
     from { background-position: 0 0; }
     to { background-position: 0 800px; }
   }
-
+  #quoteDisplay {
+    display: flex;
+    align-items: center;
+  }
   #affichage{ 
     display: flex;
     align-items: center;
