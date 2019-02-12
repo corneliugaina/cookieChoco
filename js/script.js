@@ -23,16 +23,25 @@ window.onload = function(){
         },
         bonus : { 
             active : false,
-            prixMulti : 5,
-            prixAutoclic : 10,
-            prixBoost : 15,
+            prixMulti : 50,
+            prixAutoclic : 500,
+            prixBoost : 5000,
             boostCount: 1,
             tclic : Number.MAX_SAFE_INTEGER,
             tBoosterOn : 0,
         }
     }
 
-   
+
+    //Affichage des prix de base//
+
+    pokemon.button.praffMul.innerHTML = "Prix: " + pokemon.bonus.prixMulti;
+    pokemon.button.praffautoclic.innerHTML = "Prix: " + pokemon.bonus.prixAutoclic;
+    pokemon.button.prBoost.innerHTML = "Prix: " + pokemon.bonus.prixBoost;
+
+
+
+
     //les fonctions
 
     function affScore () {
@@ -45,17 +54,6 @@ window.onload = function(){
         txt = "x" + pokemon.multiplicateur
         pokemon.button.affMul.innerText = txt 
     }
-
-    function affBooster() {
-        txt = "temps :" + ("//julien rajouter sa fonction temps!!!")
-        pokemon.button.affBoost.innerText = txt 
-    }
-
-    function affautoClic() {
-        txt = "Vous avez: " + pokemon.autoclicker    
-        pokemon.button.affautoClic.innerText = txt
-    } 
-
 
     // Fonctions PRIX : 
 
@@ -137,9 +135,7 @@ window.onload = function(){
             affScore();
             pokemon.bonus.prixBoost = pokemon.bonus.prixBoost * 2;
             prBooster();
-        } else {
-            console.log("Booster déjà acheté!") // Mettre un beau message par après? // 
-        }
+        } 
         activation();
     }
 
