@@ -3,6 +3,9 @@
 Projet de "Pika-Clicker" (CookieClicker-like) maison, qui consiste en un mini-jeu dont le but est de faire un scoring le plus rapidement possible. Le projet s'insère dans le cadre d'une mise en situation de travail en groupe sur un premier objet faisant appel aux technologies web.  
 Initiation au developpement en equipe (JS/HTML/CSS) et application de la methodologie SCRUM (dans la mesure du possible).  
 
+# Printscreen : 
+![printscreen](/images/prt.png)
+
 # Enonce du projet : 
 
 >Repo BeCode :
