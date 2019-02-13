@@ -15,7 +15,6 @@
 body{
   max-width: 1600px;
   width: 100vw;
-  //max-height : 1200px;
 }
 
 #containerGrid {
@@ -86,7 +85,6 @@ body{
         }
       }
     }
-    
     #multiActive {
       display : none;
     }
@@ -96,10 +94,7 @@ body{
     #boostActive {
       display : none;
     }
-
-    /* vignettes */ 
-
-
+    /*-------------------vignettes-------------------------*/
     .font{
         margin: 0.4em;
         display : flex;
@@ -110,9 +105,7 @@ body{
         width : 100%;
       }
     }
-
-    /* compteur de bonus*/
-
+    /*----------------------compteur de bonus-------------------*/
     #multiplication{
       background-color: red;
       border-radius: 50%;
@@ -152,9 +145,7 @@ body{
       line-height: 2.5em;
       display : none;
     }
-
-    /* Affichage prix */
-
+    /* ----------------affichage prix-------------------- */
     .prix {
       display: flex;
       align-items: center;
@@ -180,9 +171,9 @@ body{
     #prBooster{
       background-color: rgba(241, 200, 13, 0.863);
     }
-
   }
 }
+
 #clic {
   grid-area: clic;
   max-width: 350px;
@@ -204,7 +195,6 @@ body{
   &:active {
     transform: scale(0.9);
   }
-
 }
     
 .i-large {
@@ -371,7 +361,5 @@ body{
         }
       }
     }
-
-
   }
 }

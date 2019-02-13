@@ -49,9 +49,9 @@ body {
   margin-top: 5px;
   transition: 0.1s;
   position: relative;
-  /* vignettes */
-  /* compteur de bonus*/
-  /* Affichage prix */
+  /*-------------------vignettes-------------------------*/
+  /*----------------------compteur de bonus-------------------*/
+  /* ----------------affichage prix-------------------- */
 }
 .container .pokeButtonSide .pokeImage .active {
   display: flex;
