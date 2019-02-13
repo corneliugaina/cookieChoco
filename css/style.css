@@ -165,6 +165,14 @@ body {
   background-color: rgba(241, 200, 13, 0.863);
 }
 
+/* Affichage des Quotes */
+#quoteDisplay {
+  color: black;
+  border: 3px solid black;
+  font-size: 4vw;
+  font-family: "anime_ace_2.0_bbregular", Arial, sans-serif;
+}
+
 #clic {
   grid-area: clic;
   max-width: 350px;

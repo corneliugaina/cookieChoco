@@ -66,15 +66,15 @@ window.onload = function(){
     // Fonctions PRIX : 
 
     function prMultiplication() {
-        txt = "prix = "+ pokemon.bonus.prixMulti
+        txt = "Prix : " + pokemon.bonus.prixMulti  + " ₽"
         pokemon.button.praffMul.innerText = txt
     }
     function prAutoclicker () {
-        txt = "Buy: "+ pokemon.bonus.prixAutoclic + " ₽"
+        txt = "Prix : " + pokemon.bonus.prixAutoclic + " ₽"
         pokemon.button.praffautoclic.innerText = txt
     }
     function prBooster (){
-        txt = "prix = "+pokemon.bonus.prixBoost
+        txt = "Prix : " + pokemon.bonus.prixBoost  + " ₽"
         pokemon.button.prBoost.innerText = txt
     }
 
