@@ -28,8 +28,12 @@ body {
   justify-content: space-around;
   align-items: stretch;
   z-index: 1;
-  background-color: rgba(241, 200, 13, 0.863);
-  box-shadow: 4px 6px 9px #5c3e06; }
+  background-image: url("../images/leg.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.8; }
+  .container:hover {
+    opacity: 1.0; }
   .container .pokeButtonSide {
     display: flex;
     flex-flow: column nowrap;
@@ -189,15 +193,18 @@ body {
   margin: 10px auto 50px;
   width: 95%;
   min-height: 100px;
-  background-image: url("../images/leg.svg");
-  opacity: 0.9;
-  background-repeat: none;
-  background-size: cover;
+  background-color: rgba(241, 200, 13, 0.863);
+  opacity: 0.8;
   box-shadow: 4px 6px 9px #5c3e06;
   font-family: "anime_ace_2.0_bbregular", Arial, sans-serif;
   font-size: 2em;
   color: white;
   text-shadow: -1px -1px 0 #000,   1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 1px 1px 2px #141414, 1px 1px 3px #141414, 1px 1px 5px #141414, 1px 1px 7px #141414, 1px 1px 10px #141414, 1px 1px 12px #141414, 1px 1px 18px #141414; }
+  #affichage #quoteDisplay {
+    color: black;
+    border: 3px solid black;
+    font-size: 4vw;
+    font-family: "anime_ace_2.0_bbregular", Arial, sans-serif; }
 
 @media screen and (min-width: 500px) and (max-width: 1100px) {
   .container .pokeButtonSide .prix {
@@ -227,18 +234,30 @@ body {
     flex-flow: column nowrap;
     align-items: center;
     justify-content: space-around;
-    width: 90%; }
+    width: 90%;
+    height: 98%;
+    padding: 5% 0 0 5%; }
     .container .pokeButtonSide .pokeImage .active img {
       width: 25%;
       margin: 0; }
     .container .pokeButtonSide .pokeImage .inactive img {
       width: 25%;
       margin: 0; }
-    .container .pokeButtonSide .font {
-      width: 30%;
-      margin: 0;
-      position: relative;
-      top: -50%; }
+    .container .pokeButtonSide #multiplication {
+      top: 0;
+      left: 4em;
+      height: 20%;
+      width: 15%; }
+    .container .pokeButtonSide #autoClicker {
+      top: 0;
+      left: 4em;
+      height: 20%;
+      width: 15%; }
+    .container .pokeButtonSide #booster {
+      top: 0;
+      left: 4em;
+      height: 20%;
+      width: 15%; }
     .container .pokeButtonSide .prix {
       width: 40%;
       margin: 0;
