@@ -31,135 +31,118 @@ body {
   background-image: url("../images/leg.svg");
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 0.8;
-}
-.container:hover {
-  opacity: 1;
-}
-.container .pokeButtonSide {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-start;
-  align-items: center;
-  margin-top: 5px;
-  transition: 0.1s;
-  position: relative;
-  /* vignettes */
-  /* compteur de bonus*/
-  /* Affichage prix */
-}
-.container .pokeButtonSide .pokeImage .active img {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 70%;
-  margin: 10% auto 20%;
-  position: relative;
-  top: 1.5px;
-  border-radius: 50%;
-  background-color: #000;
-  -webkit-box-shadow: 0px 0px 62px 2px #f1bc1b, 0px 0px 62px 4px #e6ca78;
-  -moz-box-shadow: 0px 0px 62px 2px #f1bc1b, 0px 0px 62px 4px #e6ca78;
-  box-shadow: 0px 0px 62px 2px #f1bc1b, 0px 0px 62px 4px #e6ca78;
-}
-.container .pokeButtonSide .pokeImage .inactive img {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 70%;
-  margin: 10% auto 20%;
-  position: relative;
-  top: 1.5px;
-  border-radius: 50%;
-  background-color: #000;
-  -webkit-box-shadow: 0px 0px 62px 2px #f1bc1b, 0px 0px 62px 4px #f4c847;
-  -moz-box-shadow: 0px 0px 62px 2px #f1bc1b, 0px 0px 62px 4px #f4c847;
-  box-shadow: 0px 0px 62px 2px #f1bc1b, 0px 0px 62px 4px #f4c847;
-}
-.container .pokeButtonSide:active {
-  font-size: 1em;
-  color: #e9331b;
-  transform: scale(1.1);
-}
-.container .pokeButtonSide #multiActive {
-  display: none;
-}
-.container .pokeButtonSide #autoclicActive {
-  display: none;
-}
-.container .pokeButtonSide #boostActive {
-  display: none;
-}
-.container .pokeButtonSide .font img {
-  justify-content: center;
-  align-content: center;
-  width: 80%;
-  height: 80%;
-  margin: 5%;
-}
-.container .pokeButtonSide #multiplication {
-  background-color: red;
-  border-radius: 50%;
-  width: 20%;
-  height: 8%;
-  color: white;
-  position: absolute;
-  top: 5%;
-  right: 20%;
-  text-align: center;
-  line-height: 2.5em;
-  display: none;
-}
-.container .pokeButtonSide #autoClicker {
-  background-color: red;
-  border-radius: 50%;
-  width: 20%;
-  height: 8%;
-  color: white;
-  position: absolute;
-  top: 5%;
-  right: 20%;
-  text-align: center;
-  line-height: 2.5em;
-  display: none;
-}
-.container .pokeButtonSide #booster {
-  background-color: red;
-  border-radius: 50%;
-  width: 20%;
-  height: 8%;
-  color: white;
-  position: absolute;
-  top: 5%;
-  right: 20%;
-  text-align: center;
-  line-height: 2.5em;
-  display: none;
-}
-.container .pokeButtonSide .prix {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 5%;
-  padding: 6px;
-  width: 70%;
-  height: 30%;
-  opacity: 0.8;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 0.8em;
-  color: black;
-  text-shadow: -1px -1px 1px #111;
-  border-radius: 45%;
-}
-.container .pokeButtonSide #prMultiplication {
-  background-color: saddlebrown;
-}
-.container .pokeButtonSide #prAutoclicker {
-  background-color: silver;
-}
-.container .pokeButtonSide #prBooster {
-  background-color: rgba(241, 200, 13, 0.863);
-}
+  opacity: 0.8; }
+  .container:hover {
+    opacity: 1.0; }
+  .container .pokeButtonSide {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 5px;
+    transition: 0.1s;
+    position: relative;
+    /* vignettes */
+    /* compteur de bonus*/
+    /* Affichage prix */ }
+    .container .pokeButtonSide .pokeImage .active img {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      width: 70%;
+      margin: 10% auto 20%;
+      position: relative;
+      top: 1.5px;
+      border-radius: 50%;
+      background-color: #000;
+      -webkit-box-shadow: 0px 0px 62px 2px #f1bc1b, 0px 0px 62px 4px #e6ca78;
+      -moz-box-shadow: 0px 0px 62px 2px #f1bc1b, 0px 0px 62px 4px #e6ca78;
+      box-shadow: 0px 0px 62px 2px #f1bc1b, 0px 0px 62px 4px #e6ca78; }
+    .container .pokeButtonSide .pokeImage .inactive img {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      width: 70%;
+      margin: 10% auto 20%;
+      position: relative;
+      top: 1.5px;
+      border-radius: 50%;
+      background-color: #000;
+      -webkit-box-shadow: 0px 0px 62px 2px #f1bc1b, 0px 0px 62px 4px #f4c847;
+      -moz-box-shadow: 0px 0px 62px 2px #f1bc1b, 0px 0px 62px 4px #f4c847;
+      box-shadow: 0px 0px 62px 2px #f1bc1b, 0px 0px 62px 4px #f4c847; }
+    .container .pokeButtonSide:active {
+      font-size: 1em;
+      color: #e9331b;
+      transform: scale(1.1); }
+    .container .pokeButtonSide #multiActive {
+      display: none; }
+    .container .pokeButtonSide #autoclicActive {
+      display: none; }
+    .container .pokeButtonSide #boostActive {
+      display: none; }
+    .container .pokeButtonSide .font img {
+      justify-content: center;
+      align-content: center;
+      width: 80%;
+      height: 80%;
+      margin: 5%; }
+    .container .pokeButtonSide #multiplication {
+      background-color: red;
+      border-radius: 50%;
+      width: 20%;
+      height: 8%;
+      color: white;
+      position: absolute;
+      top: 5%;
+      right: 20%;
+      text-align: center;
+      line-height: 2.5em;
+      display: none; }
+    .container .pokeButtonSide #autoClicker {
+      background-color: red;
+      border-radius: 50%;
+      width: 20%;
+      height: 8%;
+      color: white;
+      position: absolute;
+      top: 5%;
+      right: 20%;
+      text-align: center;
+      line-height: 2.5em;
+      display: none; }
+    .container .pokeButtonSide #booster {
+      background-color: red;
+      border-radius: 50%;
+      width: 20%;
+      height: 8%;
+      color: white;
+      position: absolute;
+      top: 5%;
+      right: 20%;
+      text-align: center;
+      line-height: 2.5em;
+      display: none; }
+    .container .pokeButtonSide .prix {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 5%;
+      padding: 6px;
+      width: 70%;
+      height: 30%;
+      opacity: 0.8;
+      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      font-size: 0.8em;
+      color: black;
+      text-shadow: -1px -1px 1px #111;
+      border-radius: 45%; }
+    .container .pokeButtonSide #prMultiplication {
+      background-color: saddlebrown; }
+    .container .pokeButtonSide #prAutoclicker {
+      background-color: silver; }
+    .container .pokeButtonSide #prBooster {
+      background-color: rgba(241, 200, 13, 0.863); }
 
 #clic {
   grid-area: clic;
@@ -201,9 +184,7 @@ body {
   from {
     background-position: 0 0; }
   to {
-    background-position: 0 800px;
-  }
-}
+    background-position: 0 800px; } }
 #divAff {
   display: flex;
   flex-flow: column nowrap;
@@ -212,22 +193,21 @@ body {
   margin: 10px auto 50px;
   width: 95%;
   min-height: 100px;
-  background-color: rgba(241, 200, 13, 0.63);
+  background: linear-gradient(176deg, #f1c80da1 0%, #e91212ab 100%);
   box-shadow: 4px 6px 9px #5c3e06;
-}
-#divAff #affichage {
-  font-family: "anime_ace_2.0_bbregular", Arial, sans-serif;
-  font-size: 2em;
-  margin: 0.5em auto;
-  color: white;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 1px 1px 2px #141414, 1px 1px 3px #141414, 1px 1px 5px #141414, 1px 1px 7px #141414, 1px 1px 10px #141414, 1px 1px 12px #141414, 1px 1px 18px #141414;
-}
-#divAff #quoteDisplay {
-  color: #222219;
-  margin: 0.5em auto;
-  font-family: "Press Start 2P", cursive;
-  font-size: 0.8em;
-}
+  border-radius: 65px 16px;
+  background-color: rgba(255, 255, 255, 0.8); }
+  #divAff #affichage {
+    font-family: "anime_ace_2.0_bbregular", Arial, sans-serif;
+    font-size: 2em;
+    margin: 0.5em auto;
+    color: white;
+    text-shadow: -1px -1px 0 #000,   1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 1px 1px 2px #141414, 1px 1px 3px #141414, 1px 1px 5px #141414, 1px 1px 7px #141414, 1px 1px 10px #141414, 1px 1px 12px #141414, 1px 1px 18px #141414; }
+  #divAff #quoteDisplay {
+    color: #222219;
+    margin: 0.5em auto;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8em; }
 
 @media screen and (min-width: 500px) and (max-width: 1100px) {
   .container .pokeButtonSide .prix {
@@ -245,8 +225,7 @@ body {
     grid-template-rows: 20% 80%; }
 
   #divAff {
-    grid-area: score;
-  }
+    grid-area: score; }
 
   #clic {
     grid-area: clic;

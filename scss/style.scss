@@ -231,8 +231,10 @@ body{
   margin: 10px auto 50px;
   width: 95%;
   min-height: 100px; 
-  background-color: rgba(241, 200, 13, 0.63); 
+  background: linear-gradient(176deg, #f1c80da1 0%, #e91212ab 100%);
   box-shadow: 4px 6px 9px rgb(92, 62, 6);
+  border-radius: 65px 16px;
+  background-color: rgba(255, 255, 255, 0.80);
   #affichage{ 
     font-family: 'anime_ace_2.0_bbregular', Arial, sans-serif ;
     font-size: 2em;
