@@ -1,5 +1,6 @@
-# cookieChoco
-Projet de "CoinClicker" (CookieClicker-like) maison. Initiation au developpement en equipe (JS/HTML/CSS) et application de la methodologie SCRUM.
+# Pika-Clic
+
+Projet de "Pika-Clicker" (CookieClicker-like) maison. Initiation au developpement en equipe (JS/HTML/CSS) et application de la methodologie SCRUM (dans la mesure du possible).
 
 # Enonce du projet : 
 
@@ -15,21 +16,23 @@ Projet de "CoinClicker" (CookieClicker-like) maison. Initiation au developpement
 
 # Timing :
 
->mercredi 6 fevrier : initialisation du projet, organisation  
->jeudi 7 fevrier :   
->vendredi 8 fevrier : 
+>mercredi 6 fevrier : initialisation du projet, organisation et plannification du travail en groupe
+>jeudi 7 fevrier : création fichier sass, création structure html, création des premières fonctions : clic, multiclic, fonction bonus Multiplicateur, appels de fonctions, objet pokemon. 
+>vendredi 8 fevrier : création de la fonction bonus Booster et bonus Autoclic.
 
->lundi 11 fevrier :  
->mardi 12 fevrier :   
->mercredi 13 fevrier :   
+>lundi 11 fevrier : Abandon des branches nominatives et basculement 100% sur branche "développementMain" = 200% de gain de temps. Correction des bugs des fonctions.
+                    Journée principalement consacrée au style : arrière plan pikachu qui pique les yeux, pokeballs bonus et divers indicateurs d'achat et prix.
+>mardi 12 fevrier : commencement du responsive design et diverses améliorations CSS, création fonction "quote" (notifications narratives)
+>mercredi 13 fevrier : peaufinage du projet, corrections bugs, changement bannière et expérience utilisateur (UX).
 
 # Organisation & Outils
 
-- Schema (**Google draw**): https://docs.google.com/drawings/d/1CoZtnDKK6YqhLOcDaewb_jQaiDhKXC8Qw-J5G5h0r2o/edit?usp=sharing   
-- BreakdownVelocity (avancee projet sur **Google Sheet**) : https://docs.google.com/spreadsheets/d/1qDtbrMbKwJFSQUbTcCKCJgLlsOYBSmTDijXoKjz7QBk/edit?usp=sharing  
-- ProductBacklog : cf. Projects dans **GitHub** / cf. panneau post-it's  
-- Communication : groupe **Ryver**  
+- ProductBacklog : cf. Projects dans **GitHub** / cf. panneau post-it's.  
+- Communication : groupe **Ryver** et en présentiel.  
 - Issue/Tasks: cf. Issue dans **GitHub** 
+
+- (non utilisé) Schema (**Google draw**): https://docs.google.com/drawings/d/1CoZtnDKK6YqhLOcDaewb_jQaiDhKXC8Qw-J5G5h0r2o/edit?usp=sharing   
+- (non utilisé) BreakdownVelocity (avancee projet sur **Google Sheet**) : https://docs.google.com/spreadsheets/d/1qDtbrMbKwJFSQUbTcCKCJgLlsOYBSmTDijXoKjz7QBk/edit?usp=sharing  
 
 # Difficultés et avancements lors du projet en groupe 
 
