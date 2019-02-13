@@ -25,9 +25,9 @@ window.onload = function(){
         },
         bonus : { 
             active : false,
-            prixMulti : 50,
-            prixAutoclic : 500,
-            prixBoost : 5000,
+            prixMulti : 5,
+            prixAutoclic : 5,
+            prixBoost : 5,
             boostCount: 1,
             tclic : Number.MAX_SAFE_INTEGER,
             tBoosterOn : 0,
@@ -235,4 +235,68 @@ window.onload = function(){
 
     // appel fonction autoclic    
     pokemon.button.autoClic.addEventListener('click', achatAutoclicker);
+
+
+
+    //JULIEN - Fonction pour créer les pokeballs
+
+    let pokeballDrawer = function(topColor, bottomColor, idCanvas){
+
+        var canvas = document.getElementById(idCanvas);
+        var ctx = canvas.getContext("2d");
+        var externalRadius = (canvas.width / 2) - canvas.width * 0.04;
+        console.log(externalRadius)
+
+        var internalRadius = externalRadius /2;
+        var posX = canvas.width / 2;
+        var posY = canvas.height / 2;
+        var heightRect = posX/3;
+        var widthRect = canvas.width - canvas.width*0.1;
+
+
+        let drawCircle = function(Radius, Color){
+            ctx.fillStyle = Color
+            ctx.beginPath();
+            ctx.arc(posX,posY,Radius,0,2*Math.PI);
+            ctx.stroke();
+            ctx.closePath();
+            ctx.fill();
+        }
+
+        drawCircle(externalRadius, "black")
+
+        //Lower part
+        ctx.fillStyle = bottomColor;
+        ctx.beginPath();
+        ctx.arc(posX,posY,externalRadius-externalRadius*0.08,0,Math.PI);
+        ctx.stroke();
+        ctx.closePath();
+        ctx.fill();
+
+        //Higher part
+        ctx.fillStyle = topColor;
+        ctx.beginPath();
+        ctx.arc(posX,posY,externalRadius-externalRadius*0.08,Math.PI,2*Math.PI);
+        ctx.stroke();
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.fillStyle = "#000000";
+        ctx.fillRect(posX - widthRect/2, posY-heightRect/2, widthRect, heightRect);
+
+
+
+        drawCircle(internalRadius, "black")
+        drawCircle(internalRadius-internalRadius*0.16, "white")
+        drawCircle(internalRadius-internalRadius*0.32, "black")
+        drawCircle(internalRadius-internalRadius*0.46, "white")
+
+    }
+    pokeballDrawer("grey","lightgrey","multiInactiveCanvas");
+    pokeballDrawer("grey","lightgrey","autoInactiveCanvas");
+    pokeballDrawer("grey","lightgrey","boostInactiveCanvas");
+    pokeballDrawer("#974a00","white","multiActiveCanvas");
+    pokeballDrawer("silver","white","autoActiveCanvas");
+    pokeballDrawer("gold","white","boostActiveCanvas");
+    pokeballDrawer("red","white","mainPokeballCanvas");
 }

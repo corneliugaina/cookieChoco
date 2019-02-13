@@ -18,17 +18,17 @@
             <div id="quoteDisplay">Poke-clique pour cloner tes Pikachus !</div>
         </div>
         <div id="clic">
-            <img class = "pokeball" src ="./images/pokeball.svg"  alt = "Button Pokeball"/>
+            <canvas id="mainPokeballCanvas" width="500px" height="500px" ></canvas>
         </div>
         <div class = "container">
             
             <div class = "pokeButtonSide">
                 <div class="pokeImage">
                     <div id="multiActive" class="active">
-                        <img src ="./images/pokeball-bronze.svg"  alt = "Button Pokeball"  title="Gagnez plus de points!" />
+                        <canvas id="multiActiveCanvas" width="128px" height="128px" ></canvas>
                     </div>
                     <div id="multiInactive" class="inactive">
-                        <img src ="./images/pokeball-disabled.svg" alt = "Button Pokeball disabled" />
+                        <canvas id="multiInactiveCanvas" width="128px" height="128px" ></canvas>
                     </div>
                 </div>
                 <div class="font">
@@ -41,10 +41,10 @@
             <div class = "pokeButtonSide">
                 <div class="pokeImage" id="autoclic">
                     <div id="autoclicActive" class="active">
-                        <img src ="./images/pokeball-argent.svg"  alt = "Button Pokeball" />
+                        <canvas id="autoActiveCanvas" width="128px" height="128px" ></canvas>
                     </div>
                     <div id="autoclicInactive" class="inactive">
-                        <img src="./images/pokeball-disabled.svg" alt ="Button Pokeball disabled" />
+                        <canvas id="autoInactiveCanvas" width="128px" height="128px" ></canvas>
                     </div>
                 </div>
                 <div class="font">
@@ -56,10 +56,10 @@
             <div class="pokeButtonSide">
                 <div class="pokeImage" id="boost">
                     <div id="boostActive" class="active">
-                        <img src ="./images/pokeball-or.svg"  alt="Button Pokeball" />            
+                        <canvas id="boostActiveCanvas" width="128px" height="128px" ></canvas>
                     </div>
                     <div id="boostInactive" class="inactive">
-                        <img src ="./images/pokeball-disabled.svg" alt ="Button Pokeball disabled" />
+                        <canvas id="boostInactiveCanvas" width="128px" height="128px" ></canvas>
                     </div>
                 </div>
                 <div class="font">
