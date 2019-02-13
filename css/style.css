@@ -1,17 +1,20 @@
 * {
   box-sizing: border-box;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 
 @font-face {
-  font-family: 'anime_ace_2.0_bbregular';
+  font-family: "anime_ace_2.0_bbregular";
   src: url("./animeace2reg-webfont.woff2") format("woff2"), url("./animeace2reg-webfont.woff") format("woff");
   font-weight: normal;
-  font-style: normal; }
+  font-style: normal;
+}
 body {
   max-width: 1600px;
   width: 100vw;
-  max-height: 800px; }
+  max-height: 800px;
+}
 
 #containerGrid {
   display: flex;
@@ -19,7 +22,8 @@ body {
   justify-content: space-between;
   align-content: center;
   width: 95%;
-  margin: auto; }
+  margin: auto;
+}
 
 .container {
   width: 98vw;
@@ -29,9 +33,11 @@ body {
   align-items: stretch;
   z-index: 1;
   background-color: rgba(241, 200, 13, 0.63);
+  border-radius: 0 65px;
   box-shadow: 4px 6px 9px #5c3e06;
   position: relative;
   padding: 0.5em;
+  margin-bottom: 1%;
 }
 .container:hover {
   opacity: 1;
@@ -98,6 +104,7 @@ body {
   align-content: stretch;
 }
 .container .pokeButtonSide .font img {
+  margin: auto;
   width: 100%;
 }
 .container .pokeButtonSide #multiplication {
@@ -198,18 +205,25 @@ body {
   background: url("./pikachupluspetit.svg") repeat 0px 0px;
   -webkit-animation: dropFlowParticles 25s linear infinite;
   -o-animation: dropFlowParticles 25s linear infinite;
-  animation: dropFlowParticles 25s linear infinite; }
+  animation: dropFlowParticles 25s linear infinite;
+}
 
 @-webkit-keyframes dropFlowParticles {
   from {
-    background-position: 0 0; }
+    background-position: 0 0;
+  }
   to {
-    background-position: 0 800px; } }
+    background-position: 0 800px;
+  }
+}
 @keyframes dropFlowParticles {
   from {
-    background-position: 0 0; }
+    background-position: 0 0;
+  }
   to {
-    background-position: 0 800px; } }
+    background-position: 0 800px;
+  }
+}
 #divAff {
   display: flex;
   flex-flow: column nowrap;
@@ -221,20 +235,22 @@ body {
   min-height: 5em;
   background: linear-gradient(176deg, #f1c80da1 0%, #e91212ab 100%);
   box-shadow: 4px 6px 9px #5c3e06;
-  border-radius: 65px 16px;
-  background-color: rgba(255, 255, 255, 0.8); }
-  #divAff #affichage {
-    font-family: "anime_ace_2.0_bbregular", Arial, sans-serif;
-    margin: 0.5em auto;
-    color: white;
-    text-shadow: -1px -1px 0 #000,   1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 1px 1px 2px #141414, 1px 1px 3px #141414, 1px 1px 5px #141414, 1px 1px 7px #141414, 1px 1px 10px #141414, 1px 1px 12px #141414, 1px 1px 18px #141414; }
-  #divAff #quoteDisplay {
-    color: #222219;
-    margin: 0.5em auto;
-    font-family: 'Press Start 2P', cursive;
+  border-radius: 65px 0;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+#divAff #affichage {
+  font-family: "anime_ace_2.0_bbregular", Arial, sans-serif;
+  font-size: 1em;
+  margin: 0.5em auto;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 1px 1px 2px #141414, 1px 1px 3px #141414, 1px 1px 5px #141414, 1px 1px 7px #141414, 1px 1px 10px #141414, 1px 1px 12px #141414, 1px 1px 18px #141414;
+}
+#divAff #quoteDisplay {
+  color: #222219;
+  margin: 0.5em auto;
+  font-family: "Press Start 2P", cursive;
   font-size: 0.5em;
 }
-  font-size: 1em;
 
 @media screen and (min-width: 500px) and (max-width: 1100px) {
   .container {
@@ -242,7 +258,8 @@ body {
   }
   .container .pokeButtonSide .prix {
     font-size: 1.4em;
-    margin-bottom: 40%; }
+    margin-bottom: 40%;
+  }
 
   #clic {
     margin: 12% auto 12%;
@@ -256,7 +273,8 @@ body {
     display: grid;
     grid-template-areas: "score score" "clic bonus";
     grid-template-columns: 60% 40%;
-    grid-template-rows: 16% 84%; }
+    grid-template-rows: 16% 84%;
+  }
 
   #divAff {
     grid-area: score;
@@ -272,7 +290,8 @@ body {
 
   #clic {
     grid-area: clic;
-    margin: 10% auto; }
+    margin: 10% auto;
+  }
 
   .container {
     grid-area: bonus;
@@ -280,7 +299,6 @@ body {
     flex-flow: column nowrap;
     justify-content: space-around;
     width: 97.5%;
-    height: 93%;
     padding: 5% 0 0 5%;
   }
   .container .pokeButtonSide {
