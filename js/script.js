@@ -285,11 +285,10 @@ window.onload = function(){
         ctx.fillRect(posX - widthRect/2, posY-heightRect/2, widthRect, heightRect);
 
 
-
-        drawCircle(internalRadius, "black")
+        drawCircle(internalRadius+internalRadius*0.16, "black")
         drawCircle(internalRadius-internalRadius*0.16, "white")
-        drawCircle(internalRadius-internalRadius*0.32, "black")
-        drawCircle(internalRadius-internalRadius*0.46, "white")
+        drawCircle(internalRadius-internalRadius*0.36, "black")
+        drawCircle(internalRadius-internalRadius*0.50, "white")
 
     }
     pokeballDrawer("grey","lightgrey","multiInactiveCanvas");
