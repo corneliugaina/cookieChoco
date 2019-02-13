@@ -36,13 +36,8 @@
     justify-content: space-around;
     align-items: stretch;
     z-index: 1;
-    background-image: url("../images/leg.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 0.8;
-    &:hover{
-      opacity:1.0;
-    }
+    background-color: rgba(241, 200, 13, 0.863);
+    box-shadow: 4px 6px 9px rgb(92, 62, 6);
     .pokeButtonSide {
       display: flex;
       flex-flow : column nowrap;
@@ -234,8 +229,11 @@
     margin: 10px auto 50px;
     width: 95%;
     min-height: 100px; 
-    background-color: rgba(241, 200, 13, 0.863); 
-    opacity: 0.8;
+    background-image: url('../images/leg.svg');
+    // background-color: rgba(241, 200, 13, 0.863); 
+     opacity: 0.9;
+    background-repeat: none;
+    background-size: cover;
     box-shadow: 4px 6px 9px rgb(92, 62, 6);
     font-family: 'anime_ace_2.0_bbregular', Arial, sans-serif ;
     font-size: 2em;
