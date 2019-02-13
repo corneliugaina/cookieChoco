@@ -25,9 +25,9 @@ window.onload = function(){
         },
         bonus : { 
             active : false,
-            prixMulti : 5,
-            prixAutoclic : 5,
-            prixBoost : 5,
+            prixMulti : 50,
+            prixAutoclic : 500,
+            prixBoost : 5000,
             boostCount: 1,
             tclic : Number.MAX_SAFE_INTEGER,
             tBoosterOn : 0,
