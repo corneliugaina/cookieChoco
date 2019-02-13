@@ -15,7 +15,7 @@
 body{
   max-width: 1600px;
   width: 100vw;
-  max-height : 800px;
+  //max-height : 1200px;
 }
 
 #containerGrid {
@@ -35,10 +35,11 @@ body{
   align-items: stretch;
   z-index: 1;
   background-color: rgba(241, 200, 13, 0.63); 
-  border-radius: 0 65px;
+  border-radius: 0 25px;
   box-shadow: 4px 6px 9px rgb(92, 62, 6);
   position: relative;
   padding: 0.5em;
+  //margin-bottom: 0;
   &:hover{
     opacity:1.0;
   }
@@ -57,21 +58,13 @@ body{
         align-items: center;
         justify-content: space-around;
           canvas {
-          //display : flex;
-          //align-items: center;
-          //justify-content: space-around;
           width : 70%;
-          // position: relative;
-          // top: 1.5px;
-          // left : 0;
           border-radius : 50%;
           background-color: #000;
           -webkit-box-shadow: 0px 0px 22px 2px #fdfdfd, 0px 0px 22px 3px #f8f0d6;
           -moz-box-shadow: 0px 0px 22px 2px #fdfdfd, 0px 0px 22px 3px #f8f0d6;
           box-shadow: 0px 0px 22px 2px #fdfdfd, 0px 0px 22px 3px #f8f0d6;
           &:active {
-            // font-size: 1em;
-            // color: rgb(233, 51, 27);
             transform: scale(0.9);
           }
         }
@@ -81,21 +74,13 @@ body{
         align-items: center;
         justify-content: space-around;
           canvas {
-          //display : flex;
-          //align-items: center;
-          //justify-content: space-around;
           width : 70%;
-          // position: relative;
-          // top: 1.5px;
-          // left : 0;
           border-radius : 50%;
           background-color: #000;
           -webkit-box-shadow: 0px 0px 22px 2px #fdfdfd, 0px 0px 22px 3px #f8f0d6;
           -moz-box-shadow: 0px 0px 22px 2px #fdfdfd, 0px 0px 22px 3px #f8f0d6;
           box-shadow: 0px 0px 22px 2px #fdfdfd, 0px 0px 22px 3px #f8f0d6;
           &:active {
-            // font-size: 1em;
-            // color: rgb(233, 51, 27);
             transform: scale(0.9);
           }
         }
@@ -116,8 +101,7 @@ body{
 
 
     .font{
-        height: 20%;
-        margin: 5%;
+        margin: 0.4em;
         display : flex;
         justify-content: stretch;
         align-content: stretch;
@@ -175,7 +159,8 @@ body{
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 5%;
+      position: relative;
+      top : 0;
       padding: 6px;
       width: 85%;
       opacity: 0.8;
@@ -201,12 +186,13 @@ body{
 #clic {
   grid-area: clic;
   max-width: 350px;
-  width : 80%;
-  height : 40%;
+  width : 50%;
+  height : 50%;
   margin: 0 auto 10%;
   border-radius : 50%;
   #mainPokeballCanvas {
   width: 100%;
+  margin: auto;
   position: relative;
   top: 2px;
   background-color: #000;
@@ -254,7 +240,7 @@ body{
   min-height: 5em; 
   background: linear-gradient(176deg, #f1c80da1 0%, #e91212ab 100%);
   box-shadow: 4px 6px 9px rgb(92, 62, 6);
-  border-radius: 65px 0;
+  border-radius: 25px 0;
   background-color: rgba(255, 255, 255, 0.80);
   #affichage{ 
     font-family: 'anime_ace_2.0_bbregular', Arial, sans-serif ;
@@ -283,18 +269,23 @@ body{
 
 @media screen and (min-width: 500px) and (max-width: 1100px) {
   .container {
-    padding-top: 10%;
+    border-radius: 65px 0;
+    margin : 1em;
     .pokeButtonSide {
       .prix {
+        margin : 0.2em;
         font-size: 1.4em;
-        margin-bottom: 40%;
       }
     }
   }
   #clic {
     margin: 12% auto 12%;
   }
+  #divAff {
+    border-radius: 65px 0;
+  }
 }
+
 
 @media screen and (min-width: 1100px) {
   #containerGrid {
@@ -322,6 +313,7 @@ body{
   #clic {
     grid-area: clic;
     margin : 10% auto;
+    width : 50%;
   }
   .container {
     grid-area: bonus;

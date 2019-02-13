@@ -13,7 +13,6 @@
 body {
   max-width: 1600px;
   width: 100vw;
-  max-height: 800px;
 }
 
 #containerGrid {
@@ -33,11 +32,10 @@ body {
   align-items: stretch;
   z-index: 1;
   background-color: rgba(241, 200, 13, 0.63);
-  border-radius: 0 65px;
+  border-radius: 0 25px;
   box-shadow: 4px 6px 9px #5c3e06;
   position: relative;
   padding: 0.5em;
-  margin-bottom: 1%;
 }
 .container:hover {
   opacity: 1;
@@ -97,8 +95,7 @@ body {
   display: none;
 }
 .container .pokeButtonSide .font {
-  height: 20%;
-  margin: 5%;
+  margin: 0.4em;
   display: flex;
   justify-content: stretch;
   align-content: stretch;
@@ -150,7 +147,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 5%;
+  position: relative;
+  top: 0;
   padding: 6px;
   width: 85%;
   opacity: 0.8;
@@ -174,20 +172,25 @@ body {
 #clic {
   grid-area: clic;
   max-width: 350px;
-  width: 80%;
+  width: 50%;
+  height: 50%;
   margin: 0 auto 10%;
-  border-radius: 50%; }
-  #clic #mainPokeballCanvas {
-    width: 100%;
-    position: relative;
-    top: 2px;
-    background-color: #000;
-    border-radius: 50%;
-    -webkit-box-shadow: 0px 0px 62px 4px #f1bc1b, 0px 0px 62px 8px #f4c847, 0px 0px 62px 16px #e6ca78;
-    -moz-box-shadow: 0px 0px 62px 4px #f1bc1b, 0px 0px 62px 8px #f4c847, 0px 0px 62px 16px #e6ca78;
-    box-shadow: 0px 0px 62px 4px #f1bc1b, 0px 0px 62px 8px #f4c847, 0px 0px 62px 16px #e6ca78; }
-  #clic:active {
-    transform: scale(0.9); }
+  border-radius: 50%;
+}
+#clic #mainPokeballCanvas {
+  width: 100%;
+  margin: auto;
+  position: relative;
+  top: 2px;
+  background-color: #000;
+  border-radius: 50%;
+  -webkit-box-shadow: 0px 0px 62px 4px #f1bc1b, 0px 0px 62px 8px #f4c847, 0px 0px 62px 16px #e6ca78;
+  -moz-box-shadow: 0px 0px 62px 4px #f1bc1b, 0px 0px 62px 8px #f4c847, 0px 0px 62px 16px #e6ca78;
+  box-shadow: 0px 0px 62px 4px #f1bc1b, 0px 0px 62px 8px #f4c847, 0px 0px 62px 16px #e6ca78;
+}
+#clic:active {
+  transform: scale(0.9);
+}
 
 .i-large {
   position: absolute;
@@ -195,7 +198,8 @@ body {
   right: 0;
   left: 0;
   bottom: 0;
-  z-index: -2; }
+  z-index: -2;
+}
 
 .i-large {
   background: url("./pikachupluspetit.svg") repeat 0px 0px;
@@ -231,7 +235,7 @@ body {
   min-height: 5em;
   background: linear-gradient(176deg, #f1c80da1 0%, #e91212ab 100%);
   box-shadow: 4px 6px 9px #5c3e06;
-  border-radius: 65px 0;
+  border-radius: 25px 0;
   background-color: rgba(255, 255, 255, 0.8);
 }
 #divAff #affichage {
@@ -250,15 +254,22 @@ body {
 
 @media screen and (min-width: 500px) and (max-width: 1100px) {
   .container {
-    padding-top: 10%;
+    border-radius: 65px 0;
+    margin: 1em;
   }
   .container .pokeButtonSide .prix {
+    margin: 0.2em;
     font-size: 1.4em;
-    margin-bottom: 40%;
   }
 
   #clic {
-    margin: 12% auto 12%; } }
+    margin: 12% auto 12%;
+  }
+
+  #divAff {
+    border-radius: 65px 0;
+  }
+}
 @media screen and (min-width: 1100px) {
   #containerGrid {
     height: 100%;
@@ -273,15 +284,19 @@ body {
   #divAff {
     grid-area: score;
     width: 98vw;
-    margin: 1em auto .8em; }
-    #divAff #affichage {
-      font-size: 1.8em; }
-    #divAff #quoteDisplay {
-      font-size: 0.8em; }
+    margin: 1em auto 0.8em;
+  }
+  #divAff #affichage {
+    font-size: 1.8em;
+  }
+  #divAff #quoteDisplay {
+    font-size: 0.8em;
+  }
 
   #clic {
     grid-area: clic;
     margin: 10% auto;
+    width: 50%;
   }
 
   .container {
