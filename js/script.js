@@ -66,7 +66,7 @@ window.onload = function(){
     // Fonctions PRIX : 
 
     function prMultiplication() {
-        txt = "prix = "+ pokemon.bonus.prixMulti
+        txt = "prix = "+ pokemon.bonus.prixMulti + " ₽"
         pokemon.button.praffMul.innerText = txt
     }
     function prAutoclicker () {
@@ -74,7 +74,7 @@ window.onload = function(){
         pokemon.button.praffautoclic.innerText = txt
     }
     function prBooster (){
-        txt = "prix = "+pokemon.bonus.prixBoost
+        txt = "prix = "+pokemon.bonus.prixBoost + " ₽"
         pokemon.button.prBoost.innerText = txt
     }
 
