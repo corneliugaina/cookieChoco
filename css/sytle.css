@@ -13,6 +13,7 @@
 body {
   max-width: 1600px;
   width: 100vw;
+  max-height: 800px;
 }
 
 #containerGrid {
@@ -32,7 +33,7 @@ body {
   align-items: stretch;
   z-index: 1;
   background-color: rgba(241, 200, 13, 0.63);
-  border-radius: 0 25px;
+  border-radius: 0 65px;
   box-shadow: 4px 6px 9px #5c3e06;
   position: relative;
   padding: 0.5em;
@@ -49,9 +50,9 @@ body {
   margin-top: 5px;
   transition: 0.1s;
   position: relative;
-  /*-------------------vignettes-------------------------*/
-  /*----------------------compteur de bonus-------------------*/
-  /* ----------------affichage prix-------------------- */
+  /* vignettes */
+  /* compteur de bonus*/
+  /* Affichage prix */
 }
 .container .pokeButtonSide .pokeImage .active {
   display: flex;
@@ -95,7 +96,8 @@ body {
   display: none;
 }
 .container .pokeButtonSide .font {
-  margin: 0.4em;
+  height: 20%;
+  margin: 5%;
   display: flex;
   justify-content: stretch;
   align-content: stretch;
@@ -147,8 +149,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  top: 0;
+  margin: 5%;
   padding: 6px;
   width: 85%;
   opacity: 0.8;
@@ -172,14 +173,13 @@ body {
 #clic {
   grid-area: clic;
   max-width: 350px;
-  width: 50%;
-  height: 50%;
+  width: 80%;
+  height: 40%;
   margin: 0 auto 10%;
   border-radius: 50%;
 }
 #clic #mainPokeballCanvas {
   width: 100%;
-  margin: auto;
   position: relative;
   top: 2px;
   background-color: #000;
@@ -235,7 +235,7 @@ body {
   min-height: 5em;
   background: linear-gradient(176deg, #f1c80da1 0%, #e91212ab 100%);
   box-shadow: 4px 6px 9px #5c3e06;
-  border-radius: 25px 0;
+  border-radius: 65px 0;
   background-color: rgba(255, 255, 255, 0.8);
 }
 #divAff #affichage {
@@ -254,20 +254,15 @@ body {
 
 @media screen and (min-width: 500px) and (max-width: 1100px) {
   .container {
-    border-radius: 65px 0;
-    margin: 1em;
+    padding-top: 10%;
   }
   .container .pokeButtonSide .prix {
-    margin: 0.2em;
     font-size: 1.4em;
+    margin-bottom: 40%;
   }
 
   #clic {
     margin: 12% auto 12%;
-  }
-
-  #divAff {
-    border-radius: 65px 0;
   }
 }
 @media screen and (min-width: 1100px) {
@@ -296,7 +291,6 @@ body {
   #clic {
     grid-area: clic;
     margin: 10% auto;
-    width: 50%;
   }
 
   .container {
@@ -356,4 +350,4 @@ body {
   }
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=sytle.css.map */
