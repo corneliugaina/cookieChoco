@@ -191,35 +191,53 @@ window.onload = function(){
     // Fonction qui va afficher un message (BESOIN DE LE STYLER DANS SCSS !)
     function selectionQuote () {
         // Conditionnelles d'affichage du message, selon le score. 
-        if (pokemon.score <= 10) {
-            pokemon.affQuoteTxt = 'Level 0 : Ton Pikachu fout le bordel dans la cuisine !';
+        if (pokemon.score <= 5) {
+            pokemon.affQuoteTxt = 'Level 0 : Tes Pikachus foutent le bordel dans la cuisine !';
             pokemon.button.affQuote.innerText = pokemon.affQuoteTxt;
         } else if (pokemon.score < 50 ) {
-            pokemon.affQuoteTxt = 'Level 1 : Un gang de Pikachus sevit dans ton jardin !';
+            pokemon.affQuoteTxt = 'Level 1 : Un gang de Pikachus sevit dans ton jardin et elecrifient la mare aux magicarpes !';
             pokemon.button.affQuote.innerText = pokemon.affQuoteTxt;
-        } else if (pokemon.score < 100) {
+        } else if (pokemon.score < 150) {
             pokemon.affQuoteTxt = 'Level 2 : Une foule de Pikachus enfilent leur gilets jaunes et cassent le quartier !';
             pokemon.button.affQuote.innerText = pokemon.affQuoteTxt;
         } else if (pokemon.score < 500) {
-            pokemon.affQuoteTxt = 'Level 3 : Les Pikachus creent un syndicat et bloquent toute la region !';
+            pokemon.affQuoteTxt = 'Level 3 : Les Pikachus creent un syndicat et bloquent le ring de Bruxelles !';
             pokemon.button.affQuote.innerText = pokemon.affQuoteTxt;
         } else if (pokemon.score < 1000) {
-            pokemon.affQuoteTxt = 'Level 5 : Invasion de Pikachu sur le continent, ils font concurrence aux lapins cretins !';
+            pokemon.affQuoteTxt = 'Level 4 : Les Pikachus passent les communes a facilites et prennent en tenaille la region walonne/flamande !';
+            pokemon.button.affQuote.innerText = pokemon.affQuoteTxt;
+        } else if (pokemon.score < 3000) {
+            pokemon.affQuoteTxt = 'Level 5 : Les Pikachus prennent d\'assaut le Benelux, les luxembourgeois creent la crypto Pikacoin a leur efigie ! !';
+            pokemon.button.affQuote.innerText = pokemon.affQuoteTxt;
+        } else if (pokemon.score < 6000) {
+            pokemon.affQuoteTxt = 'Level 6 : La France est prise pour cible, les Pikachus font concurrence aux Lapins Cretins !'; 
+            pokemon.button.affQuote.innerText = pokemon.affQuoteTxt;
+        } else if (pokemon.score < 10000) {
+            pokemon.affQuoteTxt = 'Level 7 : Les Pikachus s\'organisent et commencent a puiser l\'energie des centrales nucleaires !'; 
             pokemon.button.affQuote.innerText = pokemon.affQuoteTxt;
         } else if (pokemon.score < 20000) {
-            pokemon.affQuoteTxt = 'Level 6 : Les Pikachus envahissent le monde entier !';
+            pokemon.affQuoteTxt = 'Level 8 : Invasion des Pikachus dans toute l\'Europe, ils donnent de l\'energie renouvelable !'; 
+            pokemon.button.affQuote.innerText = pokemon.affQuoteTxt;
+        } else if (pokemon.score < 40000) {
+            pokemon.affQuoteTxt = 'Level 9 : Les Pikachus creent leur nouvel ordre mondial et declarent le Nouvel Age Electrique !'; 
+            pokemon.button.affQuote.innerText = pokemon.affQuoteTxt;
+        } else if (pokemon.score < 80000) {
+            pokemon.affQuoteTxt = 'Level 10 : Le monde entier est envahi par des Pikachus !';
+            pokemon.button.affQuote.innerText = pokemon.affQuoteTxt;
+        } else if (pokemon.score < 160000) {
+            pokemon.affQuoteTxt = 'Level 11 : Les fusees de la NASA sont alimentees par des Pikachu, les pokemons se lancent a la conquete de la Lune !';
+            pokemon.button.affQuote.innerText = pokemon.affQuoteTxt;
+        } else if (pokemon.score < 300000) {
+            pokemon.affQuoteTxt = 'Level 12 : Les Pikachus construisent des colonies sur Mars et Elon Musk installe un Pikachu dans chaque Tesla !';
             pokemon.button.affQuote.innerText = pokemon.affQuoteTxt;
         } else if (pokemon.score < 500000) {
-            pokemon.affQuoteTxt = 'Level 7 : Invasion de Pikachus dans tout le systeme solaire !'; 
+            pokemon.affQuoteTxt = 'Level 13 : Le systeme solaire est renomme en \'Systeme Pikachu\' !';
             pokemon.button.affQuote.innerText = pokemon.affQuoteTxt;
         } else if (pokemon.score < 1000000) {
-            pokemon.affQuoteTxt = 'Level 8 : Invasion de Pikachus dans toute la Voie Lactee !';
-            pokemon.button.affQuote.innerText = pokemon.affQuoteTxt;
-        } else if (pokemon.score < 10000000) {
-            pokemon.affQuoteTxt = 'Level 9 : Les Pikachus explorent l\'Univers entier !';
+            pokemon.affQuoteTxt = 'Level 14 : Les Pikachu voyagent a la vitesse de la lumiere et se mettent a la conquete de la Voie Lactee !';
             pokemon.button.affQuote.innerText = pokemon.affQuoteTxt;
         } else {
-            pokemon.affQuoteTxt = 'Level 10 : "Les Pikachus sont hors controle, ils soumettent des dimensions parallèles !';
+            pokemon.affQuoteTxt = 'Level 15 : Les Pikachu mettent au point une machine de voyage spatio-temporelle et envahissent les dimensions paralleles !';
             pokemon.button.affQuote.innerText = pokemon.affQuoteTxt;
         } 
     }
