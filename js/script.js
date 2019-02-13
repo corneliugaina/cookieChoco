@@ -7,6 +7,7 @@ window.onload = function(){
         multiplicateur  :1 ,
         autoclicker :0 ,
         boost : 1,
+        affQuoteTxt: 0,
         button : {
             aff : document.getElementById('affichage'),
             cli : document.getElementById('clic'),
@@ -25,7 +26,7 @@ window.onload = function(){
         bonus : { 
             active : false,
             prixMulti : 50,
-            prixAutoclic : 50,
+            prixAutoclic : 500,
             prixBoost : 5000,
             boostCount: 1,
             tclic : Number.MAX_SAFE_INTEGER,
@@ -35,7 +36,6 @@ window.onload = function(){
 
    
     //les fonctions
-
     function affScore () {
         let txt = "Votre score est de " + pokemon.score + " pikachu !"
         pokemon.button.aff.innerText = txt
@@ -46,38 +46,29 @@ window.onload = function(){
         txt = "x" + pokemon.multiplicateur
         pokemon.button.affMul.innerText = txt 
     }
-
-    function affBooster() {
-        txt = "temps :" + ("//julien rajouter sa fonction temps!!!")
-        pokemon.button.affBoost.innerText = txt 
-    }
-
     function affautoClic() {
         txt = "x" + pokemon.autoclicker    
         pokemon.button.affautoClic.innerText = txt
     } 
 
-    // affichage quote
-    function quoteDisplay () {
-        txt = affQuote;
-        pokemon.button.affQuote.innerText = txt
-    }
 
     // Fonctions PRIX : 
-
     function prMultiplication() {
-        txt = "prix = "+ pokemon.bonus.prixMulti + " ₽"
+        txt = "Prix : " + pokemon.bonus.prixMulti  + " ₽"
         pokemon.button.praffMul.innerText = txt
     }
     function prAutoclicker () {
-        txt = "Buy: "+ pokemon.bonus.prixAutoclic + " ₽"
+        txt = "Prix : " + pokemon.bonus.prixAutoclic + " ₽"
         pokemon.button.praffautoclic.innerText = txt
     }
     function prBooster (){
-        txt = "prix = "+pokemon.bonus.prixBoost + " ₽"
+        txt = "Prix : " + pokemon.bonus.prixBoost  + " ₽"
         pokemon.button.prBoost.innerText = txt
     }
-
+    //pour afficher prix initial
+    prMultiplication()
+    prAutoclicker()
+    prBooster() 
 
     function clicking () {
         pokemon.bonus.tclic = new Date().getTime()
@@ -89,6 +80,7 @@ window.onload = function(){
         pokemon.score = pokemon.score + (1 * pokemon.multiplicateur * pokemon.boost)
         activation()
         affScore()
+        selectionQuote ()
     };
 
 
@@ -129,11 +121,6 @@ window.onload = function(){
         activation() 
         prMultiplication()
     };
-    // function boostTiming () {
-    //     t0 = new Date()
-    //     t0S = t0.getSeconds();
-    //     boost(tOS)
-    // };
 
     function boost() {
         pokemon.bonus.tBoosterOn = new Date().getTime()
@@ -151,9 +138,6 @@ window.onload = function(){
         activation();
     }
 
-    
-  
- 
     function affichageTempsBooster(){
         var timeleft = 30;
         var downloadTimer = setInterval(function(){
@@ -168,13 +152,6 @@ window.onload = function(){
         }, 1000);
     }
 
-    
-    /////////////////////////////////////////////////////////////////////
-    // Partie "Autoclicker" qui fait qu'a chaque achat d'un autoclicker :
-    // 1) le prix d'achat est deduit du score,
-    // 2) le prix du autoclicker suivant augmente (wip)
-    prAutoclicker(); // appel de la fonction affichage prix
-
     // Fonction qui permettra d'effectuer l'achat d'autoclic
     function achatAutoclicker () {
         if (pokemon.score >= 50) {
@@ -187,8 +164,8 @@ window.onload = function(){
         callAutoclic (); // Appel de la fonction du lancement de l'autoclicker
         activation() // 
         prAutoclicker(); // maj du prix (+100% apres chaque achat)    
-       } 
-    // Fonction du lancement d'autocliker une fois celui-ci achete 
+    } 
+// Fonction du lancement d'autocliker une fois celui-ci achete 
     function callAutoclic () { 
         if (pokemon.autoclicker >= 0) {
             pokemon.autoclicker++;
@@ -196,46 +173,71 @@ window.onload = function(){
             pokemon.score += 1;
             console.log(pokemon.score)
             pokemon.cli = pokemon.cli + 1;
-            affScore();
+            affScore()
+            activation();
             }, 1000);
             console.log("Lancement autoclic");
         } else {    
         console.log("pas d'autoclic a appeller");
         } 
-        affautoClic(); // mettre a jour le nombre d'autoclics deja achetes 
-        affScore(); // maj du score
+    affautoClic(); // mettre a jour le nombre d'autoclics deja achetes 
+    affScore(); // maj du score
     }
+
 
     /////////////////////////////////////////////////////////////////
     // Differentes phrases de narration du pika-clicker assignees a la variable quote, de 0 a 9 (10 niveaux)
-
-    var affQuote = ""; // variable servant dans la fonction de "quoteDisplay" 
-
     // Fonction qui va afficher un message (BESOIN DE LE STYLER DANS SCSS !)
     function selectionQuote () {
-        affScore();
-        quoteDisplay();
         // Conditionnelles d'affichage du message, selon le score. 
-        if (pokemon.score < 10) {
-            affQuote = 'Level 0 : Ton Pikachu fout le bordel dans la cuisine !';
-        } else if (pokemon.score < 50) {
-            affQuote = 'Level 1 : Un gang de Pikachus sevit dans ton jardin !';
-        } else if (pokemon.score < 100) {
-            affQuote = 'Level 2 : Une foule de Pikachus enfilent leur gilets jaunes et cassent le quartier !';
+        if (pokemon.score <= 5) {
+            pokemon.affQuoteTxt = 'Level 0 : Tes Pikachus foutent le bordel dans la cuisine !';
+            pokemon.button.affQuote.innerText = pokemon.affQuoteTxt;
+        } else if (pokemon.score < 50 ) {
+            pokemon.affQuoteTxt = 'Level 1 : Un gang de Pikachus sevit dans ton jardin et elecrifient la mare aux magicarpes !';
+            pokemon.button.affQuote.innerText = pokemon.affQuoteTxt;
+        } else if (pokemon.score < 150) {
+            pokemon.affQuoteTxt = 'Level 2 : Une foule de Pikachus enfilent leur gilets jaunes et cassent le quartier !';
+            pokemon.button.affQuote.innerText = pokemon.affQuoteTxt;
         } else if (pokemon.score < 500) {
-            affQuote = 'Level 3 : Les Pikachus creent un syndicat et bloquent toute la region !';
+            pokemon.affQuoteTxt = 'Level 3 : Les Pikachus creent un syndicat et bloquent le ring de Bruxelles !';
+            pokemon.button.affQuote.innerText = pokemon.affQuoteTxt;
         } else if (pokemon.score < 1000) {
-            affQuote = 'Level 5 : Invasion de Pikachu sur le continent, ils font concurrence aux lapins cretins !';
+            pokemon.affQuoteTxt = 'Level 4 : Les Pikachus passent les communes a facilites et prennent en tenaille la region walonne/flamande !';
+            pokemon.button.affQuote.innerText = pokemon.affQuoteTxt;
+        } else if (pokemon.score < 3000) {
+            pokemon.affQuoteTxt = 'Level 5 : Les Pikachus prennent d\'assaut le Benelux, les luxembourgeois creent la crypto Pikacoin a leur efigie ! !';
+            pokemon.button.affQuote.innerText = pokemon.affQuoteTxt;
+        } else if (pokemon.score < 6000) {
+            pokemon.affQuoteTxt = 'Level 6 : La France est prise pour cible, les Pikachus font concurrence aux Lapins Cretins !'; 
+            pokemon.button.affQuote.innerText = pokemon.affQuoteTxt;
+        } else if (pokemon.score < 10000) {
+            pokemon.affQuoteTxt = 'Level 7 : Les Pikachus s\'organisent et commencent a puiser l\'energie des centrales nucleaires !'; 
+            pokemon.button.affQuote.innerText = pokemon.affQuoteTxt;
         } else if (pokemon.score < 20000) {
-            affQuote = 'Level 6 : Les Pikachus envahissent le monde entier !';
+            pokemon.affQuoteTxt = 'Level 8 : Invasion des Pikachus dans toute l\'Europe, ils donnent de l\'energie renouvelable !'; 
+            pokemon.button.affQuote.innerText = pokemon.affQuoteTxt;
+        } else if (pokemon.score < 40000) {
+            pokemon.affQuoteTxt = 'Level 9 : Les Pikachus creent leur nouvel ordre mondial et declarent le Nouvel Age Electrique !'; 
+            pokemon.button.affQuote.innerText = pokemon.affQuoteTxt;
+        } else if (pokemon.score < 80000) {
+            pokemon.affQuoteTxt = 'Level 10 : Le monde entier est envahi par des Pikachus !';
+            pokemon.button.affQuote.innerText = pokemon.affQuoteTxt;
+        } else if (pokemon.score < 160000) {
+            pokemon.affQuoteTxt = 'Level 11 : Les fusees de la NASA sont alimentees par des Pikachu, les pokemons se lancent a la conquete de la Lune !';
+            pokemon.button.affQuote.innerText = pokemon.affQuoteTxt;
+        } else if (pokemon.score < 300000) {
+            pokemon.affQuoteTxt = 'Level 12 : Les Pikachus construisent des colonies sur Mars et Elon Musk installe un Pikachu dans chaque Tesla !';
+            pokemon.button.affQuote.innerText = pokemon.affQuoteTxt;
         } else if (pokemon.score < 500000) {
-            affQuote = 'Level 7 : Invasion de Pikachus dans tout le systeme solaire !'; 
+            pokemon.affQuoteTxt = 'Level 13 : Le systeme solaire est renomme en \'Systeme Pikachu\' !';
+            pokemon.button.affQuote.innerText = pokemon.affQuoteTxt;
         } else if (pokemon.score < 1000000) {
-            affQuote = 'Level 8 : Invasion de Pikachus dans toute la Voie Lactee !';
-        } else if (pokemon.score < 10000000) {
-            affQuote = 'Level 9 : Les Pikachus explorent l\'Univers entier !';
+            pokemon.affQuoteTxt = 'Level 14 : Les Pikachu voyagent a la vitesse de la lumiere et se mettent a la conquete de la Voie Lactee !';
+            pokemon.button.affQuote.innerText = pokemon.affQuoteTxt;
         } else {
-            affQuote = 'Level 10 : "Les Pikachus sont hors controle, ils soumettent des dimensions paralleles !';
+            pokemon.affQuoteTxt = 'Level 15 : Les Pikachu mettent au point une machine de voyage spatio-temporelle et envahissent les dimensions paralleles !';
+            pokemon.button.affQuote.innerText = pokemon.affQuoteTxt;
         } 
     }
 
@@ -251,7 +253,4 @@ window.onload = function(){
 
     // appel fonction autoclic    
     pokemon.button.autoClic.addEventListener('click', achatAutoclicker);
-
-    // appel fonction selectionQuote 
-    window.addEventListener('click', selectionQuote); // DEBUG : appel de la fonction des le chargenement de la page ??? 
 }
