@@ -1,74 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type = "text/css" href="./css/style.css">
-    <script src="./js/script.js"></script>
-    <title>Pika-Clic</title>
-    <link rel="icon" type="image/png" href="./images/pokeball.png" />
-    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-</head>
-<body>
- 
-   <div id="containerGrid" class="i-large">
-        <div id=divAff>
-            <p id="affichage">Vous avez 0 pikachu !</p>
-            <div id="quoteDisplay">Poke-clique pour cloner tes Pikachus !</div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" type = "text/css" href="./css/style.css">
+        <script src="./js/script.js"></script>
+        <title>Pika-Clic</title>
+        <link rel="icon" type="image/png" href="./images/pokeball.png" />
+        <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    </head>
+
+    <body>
+        <div id="containerGrid" class="i-large">
+
+            <div id=divAff>
+                <p id="affichage">Vous avez 0 pikachu !</p>
+                <div id="quoteDisplay">Poke-clique pour cloner tes Pikachus !</div>
+            </div>
+
+            <div id="clic">
+                <canvas id="mainPokeballCanvas" width="500px" height="500px" ></canvas>
+            </div>
+
+            <div class = "container">
+
+                <div class = "pokeButtonSide">
+                    <div class="pokeImage">
+                        <div id="multiActive">
+                            <div class="active">
+                                <canvas id="multiActiveCanvas" width="128px" height="128px" ></canvas>
+                            </div>
+                        </div>
+                        <div id="multiInactive">
+                            <div class="inactive">
+                                <canvas id="multiInactiveCanvas" width="128px" height="128px" ></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="font">
+                        <img src ="./images/multi.png"/>
+                    </div>
+
+                    <div id="multiplication" class="bonusCount">0</div>
+                    <div id="prMultiplication" class="prix">Prix: 50</div>
+                </div>
+
+                <div class = "pokeButtonSide">
+                    <div class="pokeImage" id="autoclic">
+                        <div id="autoclicActive">
+                            <div class="active">
+                                <canvas id="autoActiveCanvas" width="128px" height="128px" ></canvas>
+                            </div>
+                        </div>
+                        <div id="autoclicInactive">
+                            <div class="inactive">
+                                <canvas id="autoInactiveCanvas" width="128px" height="128px" ></canvas>
+                            </div>    
+                        </div>
+                    </div>
+
+                    <div class="font">
+                        <img src ="./images/autocl.png"/>
+                    </div>
+
+                    <div id="autoClicker" class="bonusCount">0</div>
+                    <div id="prAutoclicker" class="prix">Prix: 500</div>
+                </div>
+
+                <div class="pokeButtonSide">
+                    <div class="pokeImage" id="boost">
+                        <div id="boostActive">
+                            <div class="active">
+                                <canvas id="boostActiveCanvas" width="128px" height="128px" ></canvas>
+                            </div>
+                        </div>
+                        <div id="boostInactive">
+                            <div class="inactive">
+                                <canvas id="boostInactiveCanvas" width="128px" height="128px" ></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="font">
+                        <img src ="./images/boost.png"/>
+                    </div>
+                    <div id="booster" class="bonusCount">0</div>
+                    <div id="prBooster" class="prix">Prix: 5000</div>
+                </div>
+            </div>
         </div>
-        <div id="clic">
-            <img class = "pokeball" src ="./images/pokeball.svg"  alt = "Button Pokeball"/>
-        </div>
-        <div class = "container">
-            
-            <div class = "pokeButtonSide">
-                <div class="pokeImage">
-                    <div id="multiActive" class="active">
-                        <img src ="./images/pokeball-bronze.svg"  alt = "Button Pokeball"  title="Gagnez plus de points!" />
-                    </div>
-                    <div id="multiInactive" class="inactive">
-                        <img src ="./images/pokeball-disabled.svg" alt = "Button Pokeball disabled" />
-                    </div>
-                </div>
-                <div class="font">
-                    <img src ="./images/multi.png"/>
-                </div>
-                <div id="multiplication" class="bonusCount">0</div>
-                <div id="prMultiplication" class="prix">Prix: 50</div>
-                
-            </div>
-            <div class = "pokeButtonSide">
-                <div class="pokeImage" id="autoclic">
-                    <div id="autoclicActive" class="active">
-                        <img src ="./images/pokeball-argent.svg"  alt = "Button Pokeball" />
-                    </div>
-                    <div id="autoclicInactive" class="inactive">
-                        <img src="./images/pokeball-disabled.svg" alt ="Button Pokeball disabled" />
-                    </div>
-                </div>
-                <div class="font">
-                    <img src ="./images/autocl.png"/>
-                </div>
-                <div id="autoClicker" class="bonusCount">0</div>
-                <div id="prAutoclicker" class="prix">Prix: 500</div>
-            </div>
-            <div class="pokeButtonSide">
-                <div class="pokeImage" id="boost">
-                    <div id="boostActive" class="active">
-                        <img src ="./images/pokeball-or.svg"  alt="Button Pokeball" />            
-                    </div>
-                    <div id="boostInactive" class="inactive">
-                        <img src ="./images/pokeball-disabled.svg" alt ="Button Pokeball disabled" />
-                    </div>
-                </div>
-                <div class="font">
-                    <img src ="./images/boost.png"/>
-                </div>
-                <div id="booster" class="bonusCount">0</div>
-                <div id="prBooster" class="prix">Prix: 5000</div>
-            </div>
-        </div>     
-    </div>
-</body>
+    </body>
 </html>
