@@ -44,7 +44,7 @@ window.onload = function(){
     // francois affichage multiplicateur + aff autoclick+aff prix bonus:
     function affMulti() {
         let txt = "x" + pokemon.multiplicateur
-        pokemon.button.praffMul.innerText = txt 
+        pokemon.button.affMul.innerText = txt 
     }
 
     function affBooster() {
