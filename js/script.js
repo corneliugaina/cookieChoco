@@ -262,11 +262,9 @@ window.onload = function(){
 
 
 
-    let pokeballDrawer = function(topColor, bottomColor, idCanvas,sizeCanvas){
+    let pokeballDrawer = function(topColor, bottomColor, idCanvas){
 
         var canvas = document.getElementById(idCanvas);
-        canvas.width = sizeCanvas;
-        canvas.height = sizeCanvas;
         var ctx = canvas.getContext("2d");
         var externalRadius = (canvas.width / 2) - canvas.width * 0.04;
 
@@ -314,13 +312,13 @@ window.onload = function(){
         drawCircle(internalRadius-internalRadius*0.50, "white")
 
     }
-    pokeballDrawer("grey","lightgrey","multiInactiveCanvas", 128);
-    pokeballDrawer("grey","lightgrey","autoInactiveCanvas",128);
-    pokeballDrawer("grey","lightgrey","boostInactiveCanvas",128);
-    pokeballDrawer("#974a00","white","multiActiveCanvas",128);
-    pokeballDrawer("silver","white","autoActiveCanvas",128);
-    pokeballDrawer("gold","white","boostActiveCanvas",128);
-    pokeballDrawer("red","white","mainPokeballCanvas",500);
+    pokeballDrawer("grey","lightgrey","multiInactiveCanvas");
+    pokeballDrawer("grey","lightgrey","autoInactiveCanvas");
+    pokeballDrawer("grey","lightgrey","boostInactiveCanvas");
+    pokeballDrawer("#974a00","white","multiActiveCanvas");
+    pokeballDrawer("silver","white","autoActiveCanvas");
+    pokeballDrawer("gold","white","boostActiveCanvas");
+    pokeballDrawer("red","white","mainPokeballCanvas");
 
 
 }
