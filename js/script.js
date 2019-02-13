@@ -156,11 +156,11 @@ window.onload = function(){
     // Fonction qui permettra d'effectuer l'achat d'autoclic
     function achatAutoclicker () {
         if (pokemon.score >= pokemon.bonus.prixAutoclic) {
-        pokemon.score = pokemon.score - pokemon.bonus.prixAutoclic;
-        console.log("Achat d'Autoclicker");
-        pokemon.bonus.prixAutoclic = pokemon.bonus.prixAutoclic * 2;
+            pokemon.score = pokemon.score - pokemon.bonus.prixAutoclic;
+            console.log("Achat d'Autoclicker");
+            pokemon.bonus.prixAutoclic = pokemon.bonus.prixAutoclic * 2;
         } else {
-        console.log("Vous n'avez pas assez de credit pour l'achat de l'Autoclicker");
+           console.log("Vous n'avez pas assez de credit pour l'achat de l'Autoclicker");
         }
         callAutoclic (); // Appel de la fonction du lancement de l'autoclicker
         activation() // 
@@ -171,15 +171,15 @@ window.onload = function(){
         if (pokemon.autoclicker >= 0) {
             pokemon.autoclicker++;
             setInterval(function autoclicker () {
-            pokemon.score += 1;
-            console.log(pokemon.score)
-            pokemon.cli = pokemon.cli + 1;
-            affScore()
-            activation();
+                pokemon.score += 1;
+                console.log(pokemon.score)
+                pokemon.cli = pokemon.cli + 1;
+                affScore()
+                activation();
             }, 1000);
             console.log("Lancement autoclic");
         } else {    
-        console.log("pas d'autoclic a appeller");
+            console.log("pas d'autoclic a appeller");
         } 
     affautoClic(); // mettre a jour le nombre d'autoclics deja achetes 
     affScore(); // maj du score
