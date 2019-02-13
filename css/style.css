@@ -31,159 +31,135 @@ body {
   background-color: rgba(241, 200, 13, 0.63);
   box-shadow: 4px 6px 9px #5c3e06;
   position: relative;
-  padding: 0.5em;
-}
-.container:hover {
-  opacity: 1;
-}
-.container .pokeButtonSide {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-start;
-  align-items: center;
-  width: 33%;
-  margin-top: 5px;
-  transition: 0.1s;
-  position: relative;
-  /* vignettes */
-  /* compteur de bonus*/
-  /* Affichage prix */
-}
-.container .pokeButtonSide .pokeImage .active {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-.container .pokeButtonSide .pokeImage .active canvas {
-  width: 70%;
-  border-radius: 50%;
-  background-color: #000;
-  -webkit-box-shadow: 0px 0px 22px 2px #fdfdfd, 0px 0px 22px 3px #f8f0d6;
-  -moz-box-shadow: 0px 0px 22px 2px #fdfdfd, 0px 0px 22px 3px #f8f0d6;
-  box-shadow: 0px 0px 22px 2px #fdfdfd, 0px 0px 22px 3px #f8f0d6;
-}
-.container .pokeButtonSide .pokeImage .active canvas:active {
-  transform: scale(0.9);
-}
-.container .pokeButtonSide .pokeImage .inactive {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-.container .pokeButtonSide .pokeImage .inactive canvas {
-  width: 70%;
-  border-radius: 50%;
-  background-color: #000;
-  -webkit-box-shadow: 0px 0px 22px 2px #fdfdfd, 0px 0px 22px 3px #f8f0d6;
-  -moz-box-shadow: 0px 0px 22px 2px #fdfdfd, 0px 0px 22px 3px #f8f0d6;
-  box-shadow: 0px 0px 22px 2px #fdfdfd, 0px 0px 22px 3px #f8f0d6;
-}
-.container .pokeButtonSide .pokeImage .inactive canvas:active {
-  transform: scale(0.9);
-}
-.container .pokeButtonSide #multiActive {
-  display: none;
-}
-.container .pokeButtonSide #autoclicActive {
-  display: none;
-}
-.container .pokeButtonSide #boostActive {
-  display: none;
-}
-.container .pokeButtonSide .font {
-  height: 20%;
-  margin: 5%;
-  display: flex;
-  justify-content: stretch;
-  align-content: stretch;
-}
-.container .pokeButtonSide .font img {
-  width: 100%;
-}
-.container .pokeButtonSide #multiplication {
-  background-color: red;
-  border-radius: 50%;
-  width: 20%;
-  height: 8%;
-  color: white;
-  position: absolute;
-  top: 5%;
-  right: 20%;
-  text-align: center;
-  line-height: 2.5em;
-  display: none;
-}
-.container .pokeButtonSide #autoClicker {
-  background-color: red;
-  border-radius: 50%;
-  width: 20%;
-  height: 8%;
-  color: white;
-  position: absolute;
-  top: 5%;
-  right: 20%;
-  text-align: center;
-  line-height: 2.5em;
-  display: none;
-}
-.container .pokeButtonSide #booster {
-  background-color: red;
-  border-radius: 50%;
-  width: 20%;
-  height: 8%;
-  color: white;
-  position: absolute;
-  top: 5%;
-  right: 20%;
-  text-align: center;
-  line-height: 2.5em;
-  display: none;
-}
-.container .pokeButtonSide .prix {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 5%;
-  padding: 6px;
-  width: 85%;
-  opacity: 0.8;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 0.7em;
-  color: black;
-  text-shadow: -1px -1px 1px #111;
-  box-shadow: 1px 1px 6px #111;
-  border-radius: 45%;
-}
-.container .pokeButtonSide #prMultiplication {
-  background-color: saddlebrown;
-}
-.container .pokeButtonSide #prAutoclicker {
-  background-color: silver;
-}
-.container .pokeButtonSide #prBooster {
-  background-color: rgba(241, 200, 13, 0.863);
-}
+  padding: 0.5em; }
+  .container:hover {
+    opacity: 1.0; }
+  .container .pokeButtonSide {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 33%;
+    margin-top: 5px;
+    transition: 0.1s;
+    position: relative;
+    /* vignettes */
+    /* compteur de bonus*/
+    /* Affichage prix */ }
+    .container .pokeButtonSide .pokeImage .active {
+      display: flex;
+      align-items: center;
+      justify-content: space-around; }
+      .container .pokeButtonSide .pokeImage .active canvas {
+        width: 70%;
+        border-radius: 50%;
+        background-color: #000;
+        -webkit-box-shadow: 0px 0px 22px 2px #fdfdfd, 0px 0px 22px 3px #f8f0d6;
+        -moz-box-shadow: 0px 0px 22px 2px #fdfdfd, 0px 0px 22px 3px #f8f0d6;
+        box-shadow: 0px 0px 22px 2px #fdfdfd, 0px 0px 22px 3px #f8f0d6; }
+        .container .pokeButtonSide .pokeImage .active canvas:active {
+          transform: scale(0.9); }
+    .container .pokeButtonSide .pokeImage .inactive {
+      display: flex;
+      align-items: center;
+      justify-content: space-around; }
+      .container .pokeButtonSide .pokeImage .inactive canvas {
+        width: 70%;
+        border-radius: 50%;
+        background-color: #000;
+        -webkit-box-shadow: 0px 0px 22px 2px #fdfdfd, 0px 0px 22px 3px #f8f0d6;
+        -moz-box-shadow: 0px 0px 22px 2px #fdfdfd, 0px 0px 22px 3px #f8f0d6;
+        box-shadow: 0px 0px 22px 2px #fdfdfd, 0px 0px 22px 3px #f8f0d6; }
+        .container .pokeButtonSide .pokeImage .inactive canvas:active {
+          transform: scale(0.9); }
+    .container .pokeButtonSide #multiActive {
+      display: none; }
+    .container .pokeButtonSide #autoclicActive {
+      display: none; }
+    .container .pokeButtonSide #boostActive {
+      display: none; }
+    .container .pokeButtonSide .font {
+      height: 20%;
+      margin: 5%;
+      display: flex;
+      justify-content: stretch;
+      align-content: stretch; }
+      .container .pokeButtonSide .font img {
+        width: 100%; }
+    .container .pokeButtonSide #multiplication {
+      background-color: red;
+      border-radius: 50%;
+      width: 20%;
+      height: 8%;
+      color: white;
+      position: absolute;
+      top: 5%;
+      right: 20%;
+      text-align: center;
+      line-height: 2.5em;
+      display: none; }
+    .container .pokeButtonSide #autoClicker {
+      background-color: red;
+      border-radius: 50%;
+      width: 20%;
+      height: 8%;
+      color: white;
+      position: absolute;
+      top: 5%;
+      right: 20%;
+      text-align: center;
+      line-height: 2.5em;
+      display: none; }
+    .container .pokeButtonSide #booster {
+      background-color: red;
+      border-radius: 50%;
+      width: 20%;
+      height: 8%;
+      color: white;
+      position: absolute;
+      top: 5%;
+      right: 20%;
+      text-align: center;
+      line-height: 2.5em;
+      display: none; }
+    .container .pokeButtonSide .prix {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 5%;
+      padding: 6px;
+      width: 85%;
+      opacity: 0.8;
+      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      font-size: 0.7em;
+      color: black;
+      text-shadow: -1px -1px 1px #111;
+      box-shadow: 1px 1px 6px #111;
+      border-radius: 45%; }
+    .container .pokeButtonSide #prMultiplication {
+      background-color: saddlebrown; }
+    .container .pokeButtonSide #prAutoclicker {
+      background-color: silver; }
+    .container .pokeButtonSide #prBooster {
+      background-color: rgba(241, 200, 13, 0.863); }
 
 #clic {
   grid-area: clic;
   max-width: 350px;
   width: 80%;
   margin: 0 auto 10%;
-  border-radius: 50%;
-}
-#clic #mainPokeballCanvas {
-  width: 100%;
-  position: relative;
-  top: 2px;
-  background-color: #000;
-  border-radius: 50%;
-  -webkit-box-shadow: 0px 0px 62px 4px #f1bc1b, 0px 0px 62px 8px #f4c847, 0px 0px 62px 16px #e6ca78;
-  -moz-box-shadow: 0px 0px 62px 4px #f1bc1b, 0px 0px 62px 8px #f4c847, 0px 0px 62px 16px #e6ca78;
-  box-shadow: 0px 0px 62px 4px #f1bc1b, 0px 0px 62px 8px #f4c847, 0px 0px 62px 16px #e6ca78;
-}
-#clic:active {
-  transform: scale(0.9);
-}
+  border-radius: 50%; }
+  #clic #mainPokeballCanvas {
+    width: 100%;
+    position: relative;
+    top: 2px;
+    background-color: #000;
+    border-radius: 50%;
+    -webkit-box-shadow: 0px 0px 62px 4px #f1bc1b, 0px 0px 62px 8px #f4c847, 0px 0px 62px 16px #e6ca78;
+    -moz-box-shadow: 0px 0px 62px 4px #f1bc1b, 0px 0px 62px 8px #f4c847, 0px 0px 62px 16px #e6ca78;
+    box-shadow: 0px 0px 62px 4px #f1bc1b, 0px 0px 62px 8px #f4c847, 0px 0px 62px 16px #e6ca78; }
+  #clic:active {
+    transform: scale(0.9); }
 
 .i-large {
   position: absolute;
@@ -191,8 +167,7 @@ body {
   right: 0;
   left: 0;
   bottom: 0;
-  z-index: -2;
-}
+  z-index: -2; }
 
 .i-large {
   background: url("./pikachupluspetit.svg") repeat 0px 0px;
@@ -225,6 +200,7 @@ body {
   background-color: rgba(255, 255, 255, 0.8); }
   #divAff #affichage {
     font-family: "anime_ace_2.0_bbregular", Arial, sans-serif;
+    font-size: 1em;
     margin: 0.5em auto;
     color: white;
     text-shadow: -1px -1px 0 #000,   1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 1px 1px 2px #141414, 1px 1px 3px #141414, 1px 1px 5px #141414, 1px 1px 7px #141414, 1px 1px 10px #141414, 1px 1px 12px #141414, 1px 1px 18px #141414; }
@@ -232,22 +208,17 @@ body {
     color: #222219;
     margin: 0.5em auto;
     font-family: 'Press Start 2P', cursive;
-  font-size: 0.5em;
-}
-  font-size: 1em;
+    font-size: 0.5em; }
 
 @media screen and (min-width: 500px) and (max-width: 1100px) {
   .container {
-    padding-top: 10%;
-  }
-  .container .pokeButtonSide .prix {
-    font-size: 1.4em;
-    margin-bottom: 40%; }
+    padding-top: 10%; }
+    .container .pokeButtonSide .prix {
+      font-size: 1.4em;
+      margin-bottom: 40%; }
 
   #clic {
-    margin: 12% auto 12%;
-  }
-}
+    margin: 12% auto 12%; } }
 @media screen and (min-width: 1100px) {
   #containerGrid {
     height: 100%;
@@ -261,14 +232,11 @@ body {
   #divAff {
     grid-area: score;
     width: 98vw;
-    margin: 1em auto 0.8em;
-  }
-  #divAff #affichage {
-    font-size: 1.8em;
-  }
-  #divAff #quoteDisplay {
-    font-size: 0.8em;
-  }
+    margin: 1em auto .8em; }
+    #divAff #affichage {
+      font-size: 1.8em; }
+    #divAff #quoteDisplay {
+      font-size: 0.8em; }
 
   #clic {
     grid-area: clic;
@@ -281,52 +249,41 @@ body {
     justify-content: space-around;
     width: 97.5%;
     height: 93%;
-    padding: 5% 0 0 5%;
-  }
-  .container .pokeButtonSide {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: space-between;
-    margin: 2em;
-    width: 80%;
-  }
-  .container .pokeButtonSide .pokeImage .active canvas {
-    width: 300%;
-  }
-  .container .pokeButtonSide .pokeImage .inactive canvas {
-    width: 300%;
-  }
-  .container .pokeButtonSide #multiplication {
-    left: 3em;
-    height: 20%;
-    width: 10%;
-  }
-  .container .pokeButtonSide #autoClicker {
-    left: 3em;
-    height: 20%;
-    width: 10%;
-  }
-  .container .pokeButtonSide #booster {
-    left: 3em;
-    height: 20%;
-    width: 10%;
-  }
-  .container .pokeButtonSide .prix {
-    font-size: 1.5em;
-    position: relative;
-    top: 1em;
-    right: 2em;
-  }
-  .container .pokeButtonSide .font {
-    position: relative;
-    left: 4em;
-    top: -2.5em;
-  }
-  .container .pokeButtonSide .font img {
-    width: 250%;
-    height: 150%;
-  }
-}
+    padding: 5% 0 0 5%; }
+    .container .pokeButtonSide {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: space-between;
+      margin: 2em;
+      width: 80%; }
+      .container .pokeButtonSide .pokeImage .active canvas {
+        width: 300%; }
+      .container .pokeButtonSide .pokeImage .inactive canvas {
+        width: 300%; }
+      .container .pokeButtonSide #multiplication {
+        left: 3em;
+        height: 20%;
+        width: 10%; }
+      .container .pokeButtonSide #autoClicker {
+        left: 3em;
+        height: 20%;
+        width: 10%; }
+      .container .pokeButtonSide #booster {
+        left: 3em;
+        height: 20%;
+        width: 10%; }
+      .container .pokeButtonSide .prix {
+        font-size: 1.5em;
+        position: relative;
+        top: 1em;
+        right: 2em; }
+      .container .pokeButtonSide .font {
+        position: relative;
+        left: 4em;
+        top: -2.5em; }
+        .container .pokeButtonSide .font img {
+          width: 250%;
+          height: 150%; } }
 
 /*# sourceMappingURL=style.css.map */
