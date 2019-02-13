@@ -39,7 +39,6 @@ body{
   box-shadow: 4px 6px 9px rgb(92, 62, 6);
   position: relative;
   padding: 0.5em;
-  margin-bottom: 1%;
   &:hover{
     opacity:1.0;
   }
@@ -203,10 +202,10 @@ body{
   grid-area: clic;
   max-width: 350px;
   width : 80%;
+  height : 40%;
   margin: 0 auto 10%;
   border-radius : 50%;
   #mainPokeballCanvas {
-  // box-shadow
   width: 100%;
   position: relative;
   top: 2px;
