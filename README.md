@@ -16,13 +16,13 @@ Projet de "Pika-Clicker" (CookieClicker-like) maison. Initiation au developpemen
 
 # Timing :
 
->mercredi 6 fevrier : initialisation du projet, organisation et plannification du travail en groupe.  
->jeudi 7 fevrier : création fichier sass, création structure html, création des premières fonctions : clic, multiclic, fonction bonus Multiplicateur, appels de fonctions, objet pokemon.  
->vendredi 8 fevrier : création de la fonction bonus Booster et bonus Autoclic.  
+- *Mercredi 6 février* : initialisation du projet, organisation et plannification du travail en groupe.  
+- *Jeudi 7 février* : création fichier sass, création structure html, création des premières fonctions : clic, multiclic, fonction bonus Multiplicateur, appels de fonctions, objet pokemon.  
+- *Vendredi 8 février* : création de la fonction bonus Booster et bonus Autoclic.  
 
->lundi 11 fevrier : Abandon des branches nominatives et basculement 100% sur branche "développementMain" = 200% de gain de temps. Correction des bugs des fonctions. Journée principalement consacrée au style : arrière plan pikachu qui pique les yeux, pokeballs bonus et divers indicateurs d'achat et prix.  
->mardi 12 fevrier : commencement du responsive design et diverses améliorations CSS, création fonction "quote" (notifications narratives).  
->mercredi 13 fevrier : peaufinage du projet, corrections bugs, changement bannière et expérience utilisateur (UX).  
+- *Lundi 11 février* : Abandon des branches nominatives et basculement 100% sur branche "développementMain" = 200% de gain de temps. Correction des bugs des fonctions. Journée principalement consacrée au style : arrière plan pikachu qui pique les yeux, pokeballs bonus et divers indicateurs d'achat et prix.  
+- *Mardi 12 février* : commencement du responsive design et diverses améliorations CSS, création fonction "quote" (notifications narratives).  
+- *Mercredi 13 février* : peaufinage du projet, corrections bugs, changement bannière et expérience utilisateur (UX).  
 
 # Organisation & Outils
 
