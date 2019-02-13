@@ -140,15 +140,16 @@ window.onload = function(){
 
     function affichageTempsBooster(){
         var timeleft = 30;
+        document.getElementById("booster").innerHTML = timeleft;
         var downloadTimer = setInterval(function(){
-            timeleft--;
-            document.getElementById("booster").innerHTML = timeleft;
             if(timeleft <= 0){
                 clearInterval(downloadTimer);
                 document.getElementById("booster").innerHTML = "0";
                 pokemon.boost= 1;
                 activation();
             }
+            timeleft--;
+            document.getElementById("booster").innerHTML = timeleft;
         }, 1000);
     }
 
