@@ -25,9 +25,9 @@ window.onload = function(){
         },
         bonus : { 
             active : false,
-            prixMulti : 5,
-            prixAutoclic : 5,
-            prixBoost : 5,
+            prixMulti : 50,
+            prixAutoclic : 500,
+            prixBoost : 5000,
             boostCount: 1,
             tclic : Number.MAX_SAFE_INTEGER,
             tBoosterOn : 0,
@@ -245,7 +245,6 @@ window.onload = function(){
         var canvas = document.getElementById(idCanvas);
         var ctx = canvas.getContext("2d");
         var externalRadius = (canvas.width / 2) - canvas.width * 0.04;
-        console.log(externalRadius)
 
         var internalRadius = externalRadius /2;
         var posX = canvas.width / 2;

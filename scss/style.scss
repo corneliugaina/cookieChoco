@@ -37,6 +37,7 @@ body{
   background-color: rgba(241, 200, 13, 0.63); 
   box-shadow: 4px 6px 9px rgb(92, 62, 6);
   position: relative;
+  padding: 0.5em;
   &:hover{
     opacity:1.0;
   }
@@ -45,44 +46,61 @@ body{
     flex-flow : column nowrap;
     justify-content: flex-start;
     align-items: center;
+    width: 33%;
     margin-top: 5px;
     transition: 0.1s;
     position: relative;
     .pokeImage{
-      width: 70%;
-      .active img {
+      .active {
         display : flex;
         align-items: center;
         justify-content: space-around;
-        width : 70%;
-        position: relative;
-        top: 1.5px;
-        border-radius : 50%;
-        background-color: #000;
-        -webkit-box-shadow: 0px 0px 62px 2px #f1bc1b, 0px 0px 62px 4px #e6ca78;
-        -moz-box-shadow: 0px 0px 62px 2px #f1bc1b, 0px 0px 62px 4px #e6ca78;
-        box-shadow: 0px 0px 62px 2px #f1bc1b, 0px 0px 62px 4px #e6ca78;
+          canvas {
+          //display : flex;
+          //align-items: center;
+          //justify-content: space-around;
+          width : 70%;
+          // position: relative;
+          // top: 1.5px;
+          // left : 0;
+          border-radius : 50%;
+          background-color: #000;
+          -webkit-box-shadow: 0px 0px 22px 2px #fdfdfd, 0px 0px 22px 3px #f8f0d6;
+          -moz-box-shadow: 0px 0px 22px 2px #fdfdfd, 0px 0px 22px 3px #f8f0d6;
+          box-shadow: 0px 0px 22px 2px #fdfdfd, 0px 0px 22px 3px #f8f0d6;
+          &:active {
+            // font-size: 1em;
+            // color: rgb(233, 51, 27);
+            transform: scale(0.9);
+          }
+        }
       }
-      .inactive img {
+      .inactive {
         display : flex;
         align-items: center;
         justify-content: space-around;
-        width : 70%;
-        // position: relative;
-        // //top: 1.5px;
-        // left : 0;
-        border-radius : 50%;
-        background-color: #000;
-        -webkit-box-shadow: 0px 0px 62px 2px #f1bc1b, 0px 0px 62px 4px #f4c847;
-        -moz-box-shadow: 0px 0px 62px 2px #f1bc1b, 0px 0px 62px 4px #f4c847;
-        box-shadow: 0px 0px 62px 2px #f1bc1b, 0px 0px 62px 4px #f4c847;
+          canvas {
+          //display : flex;
+          //align-items: center;
+          //justify-content: space-around;
+          width : 70%;
+          // position: relative;
+          // top: 1.5px;
+          // left : 0;
+          border-radius : 50%;
+          background-color: #000;
+          -webkit-box-shadow: 0px 0px 22px 2px #fdfdfd, 0px 0px 22px 3px #f8f0d6;
+          -moz-box-shadow: 0px 0px 22px 2px #fdfdfd, 0px 0px 22px 3px #f8f0d6;
+          box-shadow: 0px 0px 22px 2px #fdfdfd, 0px 0px 22px 3px #f8f0d6;
+          &:active {
+            // font-size: 1em;
+            // color: rgb(233, 51, 27);
+            transform: scale(0.9);
+          }
+        }
       }
     }
-    &:active {
-      font-size: 1em;
-      color: rgb(233, 51, 27);
-      transform: scale(1.1);
-    }
+    
     #multiActive {
       display : none;
     }
@@ -97,12 +115,13 @@ body{
 
 
     .font{
-      img{
-        justify-content: center;
-        align-content: center;
-        width: 80%;
-        height: 80%;
+        height: 20%;
         margin: 5%;
+        display : flex;
+        justify-content: stretch;
+        align-content: stretch;
+      img{
+        width : 100%;
       }
     }
 
@@ -156,13 +175,13 @@ body{
       justify-content: center;
       margin: 5%;
       padding: 6px;
-      width: 70%;
-      height: 30%;
+      width: 85%;
       opacity: 0.8;
       font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-      font-size: 0.8em;
+      font-size: 0.7em;
       color: black;
       text-shadow: -1px -1px 1px #111;
+      box-shadow: 1px 1px 6px #111;
       border-radius: 45%;
     }
     #prMultiplication{
@@ -183,7 +202,7 @@ body{
   width : 80%;
   margin: 0 auto 10%;
   border-radius : 50%;
-  img {
+  #mainPokeballCanvas {
   // box-shadow
   width: 100%;
   position: relative;
@@ -227,15 +246,15 @@ body{
   flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
-  margin: 1em 1% .8em;
+  margin: 1em auto 2em;
   padding: 0.8em;
-  width: 98vw;
+  width: 90vw;
   min-height: 5em; 
   background-color: rgba(241, 200, 13, 0.63); 
   box-shadow: 4px 6px 9px rgb(92, 62, 6);
   #affichage{ 
     font-family: 'anime_ace_2.0_bbregular', Arial, sans-serif ;
-    font-size: 1.8em;
+    font-size: 1em;
     margin: 0.5em auto;
     color: white;
     text-shadow:   -1px -1px 0 #000,  
@@ -254,12 +273,13 @@ body{
   color: rgb(34, 34, 25);
    margin: 0.5em auto;
    font-family: 'Press Start 2P', cursive;
-   font-size: 0.8em;
+   font-size: 0.5em;
   }
 }
 
 @media screen and (min-width: 500px) and (max-width: 1100px) {
   .container {
+    padding-top: 10%;
     .pokeButtonSide {
       .prix {
         font-size: 1.4em;
@@ -268,11 +288,15 @@ body{
     }
   }
   #clic {
-    margin: 5%  auto 10%;
+    margin: 12% auto 12%;
   }
 }
 
 @media screen and (min-width: 1100px) {
+  body {
+    height: 100vh;
+    overflow: hidden;
+  }
   #containerGrid {
     width: 100%;
     display: grid;
@@ -284,6 +308,14 @@ body{
   }
   #divAff {
     grid-area: score;
+    width: 98vw;
+    margin: 1em auto .8em;
+    #affichage {
+      font-size: 1.8em;
+    }
+    #quoteDisplay {
+      font-size: 0.8em;
+    }
   }
   #clic {
     grid-area: clic;
@@ -293,23 +325,25 @@ body{
     grid-area: bonus;
     display: flex;
     flex-flow: column nowrap;
-    align-items: center;
+    //align-items: center;
     justify-content: space-around;
     width : 97.5%;
     //margin-right: 30%;
-    height: 98%;
+    height: 93%;
     padding: 5% 0 0 5%;
     .pokeButtonSide {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: space-between;
+      margin: 2em;
+      width: 80%;
       .pokeImage {
-        .active img {
-          width : 25%;
-          margin: 0;
-          float: left;
+        .active canvas {
+          width : 300%;
         }
-        .inactive img {
-          width : 25%;
-          margin: 0;
-          float: left;
+        .inactive canvas {
+          width : 300%;
         }
       }
       #multiplication {
@@ -331,17 +365,20 @@ body{
         width: 10%;
       }
       .prix {
-        width : 40%;
-        margin: 0;
         font-size: 1.5em;
         position: relative;
-        top: -3em;
-        left: 2em;
+        top: 1em;
+        right: 2em;
       }
       .font{
         position: relative;
-        left : 3em;
-        top: -5.5em;
+        left: 4em;
+        top: -2.5em;
+        
+        img {
+          width : 250%;
+          height : 150%;
+        }
       }
     }
 
