@@ -24,9 +24,9 @@ window.onload = function(){
         },
         bonus : { 
             active : false,
-            prixMulti : 50,
-            prixAutoclic : 50,
-            prixBoost : 5000,
+            prixMulti : 5,
+            prixAutoclic : 5,
+            prixBoost : 5,
             boostCount: 1,
             tclic : Number.MAX_SAFE_INTEGER,
             tBoosterOn : 0,
@@ -43,17 +43,17 @@ window.onload = function(){
 
     // francois affichage multiplicateur + aff autoclick+aff prix bonus:
     function affMulti() {
-        txt = "x" + pokemon.multiplicateur
-        pokemon.button.affMul.innerText = txt 
+        let txt = "x" + pokemon.multiplicateur
+        pokemon.button.praffMul.innerText = txt 
     }
 
     function affBooster() {
-        txt = "temps :" + ("//julien rajouter sa fonction temps!!!")
+        let txt = "temps :" + ("//julien rajouter sa fonction temps!!!")
         pokemon.button.affBoost.innerText = txt 
     }
 
     function affautoClic() {
-        txt = "x" + pokemon.autoclicker    
+        let txt = "x" + pokemon.autoclicker    
         pokemon.button.affautoClic.innerText = txt
     } 
 
@@ -78,7 +78,10 @@ window.onload = function(){
         pokemon.button.prBoost.innerText = txt
     }
 
+    prMultiplication();
+    prBooster();
 
+    // Emilie
     function clicking () {
         pokemon.bonus.tclic = new Date().getTime()
         if (pokemon.bonus.tclic - pokemon.bonus.tBoosterOn < 30000) {
@@ -177,7 +180,7 @@ window.onload = function(){
 
     // Fonction qui permettra d'effectuer l'achat d'autoclic
     function achatAutoclicker () {
-        if (pokemon.score >= 50) {
+        if (pokemon.score >= pokemon.bonus.prixAutoclic) {
         pokemon.score = pokemon.score - pokemon.bonus.prixAutoclic;
         console.log("Achat d'Autoclicker");
         pokemon.bonus.prixAutoclic = pokemon.bonus.prixAutoclic * 2;
