@@ -44,3 +44,11 @@ Initiation au developpement en equipe (JS/HTML/CSS) et application de la methodo
 - Nous avons utilisé SASS et travaillé principalement sur un fichier .scss pour le style, la structure d'indentation et la logique suivait celle du fichier HTML. La page du "Pika-Clic" a été rendue aussi responsive que possible, y compris sur smartphone de toutes les tailles.
 
 - Le travail s'est fait sur un seul fichier .js, avec une separation distincte entre l'objet, les différentes fonctions utilisées et les appels de fonctions. 
+
+
+# Histoire du jeu
+
+Nous avons combine les sujets tels que le clonage, la rebellion et l'energie renouvelable pour presenter une sorte de dystopie Pokemon.  
+En effet, dans le jeu, le joueur va cloner des Pikachu dans son laboratoire afin d'avoir de l'energie gratuite pour acheter des pikacoin et les miner sur le marche.  
+Mais se rendant compte de son pouvoir, le joueur va vendre au gouvernements ses Pikachus afin d'agrandir son laboratoire, et par consequent, generer davantage de Pikachus. Car evidemment le joueur a envie de connaitre la fin du jeu, et cela, a traver 15 niveaux de score a difficulte croissante, et une narration d'actualite, par une petite phrase sous le score.  
+Car le nombre de Pikachus augmentant exponentiellement, ils ont un impact de plus en plus grand sur le monde et puis l'univers tout entier.   
